@@ -7,7 +7,6 @@ plugins {
 
 }
 
-
 version = mod_version
 group = mod_group_id
 
@@ -19,13 +18,15 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
-    mappings channel: mapping_channel, version: mapping_version
 
+    mappings channel: mapping_channel, version: mapping_version
     copyIdeResources = true
+
 
     runs {
         configureEach {
             workingDirectory project.file('run')
+
             property 'forge.logging.markers', 'REGISTRIES'
 
             property 'forge.logging.console.level', 'debug'
@@ -45,18 +46,24 @@ minecraft {
             property 'forge.enabledGameTestNamespaces', mod_id
             args '--nogui'
         }
+
         gameTestServer {
             property 'forge.enabledGameTestNamespaces', mod_id
         }
 
         data {
             workingDirectory project.file('run-data')
-
             args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
         }
     }
 }
+mixin {
+    add sourceSets.main, "ironladders.refmap.json"
+    config "ironladders.mixins.json"
 
+    debug.verbose = true
+    debug.export = true
+}
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
@@ -65,7 +72,7 @@ repositories {
         url 'https://maven.blamejared.com/'
     }
     maven {
-        name 'Curseforge Maven' // Jade
+        name 'Curseforge Maven'
         url "https://www.cursemaven.com"
         content {
             includeGroup "curse.maven"
@@ -75,13 +82,11 @@ repositories {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     implementation fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
-
     implementation fg.deobf("curse.maven:jade-324717:4681833")
-
 }
+
 
 tasks.named('processResources', ProcessResources).configure {
     var replaceProperties = [
@@ -114,6 +119,8 @@ tasks.named('jar', Jar).configure {
     finalizedBy 'reobfJar'
 }
 
+
+
 publishing {
     publications {
         register('mavenJava', MavenPublication) {
@@ -128,5 +135,5 @@ publishing {
 }
 
 tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+    options.encoding = 'UTF-8'
 }
