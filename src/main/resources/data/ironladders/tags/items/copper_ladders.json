@@ -1,0 +1,12 @@
+{
+  "values": [
+    "ironladders:copper_ladder",
+    "ironladders:oxidized_copper_ladder",
+    "ironladders:weathered_copper_ladder",
+    "ironladders:exposed_copper_ladder",
+    "ironladders:waxed_copper_ladder",
+    "ironladders:waxed_oxidized_copper_ladder",
+    "ironladders:waxed_weathered_copper_ladder",
+    "ironladders:waxed_exposed_copper_ladder"
+  ]
+}

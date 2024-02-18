@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ironladders:iron_ladder"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "ironladders:iron_ladder"
+}

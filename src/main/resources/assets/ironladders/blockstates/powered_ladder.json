@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "ironladders:block/powered_ladder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "ironladders:block/powered_ladder"
+    },
+    "facing=south": {
+      "model": "ironladders:block/powered_ladder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "ironladders:block/powered_ladder",
+      "y": 270
+    }
+  }
+}
