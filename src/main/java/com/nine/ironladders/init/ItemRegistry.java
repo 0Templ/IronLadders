@@ -2,8 +2,7 @@ package com.nine.ironladders.init;
 
 
 import com.nine.ironladders.IronLadders;
-import com.nine.ironladders.common.item.UpgradeItem;
-import com.nine.ironladders.common.item.UpgradeType;
+import com.nine.ironladders.common.item.*;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -20,4 +19,8 @@ public class ItemRegistry {
     public static final RegistryObject<Item> GOLD_UPGRADE = ITEMS.register("gold_upgrade", () -> new UpgradeItem(new Item.Properties().durability(14), UpgradeType.IRON_TO_GOLD));
     public static final RegistryObject<Item> DIAMOND_UPGRADE = ITEMS.register("diamond_upgrade", () -> new UpgradeItem(new Item.Properties().durability(14), UpgradeType.GOLD_TO_DIAMOND));
     public static final RegistryObject<Item> NETHERITE_UPGRADE = ITEMS.register("netherite_upgrade", () -> new UpgradeItem(new Item.Properties().durability(28), UpgradeType.DIAMOND_TO_NETHERITE));
+    public static final RegistryObject<Item> POWER_UPGRADE_ITEM = ITEMS.register("power_upgrade", () -> new CustomUpgradeItem(new Item.Properties().stacksTo(1),UpgradeType.ANY_TO_POWERED));
+    public static final RegistryObject<Item> LIGHT_UPGRADE_ITEM = ITEMS.register("light_upgrade", () -> new CustomUpgradeItem(new Item.Properties().stacksTo(1),UpgradeType.ANY_TO_GLOWING));
+    public static final RegistryObject<Item> HIDE_UPGRADE_ITEM = ITEMS.register("hiding_upgrade", () -> new CustomUpgradeItem(new Item.Properties().stacksTo(1),UpgradeType.ANY_TO_HIDDEN));
+    public static final RegistryObject<Item> MORPH_UPGRADE_ITEM = ITEMS.register("morph_upgrade", () -> new MorphUpgradeItem(new Item.Properties().stacksTo(1),UpgradeType.ANY_TO_MORPHED));
 }

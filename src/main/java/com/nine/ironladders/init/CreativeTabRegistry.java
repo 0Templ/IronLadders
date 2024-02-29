@@ -26,6 +26,10 @@ public class CreativeTabRegistry {
                 output.accept(ItemRegistry.GOLD_UPGRADE.get());
                 output.accept(ItemRegistry.DIAMOND_UPGRADE.get());
                 output.accept(ItemRegistry.NETHERITE_UPGRADE.get());
+                output.accept(ItemRegistry.POWER_UPGRADE_ITEM.get());
+                output.accept(ItemRegistry.LIGHT_UPGRADE_ITEM.get());
+                output.accept(ItemRegistry.HIDE_UPGRADE_ITEM.get());
+                output.accept(ItemRegistry.MORPH_UPGRADE_ITEM.get());
 
                 output.accept(BlockRegistry.COPPER_LADDER.get());
                 output.accept(BlockRegistry.EXPOSED_COPPER_LADDER.get());
