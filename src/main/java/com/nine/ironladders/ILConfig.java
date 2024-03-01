@@ -47,8 +47,8 @@ public class ILConfig {
                 comment("Will Tier Upgrades work?").
                 define("enableTierLaddersUpgrade",  true);
         enablePoweredLaddersSpeedMultiplierForPlayersOnly = builder.
-                comment("The Powered Ladders affect players.").
-                define("enablePoweredLaddersSpeedMultiplierForPlayersOnly",  true);
+                comment("The Powered Ladders affect players only?").
+                define("enablePoweredLaddersSpeedMultiplierForPlayersOnly",  false);
         builder.pop();
         builder.push("ladders-settings");
         copperLadderSpeedMultiplier = builder.

@@ -53,8 +53,8 @@ public class BlockRegistry {
     public static final RegistryObject<Block> NETHERITE_LADDER = register("netherite_ladder",
             () -> new NetheriteLadderBlock(BlockBehaviour.Properties.of().forceSolidOff().strength(5.0F, 1200.0F).requiresCorrectToolForDrops().sound(SoundType.NETHERITE_BLOCK).noOcclusion().mapColor(MapColor.COLOR_BLACK).pushReaction(PushReaction.DESTROY).lightLevel(litBlockEmission(13))));
 
-    private static ToIntFunction<BlockState> litBlockEmission(int p_50760_) {
-        return (p_50763_) -> p_50763_.getValue(LIGHTED) ? p_50760_ : 0;
+    private static ToIntFunction<BlockState> litBlockEmission(int lightLevel) {
+        return (p_50763_) -> p_50763_.getValue(LIGHTED) ? lightLevel : 0;
     }
     public static int getMorphId(Block ladderBlock) {
         if (ladderBlock.equals(Blocks.LADDER)) {

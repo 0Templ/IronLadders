@@ -4,8 +4,6 @@ import com.nine.ironladders.common.BlockStateUtils;
 import com.nine.ironladders.common.item.MorphType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
@@ -151,7 +149,6 @@ public class BaseMetalLadder extends LadderBlock {
             }
         }
     }
-
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);

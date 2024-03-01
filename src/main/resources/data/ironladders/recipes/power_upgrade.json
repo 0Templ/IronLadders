@@ -1,26 +1,26 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "ironladders",
+  "group": "i_upgrades",
   "key": {
     "L": {
       "item": "minecraft:ladder"
     },
     "T": {
-      "item": "minecraft:redstone_torch"
+      "tag": "forge:dusts/redstone"
     },
     "R": {
       "item": "minecraft:repeater"
     },
     "X": {
-      "item": "minecraft:redstone"
+      "item": "minecraft:redstone_torch"
     },
     "P": {
       "item": "minecraft:piston"
     }
   },
   "pattern": [
-    " RT",
-    " XP",
+    " RX",
+    " TP",
     "L  "
   ],
   "result": {

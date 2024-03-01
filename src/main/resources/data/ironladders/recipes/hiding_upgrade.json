@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "ironladders",
+  "group": "i_upgrades",
   "key": {
     "L": {
       "item": "minecraft:ladder"
     },
     "G": {
-      "item": "minecraft:glass"
+      "tag": "forge:glass"
     },
     "D": {
       "item": "minecraft:white_dye"

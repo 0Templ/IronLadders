@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "ironladders",
+  "group": "i_ladders",
   "key": {
     "L": {
       "item": "ironladders:diamond_ladder"

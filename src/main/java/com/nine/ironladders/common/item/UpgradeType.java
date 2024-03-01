@@ -5,7 +5,6 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 
 public enum UpgradeType {
-
     DEFAULT_TO_COPPER(LadderType.DEFAULT,LadderType.COPPER),
     DEFAULT_TO_IRON(LadderType.DEFAULT,LadderType.IRON),
     DEFAULT_TO_GOLD(LadderType.DEFAULT,LadderType.GOLD),
@@ -15,7 +14,6 @@ public enum UpgradeType {
     IRON_TO_GOLD(LadderType.IRON,LadderType.GOLD),
     GOLD_TO_DIAMOND(LadderType.GOLD,LadderType.DIAMOND),
     DIAMOND_TO_NETHERITE(LadderType.DIAMOND,LadderType.NETHERITE),
-
     ANY_TO_POWERED(BooleanProperty.create("powered")),
     ANY_TO_GLOWING(BooleanProperty.create("lighted")),
     ANY_TO_HIDDEN(BooleanProperty.create("hidden")),
