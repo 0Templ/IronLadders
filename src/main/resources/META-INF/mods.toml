@@ -5,7 +5,7 @@ license="${mod_license}"
 [[mods]] #mandatory
 logoFile="icon.png"
 modId="${mod_id}" #mandatory
-version="2.0.1" #mandatory
+version="2.1.0" #mandatory
 displayName="${mod_name}" #mandatory
 authors="${mod_authors}" #optional
 description='''${mod_description}'''
