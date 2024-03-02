@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "i_ladders",
+  "key": {
+    "L": {
+      "item": "minecraft:ladder"
+    },
+    "I": {
+      "tag": "forge:ingots/copper"
+    }
+  },
+  "pattern": [
+    "LIL",
+    "LLL",
+    "LIL"
+  ],
+  "result": {
+    "count": 7,
+    "item": "ironladders:copper_ladder"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "i_ladders",
+  "key": {
+    "L": {
+      "item": "ironladders:gold_ladder"
+    },
+    "I": {
+      "tag": "forge:gems/diamond"
+    }
+  },
+  "pattern": [
+    "LIL",
+    "LLL",
+    "LIL"
+  ],
+  "result": {
+    "count": 7,
+    "item": "ironladders:diamond_ladder"
+  }
+}

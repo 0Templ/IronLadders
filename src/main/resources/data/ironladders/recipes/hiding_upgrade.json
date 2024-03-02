@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "i_upgrades",
+  "key": {
+    "L": {
+      "item": "minecraft:ladder"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "D": {
+      "item": "minecraft:white_dye"
+    }
+  },
+  "pattern": [
+    " GD",
+    " GG",
+    "L  "
+  ],
+  "result": {
+    "count": 1,
+    "item": "ironladders:hiding_upgrade"
+  }
+}

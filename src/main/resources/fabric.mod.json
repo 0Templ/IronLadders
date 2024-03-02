@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "ironladders",
+	"version": "2.0.0",
+	"name": "Iron Ladders",
+	"description": "Ladders that are faster than usual.",
+	"authors": [
+		"Nine"
+	],
+	"contact": {
+		"homepage": "https://www.curseforge.com/minecraft/mc-mods/iron-ladders"
+	},
+	"license": "GNU LESSER GENERAL PUBLIC LICENSE",
+	"icon": "assets/ironladders/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.nine.ironladders.IronLadders"
+		],
+		"client": [
+			"com.nine.ironladders.IronLaddersClient"
+		]
+	},
+	"mixins": [
+		"ironladders.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.0",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}

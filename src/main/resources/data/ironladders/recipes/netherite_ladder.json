@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "i_ladders",
+  "key": {
+    "L": {
+      "item": "ironladders:diamond_ladder"
+    },
+    "I": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "pattern": [
+    "LIL",
+    "LLL",
+    "LIL"
+  ],
+  "result": {
+    "count": 14,
+    "item": "ironladders:netherite_ladder"
+  }
+}

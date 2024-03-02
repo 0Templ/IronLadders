@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "i_upgrades",
+  "key": {
+    "L": {
+      "item": "minecraft:ladder"
+    },
+    "G": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "S": {
+      "item": "minecraft:glowstone"
+    }
+  },
+  "pattern": [
+    " GS",
+    " GG",
+    "L  "
+  ],
+  "result": {
+    "count": 1,
+    "item": "ironladders:light_upgrade"
+  }
+}

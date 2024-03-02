@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "i_upgrades",
+  "key": {
+    "L": {
+      "item": "minecraft:ladder"
+    },
+    "I": {
+      "tag": "c:copper_ingots"
+    }
+  },
+  "pattern": [
+    " II",
+    " II",
+    "L  "
+  ],
+  "result": {
+    "count": 1,
+    "item": "ironladders:copper_upgrade"
+  }
+}

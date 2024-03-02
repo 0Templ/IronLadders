@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:item/handheld",
+	"textures": {
+		"layer0": "alluring_artifacts:item/echo_axe_gui"
+
+	}
+}
