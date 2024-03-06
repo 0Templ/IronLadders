@@ -104,18 +104,18 @@ public class CustomUpgradeItem extends Item {
                 bottomType = metalLadder.getType();
             }
             if(canGoUp) {
-                if (blockAbove instanceof BaseMetalLadder && startPropertyValue == stateAbove.getValue(type.getProperty())) {
+                if (blockAbove instanceof BaseMetalLadder && blockAbove == startBlock && startPropertyValue == stateAbove.getValue(type.getProperty())) {
                     Direction currentUpFacingDirection = stateAbove.getValue(FACING);
-                    canGoUp =  startFacingDirection == currentUpFacingDirection;
+                    canGoUp = startFacingDirection == currentUpFacingDirection;
                 }
                 else {
                     canGoUp = false;
                 }
             }
             if(canGoDown){
-                if (blockBelow instanceof BaseMetalLadder && startPropertyValue == stateBelow.getValue(type.getProperty())){
+                if (blockBelow instanceof BaseMetalLadder && blockBelow == startBlock && startPropertyValue == stateBelow.getValue(type.getProperty())){
                     Direction currentDownFacingDirection = stateBelow.getValue(FACING);
-                    canGoDown =  startFacingDirection == currentDownFacingDirection;
+                    canGoDown = startFacingDirection == currentDownFacingDirection;
                 }
                 else {
                     canGoDown = false;
@@ -124,13 +124,13 @@ public class CustomUpgradeItem extends Item {
             if ((canGoUp || canGoDown)){
                 if (canGoUp){
                     if (upperType == startType) {
-                        state = BlockStateUtils.getStateWithSyncedPropsNoP(state, stateAbove);
+                        state = BlockStateUtils.getStateWithSyncedPropsNoP(blockAbove.defaultBlockState(), stateAbove);
                         upgradeSingleBlock(state,level,abovePos);
                     }
                 }
                 if (canGoDown){
                     if (bottomType == startType) {
-                        state = BlockStateUtils.getStateWithSyncedPropsNoP(state, stateBelow);
+                        state = BlockStateUtils.getStateWithSyncedPropsNoP(blockBelow.defaultBlockState(), stateBelow);
                         upgradeSingleBlock(state,level,belowPos);
                     }
                 }

@@ -59,13 +59,13 @@ public class BlockRegistry {
     public static int getMorphId(Block ladderBlock) {
         if (ladderBlock.equals(Blocks.LADDER)) {
             return 99;
-        } else if (ladderBlock.equals(OXIDIZED_COPPER_LADDER.get())) {
+        } else if (ladderBlock.equals(OXIDIZED_COPPER_LADDER.get()) || ladderBlock.equals(WAXED_OXIDIZED_COPPER_LADDER.get())) {
             return 1;
-        } else if (ladderBlock.equals(WEATHERED_COPPER_LADDER.get())) {
+        } else if (ladderBlock.equals(WEATHERED_COPPER_LADDER.get()) || ladderBlock.equals(WAXED_WEATHERED_COPPER_LADDER.get())) {
             return 2;
-        } else if (ladderBlock.equals(EXPOSED_COPPER_LADDER.get())) {
+        } else if (ladderBlock.equals(EXPOSED_COPPER_LADDER.get()) || ladderBlock.equals(WAXED_EXPOSED_COPPER_LADDER.get())) {
             return 3;
-        } else if (ladderBlock.equals(COPPER_LADDER.get())) {
+        } else if (ladderBlock.equals(COPPER_LADDER.get()) || ladderBlock.equals(WAXED_COPPER_LADDER.get())) {
             return 4;
         } else if (ladderBlock.equals(IRON_LADDER.get())) {
             return 5;

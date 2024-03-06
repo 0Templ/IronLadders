@@ -15,20 +15,24 @@ public class BlockStateUtils {
     public static final BooleanProperty LIGHTED = BooleanProperty.create("lighted");
     public static final BooleanProperty HIDDEN = BooleanProperty.create("hidden");
     public static final EnumProperty<MorphType> MORPH_TYPE = EnumProperty.create("morph", MorphType.class);
+    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+
     public static BlockState getStateWithSyncedProps(BlockState state, BlockState state_1){
         return state.setValue(WATERLOGGED, state_1.getValue(WATERLOGGED))
                 .setValue(LIGHTED, state_1.getValue(LIGHTED))
                 .setValue(POWERED, state_1.getValue(POWERED))
                 .setValue(HIDDEN, state_1.getValue(HIDDEN))
                 .setValue(HAS_SIGNAL, state_1.getValue(HAS_SIGNAL))
-                .setValue(MORPH_TYPE, state_1.getValue(MORPH_TYPE));
+                .setValue(MORPH_TYPE, state_1.getValue(MORPH_TYPE))
+                .setValue(FACING, state_1.getValue(FACING));
     }
     public static BlockState getStateWithSyncedPropsNoP(BlockState state, BlockState state_1){
         return state.setValue(WATERLOGGED, state_1.getValue(WATERLOGGED))
                 .setValue(LIGHTED, state_1.getValue(LIGHTED))
                 .setValue(POWERED, state_1.getValue(POWERED))
                 .setValue(HIDDEN, state_1.getValue(HIDDEN))
-                .setValue(MORPH_TYPE, state_1.getValue(MORPH_TYPE));
+                .setValue(MORPH_TYPE, state_1.getValue(MORPH_TYPE))
+                .setValue(FACING, state_1.getValue(FACING));
     }
 
 }

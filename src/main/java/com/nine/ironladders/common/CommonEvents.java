@@ -49,10 +49,11 @@ public class CommonEvents {
             BlockPos pos = event.getPos();
             BlockState state = level.getBlockState(pos);
             Block block = state.getBlock();
-            if (block instanceof BaseMetalLadder) {
+            if (block instanceof BaseMetalLadder baseMetalLadder) {
                 if (player.isShiftKeyDown() ) {
                     morphUpgradeItem.morphSingleBlock(state,level,pos,stack);
                     morphUpgradeItem.morphMultipleLadders(level,pos,state,stack);
+                    baseMetalLadder.updateChain(level,pos);
                 }
             }
             event.setCanceled(true);

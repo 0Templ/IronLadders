@@ -84,6 +84,7 @@ public class MorphUpgradeItem extends Item {
         }
         level.removeBlock(blockPos, false);
         level.setBlock(blockPos, upgradeState, 3);
+        level.updateNeighborsAt(blockPos.above(),level.getBlockState(blockPos).getBlock());
     }
     public void morphMultipleLadders(Level level, BlockPos blockPos, BlockState state, ItemStack stack) {
         int height = 1;
@@ -133,13 +134,13 @@ public class MorphUpgradeItem extends Item {
             if ((canGoUp || canGoDown)){
                 if (canGoUp){
                     if (upperType == startType) {
-                        state = BlockStateUtils.getStateWithSyncedPropsNoP(state,stateAbove);
+                        state = BlockStateUtils.getStateWithSyncedProps(stateAbove,stateAbove);
                         morphSingleBlock(state,level,abovePos,stack);
                     }
                 }
                 if (canGoDown){
                     if (bottomType == startType) {
-                        state = BlockStateUtils.getStateWithSyncedPropsNoP(state,stateBelow);
+                        state = BlockStateUtils.getStateWithSyncedProps(stateBelow,stateBelow);
                         morphSingleBlock(state,level,belowPos,stack);
                     }
                 }
