@@ -13,7 +13,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -22,6 +21,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.LadderBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -55,7 +55,7 @@ public class MorphUpgradeItem extends Item {
         BlockState blockState = level.getBlockState(blockPos);
         Block block = blockState.getBlock();
         EnumProperty<MorphType> property = type.getMorphProperty();
-        if (block instanceof LadderBlock && property != null) {
+        if ((block instanceof LadderBlock || block.equals(Blocks.VINE)) && property != null ) {
             if (player.isShiftKeyDown() ) {
                 if (BlockRegistry.getMorphId(block) != 0){
                     setMorphType(stack, BlockRegistry.getMorphId(block));

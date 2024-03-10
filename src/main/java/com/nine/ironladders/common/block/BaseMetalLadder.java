@@ -164,10 +164,12 @@ public class BaseMetalLadder extends LadderBlock {
     public int getSpeedMultiplier() {
         return 0;
     }
+    public boolean isMorphed(BlockState blockState){
+        return blockState.getValue(MORPH_TYPE) != MorphType.NONE;
+    }
     public boolean isPowered(BlockState blockState){
         return blockState.getValue(POWERED);
     }
-
     public boolean isPoweredAndHasSignal(BlockState blockState){
         if (blockState.getBlock() instanceof BaseMetalLadder){
             return isPowered(blockState) && blockState.getValue(HAS_SIGNAL);

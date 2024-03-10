@@ -13,14 +13,11 @@ public enum MorphType implements StringRepresentable{
     GOLD("gold"),
     DIAMOND("diamond"),
     NETHERITE("netherite"),
-    DEFAULT("default"); //Vanilla ladder
-
+    DEFAULT("default");
     private final String name;
-
     MorphType(String p_61775_) {
         this.name = p_61775_;
     }
-
     public String toString() {
         return this.name;
     }
