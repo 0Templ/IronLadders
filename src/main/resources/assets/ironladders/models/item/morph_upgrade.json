@@ -60,6 +60,12 @@
     },
     {
       "predicate": {
+        "morph_type": 9
+      },
+      "model": "ironladders:item/morph_vines_upgrade"
+    },
+    {
+      "predicate": {
         "morph_type": 99
       },
       "model": "ironladders:item/morph_default_upgrade"

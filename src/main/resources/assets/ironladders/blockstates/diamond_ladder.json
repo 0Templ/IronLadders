@@ -1049,6 +1049,111 @@
     "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,morph=default": {
       "model": "ironladders:block/ladder",
       "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=false,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=false,morph=vines": {
+      "model": "ironladders:block/vine"
+    },
+    "facing=south,hidden=false,lighted=false,powered=false,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=false,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 270
+    },
+    "facing=east,hidden=true,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 90
+    },
+    "facing=north,hidden=true,morph=vines": {
+      "model": "ironladders:block/vine"
+    },
+    "facing=south,hidden=true,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 180
+    },
+    "facing=west,hidden=true,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=false,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=false,morph=vines": {
+      "model": "ironladders:block/vine"
+    },
+    "facing=south,hidden=false,lighted=true,powered=false,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=false,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,morph=vines": {
+      "model": "ironladders:block/vine"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,morph=vines": {
+      "model": "ironladders:block/vine"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,morph=vines": {
+      "model": "ironladders:block/vine"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,morph=vines": {
+      "model": "ironladders:block/vine"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,morph=vines": {
+      "model": "ironladders:block/vine",
+      "y": 270
     }
   }
 }

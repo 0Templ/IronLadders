@@ -1,5 +1,6 @@
 package com.nine.ironladders;
 
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.common.Mod;
 

@@ -20,10 +20,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.LadderBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.*;
 import net.minecraftforge.api.distmarker.Dist;
@@ -55,8 +52,8 @@ public class MorphUpgradeItem extends Item {
         BlockState blockState = level.getBlockState(blockPos);
         Block block = blockState.getBlock();
         EnumProperty<MorphType> property = type.getMorphProperty();
-        if ((block instanceof LadderBlock || block.equals(Blocks.VINE)) && property != null ) {
-            if (player.isShiftKeyDown() ) {
+        if ((block instanceof LadderBlock || block instanceof VineBlock) && property != null ) {
+            if (player.isShiftKeyDown()) {
                 if (BlockRegistry.getMorphId(block) != 0){
                     setMorphType(stack, BlockRegistry.getMorphId(block));
                     level.playSound((Player)null, blockPos, SoundEvents.SLIME_SQUISH, SoundSource.PLAYERS, 1.0F, 1.0F);

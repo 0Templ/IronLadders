@@ -167,6 +167,9 @@ public class BaseMetalLadder extends LadderBlock {
     public boolean isMorphed(BlockState blockState){
         return blockState.getValue(MORPH_TYPE) != MorphType.NONE;
     }
+    public boolean isVines(BlockState blockState){
+        return blockState.getValue(MORPH_TYPE) == MorphType.VINES;
+    }
     public boolean isPowered(BlockState blockState){
         return blockState.getValue(POWERED);
     }

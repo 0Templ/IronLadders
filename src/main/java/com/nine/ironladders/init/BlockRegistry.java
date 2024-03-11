@@ -5,10 +5,7 @@ import com.nine.ironladders.IronLadders;
 import com.nine.ironladders.common.block.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.WeatheringCopper;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
@@ -75,6 +72,8 @@ public class BlockRegistry {
             return 7;
         } else if (ladderBlock.equals(NETHERITE_LADDER.get())) {
             return 8;
+        } else if (ladderBlock instanceof VineBlock) {
+            return 9;
         }
         return 0;
     }

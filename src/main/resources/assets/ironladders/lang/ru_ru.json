@@ -34,6 +34,7 @@
   "tooltip.item.upgrade.diamond": "Алзмазную",
   "tooltip.item.upgrade.netherite": "Незеритовую",
   "tooltip.item.upgrade.default": "Деревянную",
+  "tooltip.item.upgrade.vines": "Лианы",
   "tooltip.item.upgrade.not_consumable": "Не расходуется",
   "tooltip.item.upgrade.upgrades_amount": "Может улучшить до §l%s §rлестниц",
   "tooltip.item.upgrade.additional_info": "Используйте Шифт + ЛКМ для многократного применения",

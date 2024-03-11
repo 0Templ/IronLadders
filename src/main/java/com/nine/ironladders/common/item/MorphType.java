@@ -13,6 +13,7 @@ public enum MorphType implements StringRepresentable{
     GOLD("gold"),
     DIAMOND("diamond"),
     NETHERITE("netherite"),
+    VINES("vines"),
     DEFAULT("default");
     private final String name;
     MorphType(String p_61775_) {
@@ -36,6 +37,7 @@ public enum MorphType implements StringRepresentable{
             case 6 -> GOLD;
             case 7 -> DIAMOND;
             case 8 -> NETHERITE;
+            case 9 -> VINES;
             default -> NONE;
         };
     }

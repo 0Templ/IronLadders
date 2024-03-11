@@ -34,6 +34,7 @@
   "tooltip.item.upgrade.diamond": "Diamond",
   "tooltip.item.upgrade.netherite": "Nethterite",
   "tooltip.item.upgrade.default": "Wooden",
+  "tooltip.item.upgrade.vines": "Vines",
   "tooltip.item.upgrade.not_consumable": "Not Consumable",
   "tooltip.item.upgrade.upgrades_amount": "Upgrades up to §l%s §rladders",
   "tooltip.item.upgrade.additional_info": "Use Shift + LMB for multiple use",
