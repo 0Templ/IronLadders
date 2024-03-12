@@ -34,6 +34,7 @@
   "tooltip.item.upgrade.diamond": "Diamond",
   "tooltip.item.upgrade.netherite": "Nethterite",
   "tooltip.item.upgrade.default": "Wooden",
+  "tooltip.item.upgrade.vines": "Vines",
   "tooltip.item.upgrade.not_consumable": "Not Consumable",
   "tooltip.item.upgrade.upgrades_amount": "Upgrades up to §l%s §rladders",
   "tooltip.item.upgrade.additional_info": "Use Shift + LMB for multiple use",
@@ -47,5 +48,10 @@
   "tooltip.item.upgrade.light_info": "Ladders with this upgrade will emit light",
   "tooltip.item.upgrade.powered_info": "Ladders with this upgrade will automatically raise/lower creatures",
   "tooltip.item.upgrade.powered_info_2": "Direction is switched with redstone signal",
-  "tooltip.item.upgrade.disabled": "Disabled"
+  "tooltip.item.upgrade.disabled": "Disabled",
+  "config.jade.morph_state": "Morph: ",
+  "config.jade.power_state": "State: ",
+  "config.jade.power_state_off": "Off",
+  "config.jade.power_state_on": "On",
+  "config.jade.plugin_minecraft.ironladders": "Iron Ladders states"
 }

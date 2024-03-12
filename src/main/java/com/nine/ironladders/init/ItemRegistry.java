@@ -3,7 +3,7 @@ package com.nine.ironladders.init;
 import com.nine.ironladders.common.item.CustomUpgradeItem;
 import com.nine.ironladders.common.item.MorphUpgradeItem;
 import com.nine.ironladders.common.item.UpgradeItem;
-import com.nine.ironladders.common.item.UpgradeType;
+import com.nine.ironladders.common.utils.UpgradeType;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;

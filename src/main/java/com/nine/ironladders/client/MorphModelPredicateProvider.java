@@ -18,6 +18,6 @@ public class MorphModelPredicateProvider implements ClampedModelPredicateProvide
     }
     @Deprecated
     public float call(ItemStack itemStack, @Nullable ClientWorld clientWorld, @Nullable LivingEntity livingEntity, int i) {
-        return MathHelper.clamp(this.unclampedCall(itemStack, clientWorld, livingEntity, i), 0.0F, 10.0F);
+        return MathHelper.clamp(this.unclampedCall(itemStack, clientWorld, livingEntity, i), 0.0F, 100.0F);
     }
 }

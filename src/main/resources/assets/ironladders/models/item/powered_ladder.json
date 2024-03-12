@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "ironladders:block/powered_ladder",
-    "layer1": "ironladders:block/powered_ladder_light"
-  }
-}

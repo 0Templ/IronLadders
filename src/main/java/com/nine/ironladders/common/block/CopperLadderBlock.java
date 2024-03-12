@@ -1,6 +1,7 @@
 package com.nine.ironladders.common.block;
 
 import com.nine.ironladders.IronLadders;
+import com.nine.ironladders.common.utils.LadderType;
 import net.minecraft.block.Oxidizable;
 public class CopperLadderBlock extends BaseMetalLadder implements Oxidizable {
 

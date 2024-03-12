@@ -1,9 +1,11 @@
 package com.nine.ironladders.common.item;
 
 import com.nine.ironladders.IronLadders;
-import com.nine.ironladders.common.BlockStateUtils;
+import com.nine.ironladders.common.utils.BlockStateUtils;
 import com.nine.ironladders.common.block.BaseMetalLadder;
-import com.nine.ironladders.common.block.LadderType;
+import com.nine.ironladders.common.utils.LadderProperties;
+import com.nine.ironladders.common.utils.LadderType;
+import com.nine.ironladders.common.utils.UpgradeType;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.*;
@@ -17,9 +19,6 @@ import net.minecraft.item.ItemUsageContext;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.DirectionProperty;
-import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
@@ -31,9 +30,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class UpgradeItem extends Item {
-    public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
-    public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-
     UpgradeType type;
     public UpgradeItem(Settings settings, UpgradeType type) {
         super(settings);
@@ -104,7 +100,7 @@ public class UpgradeItem extends Item {
             LadderType startType = LadderType.DEFAULT;
             LadderType upperType = startType;
             LadderType bottomType = startType;
-            Direction startFacingDirection = oldState.get(FACING);
+            Direction startFacingDirection = oldState.get(LadderProperties.FACING);
 
             if (startBlock instanceof BaseMetalLadder metalLadder){
                 startType = metalLadder.getType();
@@ -126,7 +122,7 @@ public class UpgradeItem extends Item {
 
             if(canGoUp) {
                 if (blockAbove instanceof LadderBlock) {
-                    Direction currentUpFacingDirection = stateAbove.get(FACING);
+                    Direction currentUpFacingDirection = stateAbove.get(LadderProperties.FACING);
                     canGoUp =  startFacingDirection == currentUpFacingDirection;
                 }
                 else {
@@ -135,7 +131,7 @@ public class UpgradeItem extends Item {
             }
             if(canGoDown){
                 if (blockBelow instanceof LadderBlock){
-                    Direction currentDownFacingDirection = stateBelow.get(FACING);
+                    Direction currentDownFacingDirection = stateBelow.get(LadderProperties.FACING);
                     canGoDown =  startFacingDirection == currentDownFacingDirection;
                 }
                 else {
@@ -144,7 +140,7 @@ public class UpgradeItem extends Item {
             }
             if ((canGoUp || canGoDown) && stack.getDamage() < stack.getMaxDamage()){
                 if (canGoUp){
-                    Direction currentUpFacingDirection = stateAbove.get(FACING);
+                    Direction currentUpFacingDirection = stateAbove.get(LadderProperties.FACING);
                     if (currentUpFacingDirection == startFacingDirection && upperType == startType) {
                         newState = BlockStateUtils.getStateWithSyncedProps(newState,stateAbove);
                         upgradeSingleBlock(level,player,abovePos,newState,stack);
@@ -153,7 +149,7 @@ public class UpgradeItem extends Item {
                 }
 
                 if (canGoDown && ladderCount != stack.getMaxDamage()){
-                    Direction currentDownFacingDirection = stateBelow.get(FACING);
+                    Direction currentDownFacingDirection = stateBelow.get(LadderProperties.FACING);
                     if (currentDownFacingDirection == startFacingDirection && bottomType == startType) {
                         newState = BlockStateUtils.getStateWithSyncedProps(newState,stateBelow);
                         upgradeSingleBlock(level,player,belowPos,newState,stack);

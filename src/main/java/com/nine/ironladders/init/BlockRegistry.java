@@ -11,10 +11,7 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.Identifier;
-
-import java.util.function.ToIntFunction;
 
 public class BlockRegistry {
     public static final Block OXIDIZED_COPPER_LADDER = registerBlock("oxidized_copper_ladder",
@@ -34,30 +31,26 @@ public class BlockRegistry {
     public static final Block WAXED_COPPER_LADDER = registerBlock("waxed_copper_ladder",
             new CopperLadderBlock(Oxidizable.OxidationLevel.UNAFFECTED, FabricBlockSettings.create().mapColor(MapColor.ORANGE).strength(2.0F, 6.0F).requiresTool().sounds(BlockSoundGroup.COPPER).nonOpaque().pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block IRON_LADDER = registerBlock("iron_ladder",
-            new IronLadderBlock(FabricBlockSettings.create().mapColor(MapColor.IRON_GRAY).strength(2.0F, 6.0F).requiresTool().sounds(BlockSoundGroup.METAL).nonOpaque().pistonBehavior(PistonBehavior.DESTROY).luminance(BlockRegistry.litBlockEmission(13))));
+            new IronLadderBlock(FabricBlockSettings.create().mapColor(MapColor.IRON_GRAY).strength(2.0F, 6.0F).requiresTool().sounds(BlockSoundGroup.METAL).nonOpaque().pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block GOLD_LADDER = registerBlock("gold_ladder",
             new GoldLadderBlock(FabricBlockSettings.create().mapColor(MapColor.GOLD).strength(1.5F, 6.0F).requiresTool().sounds(BlockSoundGroup.METAL).nonOpaque().pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block DIAMOND_LADDER = registerBlock("diamond_ladder",
             new DiamondLadderBlock(FabricBlockSettings.create().mapColor(MapColor.DIAMOND_BLUE).strength(3.0F, 6.0F).requiresTool().sounds(BlockSoundGroup.METAL).nonOpaque().pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block NETHERITE_LADDER = registerBlock("netherite_ladder",
             new NetheriteLadderBlock(FabricBlockSettings.create().mapColor(MapColor.BLACK).strength(5.0F, 1200.0F).requiresTool().sounds(BlockSoundGroup.NETHERITE).nonOpaque().pistonBehavior(PistonBehavior.DESTROY)));
-    public static ToIntFunction<BlockState> litBlockEmission(int litLevel) {
-        return state -> state.get(LIGHTED) != false ? litLevel : 0;
-    }
 
-/*    private static ToIntFunction<BlockState> litBlockEmission(int lightLevel) {
-        return (p_50763_) -> p_50763_.get(LIGHTED) ? lightLevel : 0;
-    }*/
+
+
     public static int getMorphId(Block ladderBlock) {
         if (ladderBlock.equals(Blocks.LADDER)) {
             return 99;
-        } else if (ladderBlock.equals(OXIDIZED_COPPER_LADDER)) {
+        } else if (ladderBlock.equals(OXIDIZED_COPPER_LADDER) || ladderBlock.equals(WAXED_OXIDIZED_COPPER_LADDER)) {
             return 1;
-        } else if (ladderBlock.equals(WEATHERED_COPPER_LADDER)) {
+        } else if (ladderBlock.equals(WEATHERED_COPPER_LADDER) || ladderBlock.equals(WAXED_WEATHERED_COPPER_LADDER)) {
             return 2;
-        } else if (ladderBlock.equals(EXPOSED_COPPER_LADDER)) {
+        } else if (ladderBlock.equals(EXPOSED_COPPER_LADDER) || ladderBlock.equals(WAXED_EXPOSED_COPPER_LADDER)) {
             return 3;
-        } else if (ladderBlock.equals(COPPER_LADDER)) {
+        } else if (ladderBlock.equals(COPPER_LADDER) || ladderBlock.equals(WAXED_COPPER_LADDER)) {
             return 4;
         } else if (ladderBlock.equals(IRON_LADDER)) {
             return 5;
@@ -67,6 +60,8 @@ public class BlockRegistry {
             return 7;
         } else if (ladderBlock.equals(NETHERITE_LADDER)) {
             return 8;
+        }else if (ladderBlock instanceof VineBlock) {
+            return 9;
         }
         return 0;
     }
@@ -74,7 +69,6 @@ public class BlockRegistry {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(IronLadders.MODID, name), block);
     }
-    public static final BooleanProperty LIGHTED = BooleanProperty.of("lighted");
 
     private static Item registerBlockItem(String name, Block block) {
         return Registry.register(Registries.ITEM, new Identifier(IronLadders.MODID, name),

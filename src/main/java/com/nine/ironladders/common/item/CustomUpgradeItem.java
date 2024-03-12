@@ -1,13 +1,17 @@
 package com.nine.ironladders.common.item;
 
 import com.nine.ironladders.IronLadders;
-import com.nine.ironladders.common.BlockStateUtils;
+import com.nine.ironladders.common.utils.BlockStateUtils;
 import com.nine.ironladders.common.block.BaseMetalLadder;
-import com.nine.ironladders.common.block.LadderType;
+import com.nine.ironladders.common.utils.LadderProperties;
+import com.nine.ironladders.common.utils.LadderType;
+import com.nine.ironladders.common.utils.UpgradeType;
 import com.nine.ironladders.init.ItemRegistry;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
@@ -29,7 +33,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class CustomUpgradeItem extends Item {
-    public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     UpgradeType type;
     public CustomUpgradeItem(Settings settings, UpgradeType type) {
         super(settings);
@@ -80,7 +83,7 @@ public class CustomUpgradeItem extends Item {
         LadderType startType = LadderType.DEFAULT;
         LadderType upperType = startType;
         LadderType bottomType = startType;
-        Direction startFacingDirection = state.get(FACING);
+        Direction startFacingDirection = state.get(LadderProperties.FACING);
         boolean startPropertyValue = state.get(type.getProperty());
         while (height < 256) {
             if (startBlock instanceof BaseMetalLadder metalLadder){
@@ -101,8 +104,8 @@ public class CustomUpgradeItem extends Item {
                 bottomType = metalLadder.getType();
             }
             if(canGoUp) {
-                if (blockAbove instanceof BaseMetalLadder && startPropertyValue == stateAbove.get(type.getProperty())) {
-                    Direction currentUpFacingDirection = stateAbove.get(FACING);
+                if (blockAbove instanceof BaseMetalLadder && blockAbove == startBlock && startPropertyValue == stateAbove.get(type.getProperty())){
+                    Direction currentUpFacingDirection = stateAbove.get(LadderProperties.FACING);
                     canGoUp =  startFacingDirection == currentUpFacingDirection;
                 }
                 else {
@@ -110,8 +113,8 @@ public class CustomUpgradeItem extends Item {
                 }
             }
             if(canGoDown){
-                if (blockBelow instanceof BaseMetalLadder && startPropertyValue == stateBelow.get(type.getProperty())){
-                    Direction currentDownFacingDirection = stateBelow.get(FACING);
+                if (blockBelow instanceof BaseMetalLadder && blockBelow == startBlock && startPropertyValue == stateBelow.get(type.getProperty())){
+                    Direction currentDownFacingDirection = stateBelow.get(LadderProperties.FACING);
                     canGoDown =  startFacingDirection == currentDownFacingDirection;
                 }
                 else {
@@ -121,13 +124,13 @@ public class CustomUpgradeItem extends Item {
             if ((canGoUp || canGoDown)){
                 if (canGoUp){
                     if (upperType == startType) {
-                        state = BlockStateUtils.getStateWithSyncedPropsNoP(state, stateAbove);
+                        state = BlockStateUtils.getStateWithSyncedPropsNoP(blockAbove.getDefaultState(), stateAbove);
                         upgradeSingleBlock(state,level,abovePos);
                     }
                 }
                 if (canGoDown){
                     if (bottomType == startType) {
-                        state = BlockStateUtils.getStateWithSyncedPropsNoP(state, stateBelow);
+                        state = BlockStateUtils.getStateWithSyncedPropsNoP(blockBelow.getDefaultState(), stateBelow);
                         upgradeSingleBlock(state,level,belowPos);
                     }
                 }

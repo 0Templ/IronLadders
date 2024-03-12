@@ -34,6 +34,7 @@
   "tooltip.item.upgrade.diamond": "Алзмазную",
   "tooltip.item.upgrade.netherite": "Незеритовую",
   "tooltip.item.upgrade.default": "Деревянную",
+  "tooltip.item.upgrade.vines": "Лианы",
   "tooltip.item.upgrade.not_consumable": "Не расходуется",
   "tooltip.item.upgrade.upgrades_amount": "Может улучшить до §l%s §rлестниц",
   "tooltip.item.upgrade.additional_info": "Используйте Шифт + ЛКМ для многократного применения",
@@ -47,5 +48,10 @@
   "tooltip.item.upgrade.light_info": "Лестницы с этим улучшением будут излучать свет",
   "tooltip.item.upgrade.powered_info": "Лестницы с этим улуччшением будут поднимать/опускать сущетсв",
   "tooltip.item.upgrade.powered_info_2": "Направление меняется редстоун сигналом",
-  "tooltip.item.upgrade.disabled": "Не активно"
+  "tooltip.item.upgrade.disabled": "Не активно",
+  "config.jade.morph_state": "Превращена в: ",
+  "config.jade.power_state": "Состояние: ",
+  "config.jade.power_state_off": "Отключена",
+  "config.jade.power_state_on": "Включена",
+  "config.jade.plugin_minecraft.ironladders": "Iron Ladders states"
 }

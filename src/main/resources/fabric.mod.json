@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "ironladders",
-	"version": "2.0.0",
+	"version": "2.1.50",
 	"name": "Iron Ladders",
 	"description": "Ladders that are faster than usual.",
 	"authors": [
@@ -19,6 +19,9 @@
 		],
 		"client": [
 			"com.nine.ironladders.IronLaddersClient"
+		],
+		"jade": [
+			"com.nine.ironladders.compat.jade.JadeRegistry"
 		]
 	},
 	"mixins": [
