@@ -1,7 +1,7 @@
 package com.nine.ironladders.common.utils;
 
-import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.EnumProperty;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 
 public enum UpgradeType {
     DEFAULT_TO_COPPER(LadderType.DEFAULT,LadderType.COPPER),
@@ -13,10 +13,10 @@ public enum UpgradeType {
     IRON_TO_GOLD(LadderType.IRON,LadderType.GOLD),
     GOLD_TO_DIAMOND(LadderType.GOLD,LadderType.DIAMOND),
     DIAMOND_TO_NETHERITE(LadderType.DIAMOND,LadderType.NETHERITE),
-    ANY_TO_POWERED(BooleanProperty.of("powered")),
-    ANY_TO_GLOWING(BooleanProperty.of("lighted")),
-    ANY_TO_HIDDEN(BooleanProperty.of("hidden")),
-    ANY_TO_MORPHED(EnumProperty.of("morph", MorphType.class));
+    ANY_TO_POWERED(BooleanProperty.create("powered")),
+    ANY_TO_GLOWING(BooleanProperty.create("lighted")),
+    ANY_TO_HIDDEN(BooleanProperty.create("hidden")),
+    ANY_TO_MORPHED(EnumProperty.create("morph", MorphType.class));
     private final LadderType originType;
     private final LadderType finalType;
     private final BooleanProperty property;
@@ -40,6 +40,7 @@ public enum UpgradeType {
         this.originType = null;
         this.finalType = null;
     }
+
     public BooleanProperty getProperty() {
         return property;
     }

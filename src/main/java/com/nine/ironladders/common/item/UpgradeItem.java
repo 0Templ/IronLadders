@@ -1,96 +1,100 @@
 package com.nine.ironladders.common.item;
 
 import com.nine.ironladders.IronLadders;
-import com.nine.ironladders.common.utils.BlockStateUtils;
 import com.nine.ironladders.common.block.BaseMetalLadder;
+import com.nine.ironladders.common.utils.BlockStateUtils;
 import com.nine.ironladders.common.utils.LadderProperties;
 import com.nine.ironladders.common.utils.LadderType;
 import com.nine.ironladders.common.utils.UpgradeType;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.minecraft.block.*;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUsageContext;
-import net.minecraft.particle.ParticleTypes;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.Text;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.world.World;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LadderBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public class UpgradeItem extends Item {
     UpgradeType type;
-    public UpgradeItem(Settings settings, UpgradeType type) {
-        super(settings);
+    public UpgradeItem(Properties p_41383_, UpgradeType type) {
+        super(p_41383_);
         this.type = type;
     }
     @Override
-    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if (stack.getDamage() == stack.getMaxDamage() && !world.isClient) {
-            stack.decrement(1);
+    public void inventoryTick(ItemStack stack, Level pLevel, Entity pEntity, int pItemSlot, boolean pIsSelected) {
+        if (stack.getDamageValue() == stack.getMaxDamage() && !pLevel.isClientSide) {
+            stack.shrink(1);
         }
     }
     @Override
-    public ActionResult useOnBlock(ItemUsageContext context) {
-        if (!IronLadders.CONFIG.enableTierLaddersUpgrade){
-            return ActionResult.FAIL;
-        }
-        PlayerEntity player = context.getPlayer();
-        BlockPos blockPos = context.getBlockPos();
-        World level = context.getWorld();
+    public InteractionResult useOn(UseOnContext context) {
+        BlockPos blockPos = context.getClickedPos();
+        ItemStack stack = context.getItemInHand();
+        Player player = context.getPlayer();
+
+        Level level = context.getLevel();
         BlockState blockState = level.getBlockState(blockPos);
         Block block = blockState.getBlock();
+        if (!IronLadders.CONFIG.enableTierLaddersUpgrade){
+            return InteractionResult.FAIL;
+        }
+
         BlockState upgradeState;
         UpgradeItem upgradeItem = this;
-        ItemStack stack = context.getStack();
-        if (player == null || level.isClient || stack.getDamage() == stack.getMaxDamage()){
-            return ActionResult.FAIL;
+        if (player == null || level.isClientSide || stack.getDamageValue() == stack.getMaxDamage() || !IronLadders.CONFIG.enableTierLaddersUpgrade){
+            return InteractionResult.FAIL;
         }
-        if (stack.getDamage() == stack.getMaxDamage()){
+        if (stack.getDamageValue() == stack.getMaxDamage()){
             remove(player,stack);
         }
-        if (block instanceof LadderBlock) {
-            upgradeState = type.getUpgradeType().getBlock(type.getUpgradeType()).getStateWithProperties(blockState);
+
+        if (block instanceof LadderBlock){
+            upgradeState = type.getUpgradeType().getBlock(type.getUpgradeType()).withPropertiesOf(blockState);
             boolean defaultLadder = block == Blocks.LADDER && type.getPreviousType() == LadderType.DEFAULT;
             boolean upgradeableLadder = block instanceof BaseMetalLadder metalLadder && type.getPreviousType() == metalLadder.getType();
-            if (!player.isSneaking()){
+            if (!player.isShiftKeyDown()){
                 if (defaultLadder || upgradeableLadder){
                     upgradeSingleBlock(level,player,blockPos,upgradeState,stack);
-                    return ActionResult.SUCCESS;
+                    return InteractionResult.SUCCESS;
                 }
             }
             else {
                 if (defaultLadder || upgradeableLadder){
                     upgradeSingleBlock(level,player,blockPos,upgradeState,stack);
                     upgradeMultipleLadders(player, level, blockPos, blockState, upgradeState, upgradeItem, stack);
-                    return ActionResult.SUCCESS;
+                    return InteractionResult.SUCCESS;
                 }
             }
         }
-        return ActionResult.FAIL;
+        return InteractionResult.FAIL;
     }
-    private static void upgradeSingleBlock(World level,PlayerEntity player, BlockPos blockPos, BlockState upgradeState, ItemStack stack){
+    private static void upgradeSingleBlock(Level level,Player player, BlockPos blockPos, BlockState upgradeState, ItemStack stack){
         level.removeBlock(blockPos,false);
-        level.setBlockState(blockPos,upgradeState,3);
-        level.addParticle(ParticleTypes.HAPPY_VILLAGER, blockPos.getX() + 0.5, blockPos.getY() + 0.5, blockPos.getZ() + 0.5, 10, 0.5, 0);
-
-        level.playSound(null, blockPos, SoundEvents.BLOCK_LADDER_PLACE, SoundCategory.PLAYERS, 0.9F + level.random.nextFloat(), 1.0f);
-        if (!player.getAbilities().creativeMode){
-            stack.damage(1, level.getRandom(), null);
+        level.setBlock(blockPos,upgradeState,3);
+        level.levelEvent(2005, blockPos, 0);
+        level.playSound((Player)null, blockPos, SoundEvents.LADDER_PLACE, SoundSource.BLOCKS, 1F, 0.9F + level.random.nextFloat() * 0.2F);
+        if (!player.getAbilities().instabuild){
+            stack.hurt(1,level.getRandom(),null);
         }
     }
-    public void upgradeMultipleLadders(PlayerEntity player, World level, BlockPos blockPos, BlockState oldState, BlockState newState, UpgradeItem upgradeItem, ItemStack stack) {
+
+    public void upgradeMultipleLadders(Player player, Level level, BlockPos blockPos, BlockState oldState, BlockState newState, UpgradeItem upgradeItem, ItemStack stack) {
         int ladderCount = 0;
         int height = 1;
         boolean canGoUp = true;
@@ -100,18 +104,18 @@ public class UpgradeItem extends Item {
             LadderType startType = LadderType.DEFAULT;
             LadderType upperType = startType;
             LadderType bottomType = startType;
-            Direction startFacingDirection = oldState.get(LadderProperties.FACING);
+            Direction startFacingDirection = oldState.getValue(LadderProperties.FACING);
 
             if (startBlock instanceof BaseMetalLadder metalLadder){
                 startType = metalLadder.getType();
             }
 
-            BlockState stateAbove = level.getBlockState(blockPos.offset(Direction.UP, height));
-            BlockPos abovePos = blockPos.offset(Direction.UP, height);
+            BlockState stateAbove = level.getBlockState(blockPos.above(height));
+            BlockPos abovePos = blockPos.above(height);
             Block blockAbove = stateAbove.getBlock();
 
-            BlockPos belowPos = blockPos.offset(Direction.DOWN, height);
-            BlockState stateBelow = level.getBlockState(blockPos.offset(Direction.DOWN, height));
+            BlockPos belowPos = blockPos.below(height);
+            BlockState stateBelow = level.getBlockState(blockPos.below(height));
             Block blockBelow = stateBelow.getBlock();
             if (blockAbove instanceof BaseMetalLadder metalLadder){
                 upperType = metalLadder.getType();
@@ -119,10 +123,9 @@ public class UpgradeItem extends Item {
             if (blockBelow instanceof BaseMetalLadder metalLadder){
                 bottomType = metalLadder.getType();
             }
-
             if(canGoUp) {
                 if (blockAbove instanceof LadderBlock) {
-                    Direction currentUpFacingDirection = stateAbove.get(LadderProperties.FACING);
+                    Direction currentUpFacingDirection = stateAbove.getValue(LadderProperties.FACING);
                     canGoUp =  startFacingDirection == currentUpFacingDirection;
                 }
                 else {
@@ -131,26 +134,23 @@ public class UpgradeItem extends Item {
             }
             if(canGoDown){
                 if (blockBelow instanceof LadderBlock){
-                    Direction currentDownFacingDirection = stateBelow.get(LadderProperties.FACING);
+                    Direction currentDownFacingDirection = stateBelow.getValue(LadderProperties.FACING);
                     canGoDown =  startFacingDirection == currentDownFacingDirection;
                 }
                 else {
                     canGoDown = false;
                 }
             }
-            if ((canGoUp || canGoDown) && stack.getDamage() < stack.getMaxDamage()){
+            if ((canGoUp || canGoDown) && stack.getDamageValue() < stack.getMaxDamage()){
                 if (canGoUp){
-                    Direction currentUpFacingDirection = stateAbove.get(LadderProperties.FACING);
-                    if (currentUpFacingDirection == startFacingDirection && upperType == startType) {
+                    if (upperType == startType) {
                         newState = BlockStateUtils.getStateWithSyncedProps(newState,stateAbove);
                         upgradeSingleBlock(level,player,abovePos,newState,stack);
                         ladderCount++;
                     }
                 }
-
                 if (canGoDown && ladderCount != stack.getMaxDamage()){
-                    Direction currentDownFacingDirection = stateBelow.get(LadderProperties.FACING);
-                    if (currentDownFacingDirection == startFacingDirection && bottomType == startType) {
+                    if (bottomType == startType) {
                         newState = BlockStateUtils.getStateWithSyncedProps(newState,stateBelow);
                         upgradeSingleBlock(level,player,belowPos,newState,stack);
                         ladderCount++;
@@ -162,33 +162,34 @@ public class UpgradeItem extends Item {
                 break;
             }
         }
-        if (stack.getDamage() == stack.getMaxDamage()){
+        if (stack.getDamageValue() == stack.getMaxDamage()){
             upgradeItem.remove(player,stack);
         }
     }
+    public UpgradeType getType(){
+        return this.type;
+    }
 
-    private void remove(PlayerEntity player, ItemStack stack) {
-        if (!player.getAbilities().creativeMode) {
-            stack.decrement(1);
+    private void remove(Player player,ItemStack stack){
+        if (!player.getAbilities().instabuild) {
+            stack.shrink(1);
         }
     }
     @Override
-    public boolean isEnchantable(ItemStack stack) {
+    public boolean isEnchantable(@NotNull ItemStack stack) {
         return false;
     }
 
     @Override
-    @Environment(EnvType.CLIENT)
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+    public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
         if (!IronLadders.CONFIG.enableTierLaddersUpgrade){
-            tooltip.add(Text.translatable("tooltip.item.upgrade.disabled").formatted(Formatting.RED));
+            tooltip.add(Component.translatable("tooltip.item.upgrade.disabled").withStyle(ChatFormatting.RED));
             return;
         }
         if (Screen.hasShiftDown()){
-            tooltip.add(Text.translatable("tooltip.item.upgrade.upgrades_amount",stack.getMaxDamage() - stack.getDamage()).formatted(Formatting.GRAY));
-            tooltip.add(Text.translatable("tooltip.item.upgrade.additional_info").formatted(Formatting.GRAY));
+            tooltip.add(Component.translatable("tooltip.item.upgrade.upgrades_amount",stack.getMaxDamage() - stack.getDamageValue()).withStyle(ChatFormatting.GRAY));
+            tooltip.add(Component.translatable("tooltip.item.upgrade.additional_info").withStyle(ChatFormatting.GRAY));
         }
-        super.appendTooltip(stack, world, tooltip, context);
+        super.appendHoverText(stack, level, tooltip, flag);
     }
-
 }

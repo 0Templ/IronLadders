@@ -7,16 +7,13 @@ import com.nine.ironladders.init.ItemRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
-import net.fabricmc.fabric.mixin.blockrenderlayer.RenderLayersMixin;
-import net.minecraft.block.Blocks;
-import net.minecraft.client.color.block.BlockColorProvider;
-import net.minecraft.client.color.world.BiomeColors;
-import net.minecraft.client.color.world.FoliageColors;
-import net.minecraft.client.item.ModelPredicateProviderRegistry;
-import net.minecraft.client.render.RenderLayer;
-import net.minecraft.item.Item;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.biome.ColorResolver;
+import net.minecraft.client.color.block.BlockColor;
+import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.FoliageColor;
 
 public class IronLaddersClient implements ClientModInitializer {
     @Override
@@ -26,28 +23,30 @@ public class IronLaddersClient implements ClientModInitializer {
         registerBlockLayers();
     }
     public void makeMorphItem(Item item) {
-        ModelPredicateProviderRegistry.register(item, new Identifier("morph_type"), new MorphModelPredicateProvider());
+        ItemProperties.register(item, new ResourceLocation("morph_type"), new MorphModelPredicateProvider());
     }
-
-    private static final BlockColorProvider BLOCK_COLOR_PROVIDER = (state, world, pos, tintIndex) -> {
+    private static final BlockColor BLOCK_COLOR_PROVIDER = (state, world, pos, tintIndex) -> {
         if (state.getBlock() instanceof BaseMetalLadder ladder && ladder.isVines(state)) {
-            return world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) : FoliageColors.getDefaultColor();
+            return world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.getDefaultColor();
         }
-        return 0;
+        if (world!=null) {
+            return world.getBlockState(pos).getMapColor(world, pos).col;
+        }
+        return BlockRegistry.getMapColor(state.getBlock());
     };
     public static void registerBlockLayers() {
-        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.COPPER_LADDER, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.EXPOSED_COPPER_LADDER, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.WEATHERED_COPPER_LADDER, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.OXIDIZED_COPPER_LADDER, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.WAXED_COPPER_LADDER, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.WAXED_EXPOSED_COPPER_LADDER, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.WAXED_WEATHERED_COPPER_LADDER, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.WAXED_OXIDIZED_COPPER_LADDER, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.IRON_LADDER, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.GOLD_LADDER, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.DIAMOND_LADDER, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.NETHERITE_LADDER, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.COPPER_LADDER, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.EXPOSED_COPPER_LADDER, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.WEATHERED_COPPER_LADDER, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.OXIDIZED_COPPER_LADDER, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.WAXED_COPPER_LADDER, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.WAXED_EXPOSED_COPPER_LADDER, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.WAXED_WEATHERED_COPPER_LADDER, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.WAXED_OXIDIZED_COPPER_LADDER, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.IRON_LADDER, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.GOLD_LADDER, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.DIAMOND_LADDER, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.NETHERITE_LADDER, RenderType.cutout());
 
     }
     public static void registerBlockColors() {

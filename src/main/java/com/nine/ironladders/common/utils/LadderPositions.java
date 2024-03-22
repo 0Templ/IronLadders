@@ -1,8 +1,9 @@
 package com.nine.ironladders.common.utils;
 
-import net.minecraft.util.StringIdentifiable;
+import net.minecraft.util.StringRepresentable;
+import org.jetbrains.annotations.NotNull;
 
-public enum LadderPositions implements StringIdentifiable {
+public enum LadderPositions implements StringRepresentable {
     SINGLE("single"),
     HAS_UP_NEIGHBOUR("has_up"),
     HAS_DOWN_NEIGHBOUR("has_down"),
@@ -15,8 +16,8 @@ public enum LadderPositions implements StringIdentifiable {
         return this.name;
     }
 
-    @Override
-    public String asString() {
+    public @NotNull String getSerializedName() {
         return this.name;
     }
+
 }

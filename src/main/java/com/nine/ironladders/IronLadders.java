@@ -1,5 +1,6 @@
 package com.nine.ironladders;
 
+import com.nine.ironladders.common.CommonEvents;
 import com.nine.ironladders.init.*;
 import net.fabricmc.api.ModInitializer;
 
@@ -20,7 +21,7 @@ public class IronLadders implements ModInitializer {
 		ItemRegistry.register();
 		BlockRegistry.register();
 		CreativeTabGroup.register();
-		//CommonEvents.init();
+		CommonEvents.init();
 
 		OxidizableBlocksRegistry.registerOxidizableBlockPair(BlockRegistry.COPPER_LADDER, BlockRegistry.EXPOSED_COPPER_LADDER);
 		OxidizableBlocksRegistry.registerOxidizableBlockPair(BlockRegistry.EXPOSED_COPPER_LADDER, BlockRegistry.WEATHERED_COPPER_LADDER);

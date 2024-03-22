@@ -1,4 +1,4 @@
-/*
+
 package com.nine.ironladders.common;
 
 import com.nine.ironladders.common.block.BaseMetalLadder;
@@ -6,34 +6,31 @@ import com.nine.ironladders.common.item.MorphUpgradeItem;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.impl.event.interaction.InteractionEventsRouter;
-import net.minecraft.block.BlockState;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.hit.HitResult;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.client.Minecraft;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
+
 
 public class CommonEvents {
 
     public static void init() {
         AttackBlockCallback.EVENT.register((player, world, hand, pos, direction) -> {
-            System.out.println(world);
-
-            if (hand != Hand.MAIN_HAND || world.isClient) {
-                return ActionResult.PASS;
-            }
             BlockState state = world.getBlockState(pos);
-            if (state.getBlock() instanceof BaseMetalLadder && player.isSneaking()) {
-                ItemStack stack = player.getStackInHand(hand);
-                if (stack.getItem() instanceof MorphUpgradeItem morphUpgradeItem) {
+            if (state.getBlock() instanceof BaseMetalLadder && player.isShiftKeyDown()) {
+                ItemStack stack = player.getMainHandItem();
+                if (stack.getItem() instanceof MorphUpgradeItem morphUpgradeItem && !player.getCooldowns().isOnCooldown(morphUpgradeItem)) {
+                    player.getCooldowns().addCooldown(morphUpgradeItem,10);
                     morphUpgradeItem.morphSingleBlock(state, world, pos, stack);
                     morphUpgradeItem.morphMultipleLadders(world, pos, state, stack);
+                    return InteractionResult.SUCCESS;
                 }
-                return ActionResult.FAIL;
+                return InteractionResult.FAIL;
             }
-            return ActionResult.FAIL;
+            return InteractionResult.SUCCESS;
         });
     }
 }
-*/
+

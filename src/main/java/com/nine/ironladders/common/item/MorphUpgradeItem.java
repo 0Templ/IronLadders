@@ -1,58 +1,61 @@
 package com.nine.ironladders.common.item;
 
+
 import com.nine.ironladders.IronLadders;
-import com.nine.ironladders.common.utils.*;
 import com.nine.ironladders.common.block.BaseMetalLadder;
+import com.nine.ironladders.common.utils.*;
 import com.nine.ironladders.init.BlockRegistry;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.minecraft.block.*;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUsageContext;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.state.property.EnumProperty;
-import net.minecraft.text.Text;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.world.World;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LadderBlock;
+import net.minecraft.world.level.block.VineBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public class MorphUpgradeItem extends Item {
     UpgradeType type;
-    public MorphUpgradeItem(Settings settings, UpgradeType type) {
-        super(settings);
-        this.type = type;
+    public MorphUpgradeItem(Properties p_41383_, UpgradeType type) {
+        super(p_41383_);
+        this.type=type;
     }
     @Override
-    public ActionResult useOnBlock(ItemUsageContext context) {
-        PlayerEntity player = context.getPlayer();
+    public InteractionResult useOn(UseOnContext context) {
+        BlockPos blockPos = context.getClickedPos();
+        ItemStack stack = context.getItemInHand();
+        Player player = context.getPlayer();
 
-        if (player == null){
-            return ActionResult.FAIL;
-        }
-        if (!IronLadders.CONFIG.enableMorphLaddersUpgrade){
-            return ActionResult.FAIL;
-        }
-        BlockPos blockPos = context.getBlockPos();
-        World level = context.getWorld();
+        Level level = context.getLevel();
         BlockState blockState = level.getBlockState(blockPos);
         Block block = blockState.getBlock();
-        ItemStack stack = context.getStack();
+        if (player == null){
+            return InteractionResult.FAIL;
+        }
+        if (!IronLadders.CONFIG.enableMorphLaddersUpgrade){
+            return InteractionResult.FAIL;
+        }
         EnumProperty<MorphType> property = type.getMorphProperty();
-        if ((block instanceof LadderBlock || block instanceof VineBlock) && property != null) {
-            if (player.isSneaking() ) {
+        if ((block instanceof LadderBlock || block instanceof VineBlock) && property != null ) {
+            if (player.isShiftKeyDown()) {
                 if (BlockRegistry.getMorphId(block) != 0){
                     setMorphType(stack, BlockRegistry.getMorphId(block));
-                    level.playSound(null, blockPos, SoundEvents.ENTITY_SLIME_SQUISH, SoundCategory.PLAYERS, 0.8F + level.random.nextFloat(), 1.0f);
+                    level.playSound((Player)null, blockPos, SoundEvents.SLIME_SQUISH, SoundSource.PLAYERS, 1.0F, 1.0F);
                 }
             }
             else if(block instanceof BaseMetalLadder metalLadder){
@@ -61,25 +64,25 @@ public class MorphUpgradeItem extends Item {
             }
         }
 
-        return ActionResult.FAIL;
+        return InteractionResult.FAIL;
     }
-    public void morphSingleBlock(BlockState blockState, World level, BlockPos blockPos, ItemStack stack){
+    public void morphSingleBlock(BlockState blockState, Level level, BlockPos blockPos, ItemStack stack){
         EnumProperty<MorphType> property = type.getMorphProperty();
-        MorphType morphType = blockState.get(property);
+        MorphType morphType = blockState.getValue(property);
         BlockState upgradeState;
         if (morphType == morphType.getTypeFromId(getMorphType(stack))){
-            level.playSound(null, blockPos, SoundEvents.BLOCK_LADDER_BREAK, SoundCategory.PLAYERS, 0.9F + level.random.nextFloat(), 1.0f);
-            upgradeState =  blockState.with(property, MorphType.NONE);
+            level.playSound((Player)null, blockPos, SoundEvents.LADDER_BREAK, SoundSource.PLAYERS, 1.0F, 1.0F);
+            upgradeState =  blockState.setValue(property, MorphType.NONE);
         }
         else {
-            upgradeState =  blockState.with(property, morphType.getTypeFromId(getMorphType(stack)));
-            level.playSound(null, blockPos, SoundEvents.BLOCK_LADDER_BREAK, SoundCategory.PLAYERS, 0.9F + level.random.nextFloat(), 1.0f);
+            upgradeState =  blockState.setValue(property, morphType.getTypeFromId(getMorphType(stack)));
+            level.playSound((Player)null, blockPos, SoundEvents.LADDER_PLACE, SoundSource.PLAYERS, 1.0F, 1.0F);
         }
         level.removeBlock(blockPos, false);
-        level.setBlockState(blockPos, upgradeState, 3);
-        level.updateNeighbors(blockPos.up(),level.getBlockState(blockPos).getBlock());
+        level.setBlock(blockPos, upgradeState, 3);
+        level.updateNeighborsAt(blockPos.above(),level.getBlockState(blockPos).getBlock());
     }
-    public void morphMultipleLadders(World level, BlockPos blockPos, BlockState state, ItemStack stack) {
+    public void morphMultipleLadders(Level level, BlockPos blockPos, BlockState state, ItemStack stack) {
         int height = 1;
         boolean canGoUp = true;
         boolean canGoDown = true;
@@ -87,18 +90,18 @@ public class MorphUpgradeItem extends Item {
         LadderType startType = LadderType.DEFAULT;
         LadderType upperType = startType;
         LadderType bottomType = startType;
-        Direction startFacingDirection = state.get(LadderProperties.FACING);
-        MorphType startMorphType = state.get(type.getMorphProperty());
+        Direction startFacingDirection = state.getValue(LadderProperties.FACING);
+        MorphType startMorphType = state.getValue(type.getMorphProperty());
         while (height < 256) {
             if (startBlock instanceof BaseMetalLadder metalLadder){
                 startType = metalLadder.getType();
             }
-            BlockState stateAbove = level.getBlockState(blockPos.up(height));
-            BlockPos abovePos = blockPos.up(height);
+            BlockState stateAbove = level.getBlockState(blockPos.above(height));
+            BlockPos abovePos = blockPos.above(height);
             Block blockAbove = stateAbove.getBlock();
 
-            BlockPos belowPos = blockPos.down(height);
-            BlockState stateBelow = level.getBlockState(blockPos.down(height));
+            BlockPos belowPos = blockPos.below(height);
+            BlockState stateBelow = level.getBlockState(blockPos.below(height));
             Block blockBelow = stateBelow.getBlock();
             if (blockAbove instanceof BaseMetalLadder metalLadder){
                 upperType = metalLadder.getType();
@@ -108,8 +111,8 @@ public class MorphUpgradeItem extends Item {
             }
             if(canGoUp) {
                 if (blockAbove instanceof BaseMetalLadder) {
-                    Direction currentUpFacingDirection = stateAbove.get(LadderProperties.FACING);
-                    canGoUp =  startFacingDirection == currentUpFacingDirection && startMorphType == stateAbove.get(type.getMorphProperty());
+                    Direction currentUpFacingDirection = stateAbove.getValue(LadderProperties.FACING);
+                    canGoUp =  startFacingDirection == currentUpFacingDirection && startMorphType == stateAbove.getValue(type.getMorphProperty());
                 }
                 else {
                     canGoUp = false;
@@ -117,8 +120,8 @@ public class MorphUpgradeItem extends Item {
             }
             if(canGoDown){
                 if (blockBelow instanceof BaseMetalLadder ) {
-                    Direction currentDownFacingDirection = stateBelow.get(LadderProperties.FACING);
-                    canGoDown =  startFacingDirection == currentDownFacingDirection && startMorphType == stateBelow.get(type.getMorphProperty());
+                    Direction currentDownFacingDirection = stateBelow.getValue(LadderProperties.FACING);
+                    canGoDown =  startFacingDirection == currentDownFacingDirection && startMorphType == stateBelow.getValue(type.getMorphProperty());
                 }
                 else {
                     canGoDown = false;
@@ -127,13 +130,13 @@ public class MorphUpgradeItem extends Item {
             if ((canGoUp || canGoDown)){
                 if (canGoUp){
                     if (upperType == startType) {
-                        state = BlockStateUtils.getStateWithSyncedProps(state,stateAbove);
+                        state = BlockStateUtils.getStateWithSyncedProps(stateAbove,stateAbove);
                         morphSingleBlock(state,level,abovePos,stack);
                     }
                 }
                 if (canGoDown){
                     if (bottomType == startType) {
-                        state = BlockStateUtils.getStateWithSyncedProps(state,stateBelow);
+                        state = BlockStateUtils.getStateWithSyncedProps(stateBelow,stateBelow);
                         morphSingleBlock(state,level,belowPos,stack);
                     }
                 }
@@ -145,34 +148,33 @@ public class MorphUpgradeItem extends Item {
         }
     }
     @Override
-    public boolean isEnchantable(ItemStack stack) {
+    public boolean isEnchantable(@NotNull ItemStack stack) {
         return false;
     }
     public void setMorphType(ItemStack stack, int type) {
-        stack.getOrCreateNbt().putInt("morph_type", type);
+        stack.getOrCreateTag().putInt("morph_type", type);
     }
     public int getMorphType(ItemStack stack) {
-        return stack.getOrCreateNbt().getInt("morph_type");
+        return stack.getOrCreateTag().getInt("morph_type");
     }
 
     @Override
-    @Environment(EnvType.CLIENT)
-    public void appendTooltip(ItemStack stack, @Nullable World level, List<Text> tooltip, TooltipContext context) {
+    public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
         if (!IronLadders.CONFIG.enableMorphLaddersUpgrade){
-            tooltip.add(Text.translatable("tooltip.item.upgrade.disabled").formatted(Formatting.RED));
+            tooltip.add(Component.translatable("tooltip.item.upgrade.disabled").withStyle(ChatFormatting.RED));
             return;
         }
         if (!Screen.hasShiftDown()){
             return;
         }
         if (getMorphType(stack)!=0){
-            tooltip.add(Text.translatable("tooltip.item.upgrade.morph_info_4").formatted(Formatting.GRAY)
-                    .append(Text.translatable("tooltip.item.upgrade." + MorphType.NONE.getTypeFromId(getMorphType(stack)).toString()).formatted(Formatting.GRAY)));
+            tooltip.add(Component.translatable("tooltip.item.upgrade.morph_info_4").withStyle(ChatFormatting.GRAY)
+                    .append(Component.translatable("tooltip.item.upgrade." + MorphType.NONE.getTypeFromId(getMorphType(stack)).toString()).withStyle(ChatFormatting.GRAY)));
         }
-        tooltip.add(Text.translatable("tooltip.item.upgrade.morph_info").formatted(Formatting.GRAY));
-        tooltip.add(Text.translatable("tooltip.item.upgrade.morph_info_2").formatted(Formatting.GRAY));
-        tooltip.add(Text.translatable("tooltip.item.upgrade.morph_info_3").formatted(Formatting.GRAY));
-        tooltip.add(Text.translatable("tooltip.item.upgrade.not_consumable").formatted(Formatting.GRAY));
+        tooltip.add(Component.translatable("tooltip.item.upgrade.morph_info").withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.translatable("tooltip.item.upgrade.morph_info_2").withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.translatable("tooltip.item.upgrade.morph_info_3").withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.translatable("tooltip.item.upgrade.additional_info_2").withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.translatable("tooltip.item.upgrade.not_consumable").withStyle(ChatFormatting.GRAY));
     }
-
 }

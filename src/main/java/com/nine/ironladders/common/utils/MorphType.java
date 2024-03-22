@@ -1,9 +1,9 @@
 package com.nine.ironladders.common.utils;
 
-import net.minecraft.util.StringIdentifiable;
+import net.minecraft.util.StringRepresentable;
 import org.jetbrains.annotations.NotNull;
 
-public enum MorphType implements StringIdentifiable {
+public enum MorphType implements StringRepresentable {
     NONE("none"),
     OXIDIZED_COPPER("oxidized_copper"),
     WEATHERED_COPPER("weathered_copper"),
@@ -15,13 +15,10 @@ public enum MorphType implements StringIdentifiable {
     NETHERITE("netherite"),
     VINES("vines"),
     DEFAULT("default");
-
     private final String name;
-
     MorphType(String p_61775_) {
         this.name = p_61775_;
     }
-
     public String toString() {
         return this.name;
     }
@@ -43,10 +40,5 @@ public enum MorphType implements StringIdentifiable {
             case 9 -> VINES;
             default -> NONE;
         };
-    }
-
-    @Override
-    public String asString() {
-        return this.name;
     }
 }

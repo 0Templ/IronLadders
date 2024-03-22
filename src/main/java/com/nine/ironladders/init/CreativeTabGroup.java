@@ -1,50 +1,51 @@
 package com.nine.ironladders.init;
 
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 import com.nine.ironladders.IronLadders;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 
 public class CreativeTabGroup {
-    public static final ItemGroup TAB = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(IronLadders.MODID, "ironladders"),
-            FabricItemGroup.builder().displayName(Text.translatable("tab.ironladders"))
-                    .icon(() -> new ItemStack(BlockRegistry.IRON_LADDER)).entries((displayContext, entries) -> {
-
-                        entries.add(ItemRegistry.COPPER_UPGRADE);
-                        entries.add(ItemRegistry.WOOD_IRON_UPGRADE);
-                        entries.add(ItemRegistry.WOOD_GOLD_UPGRADE);
-                        entries.add(ItemRegistry.WOOD_DIAMOND_UPGRADE);
-                        entries.add(ItemRegistry.WOOD_NEHTERITE_UPGRADE);
-                        entries.add(ItemRegistry.IRON_UPGRADE);
-                        entries.add(ItemRegistry.GOLD_UPGRADE);
-                        entries.add(ItemRegistry.DIAMOND_UPGRADE);
-                        entries.add(ItemRegistry.NETHERITE_UPGRADE);
-                        entries.add(ItemRegistry.POWER_UPGRADE_ITEM);
-                        entries.add(ItemRegistry.LIGHT_UPGRADE_ITEM);
-                        entries.add(ItemRegistry.HIDE_UPGRADE_ITEM);
-                        entries.add(ItemRegistry.MORPH_UPGRADE_ITEM);
-
-                        entries.add(BlockRegistry.COPPER_LADDER);
-                        entries.add(BlockRegistry.EXPOSED_COPPER_LADDER);
-                        entries.add(BlockRegistry.WEATHERED_COPPER_LADDER);
-                        entries.add(BlockRegistry.OXIDIZED_COPPER_LADDER);
-                        entries.add(BlockRegistry.WAXED_COPPER_LADDER);
-                        entries.add(BlockRegistry.WAXED_EXPOSED_COPPER_LADDER);
-                        entries.add(BlockRegistry.WAXED_WEATHERED_COPPER_LADDER);
-                        entries.add(BlockRegistry.WAXED_OXIDIZED_COPPER_LADDER);
-
-                        entries.add(BlockRegistry.IRON_LADDER);
-                        entries.add(BlockRegistry.GOLD_LADDER);
-                        entries.add(BlockRegistry.DIAMOND_LADDER);
-                        entries.add(BlockRegistry.NETHERITE_LADDER);
-
-                    }).build());
     public static void register() {
+        var tab = FabricItemGroup.builder()
+                .title(Component.translatable("itemgroup.ironladders"))
+                .icon(() -> new ItemStack(BlockRegistry.IRON_LADDER))
+                .displayItems((parameters, output) -> {
+                    output.accept(ItemRegistry.COPPER_UPGRADE);
+                    output.accept(ItemRegistry.WOOD_IRON_UPGRADE);
+                    output.accept(ItemRegistry.WOOD_GOLD_UPGRADE);
+                    output.accept(ItemRegistry.WOOD_DIAMOND_UPGRADE);
+                    output.accept(ItemRegistry.WOOD_NEHTERITE_UPGRADE);
+                    output.accept(ItemRegistry.IRON_UPGRADE);
+                    output.accept(ItemRegistry.GOLD_UPGRADE);
+                    output.accept(ItemRegistry.DIAMOND_UPGRADE);
+                    output.accept(ItemRegistry.NETHERITE_UPGRADE);
+                    output.accept(ItemRegistry.POWER_UPGRADE_ITEM);
+                    output.accept(ItemRegistry.LIGHT_UPGRADE_ITEM);
+                    output.accept(ItemRegistry.HIDE_UPGRADE_ITEM);
+                    output.accept(ItemRegistry.MORPH_UPGRADE_ITEM);
+
+                    output.accept(BlockRegistry.COPPER_LADDER);
+                    output.accept(BlockRegistry.EXPOSED_COPPER_LADDER);
+                    output.accept(BlockRegistry.WEATHERED_COPPER_LADDER);
+                    output.accept(BlockRegistry.OXIDIZED_COPPER_LADDER);
+                    output.accept(BlockRegistry.WAXED_COPPER_LADDER);
+                    output.accept(BlockRegistry.WAXED_EXPOSED_COPPER_LADDER);
+                    output.accept(BlockRegistry.WAXED_WEATHERED_COPPER_LADDER);
+                    output.accept(BlockRegistry.WAXED_OXIDIZED_COPPER_LADDER);
+
+                    output.accept(BlockRegistry.IRON_LADDER);
+                    output.accept(BlockRegistry.GOLD_LADDER);
+                    output.accept(BlockRegistry.DIAMOND_LADDER);
+                    output.accept(BlockRegistry.NETHERITE_LADDER);
+                }).build();
+
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,new ResourceLocation(IronLadders.MODID), tab);
     }
+
 }
 

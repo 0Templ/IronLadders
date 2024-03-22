@@ -41,7 +41,8 @@ public class ILConfig {
     public boolean enableTierLaddersUpgrade = true;
     @SerializedName("The Powered Ladders affect players only?")
     public boolean enablePoweredLaddersSpeedMultiplierForPlayersOnly = false;
-
+    @SerializedName("Will additional information about ladders be shown in the Jade tooltip")
+    public boolean jadeIntegration = true;
 
 
     public static ILConfig loadConfig(File file) {

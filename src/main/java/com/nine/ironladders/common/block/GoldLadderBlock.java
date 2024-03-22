@@ -5,7 +5,7 @@ import com.nine.ironladders.common.utils.LadderType;
 
 public class GoldLadderBlock extends BaseMetalLadder {
 
-    public GoldLadderBlock(Settings settings) {
+    public GoldLadderBlock(Properties settings) {
         super(settings, LadderType.GOLD);
      }
     @Override

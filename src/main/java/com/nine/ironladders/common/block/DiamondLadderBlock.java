@@ -5,7 +5,7 @@ import com.nine.ironladders.common.utils.LadderType;
 
 public class DiamondLadderBlock extends BaseMetalLadder {
 
-    public DiamondLadderBlock(Settings settings) {
+    public DiamondLadderBlock(Properties settings) {
         super(settings, LadderType.DIAMOND);
      }
     @Override

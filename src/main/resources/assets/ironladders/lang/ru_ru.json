@@ -1,5 +1,5 @@
 {
-  "tab.ironladders": "Iron Ladders",
+  "itemgroup.ironladders": "Iron Ladders",
   "block.ironladders.waxed_copper_ladder": "Вощёная медная лестница",
   "block.ironladders.copper_ladder": "Медная лестница",
   "block.ironladders.oxidized_copper_ladder": "Окисленная медная лестница",
@@ -49,9 +49,13 @@
   "tooltip.item.upgrade.powered_info": "Лестницы с этим улуччшением будут поднимать/опускать сущетсв",
   "tooltip.item.upgrade.powered_info_2": "Направление меняется редстоун сигналом",
   "tooltip.item.upgrade.disabled": "Не активно",
-  "config.jade.morph_state": "Превращена в: ",
-  "config.jade.power_state": "Состояние: ",
-  "config.jade.power_state_off": "Отключена",
-  "config.jade.power_state_on": "Включена",
-  "config.jade.plugin_minecraft.ironladders": "Iron Ladders states"
+  "config.info.morph_state": "Превращена в ",
+  "config.info.power_state": "Состояние: ",
+  "config.info.power_state_off": "Отключена",
+  "config.info.power_state_on": "Включена",
+  "config.nei.hiding_upgrade": "Скрывает визуальные изменения от Светового и Редстоун улучшений, меняя логики их работы.\n\nЭтот эффект не сохранится если вы разрушите лестницу",
+  "config.nei.light_upgrade": "С этим улучшением лестницы начинают излучать свет. Уровень света - 13.\n\nЭтот эффект не сохранится если вы разрушите лестницу",
+  "config.nei.power_upgrade": "Лестницы с этим улучшением будут поднимать существ при получении редстоун сигнала. Сигнал распространяется аналогично энергорельсам\nЭтот эффект не сохранится если вы разрушите лестницу",
+  "config.nei.morph_upgrade": "Позволяет изменить внешний вид лестницы. Скопировать модель другой лестницы - ШИФТ + ПКМ. Применить - ЛКМ (работает только с лестницами из этого мода).\nЭтот эффект не сохранится если вы разрушите лестницу",
+  "config.info.plugin_minecraft.ironladders": "Iron Ladders states"
 }

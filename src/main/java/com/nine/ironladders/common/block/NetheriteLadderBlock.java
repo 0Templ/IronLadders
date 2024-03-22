@@ -5,7 +5,7 @@ import com.nine.ironladders.common.utils.LadderType;
 
 public class NetheriteLadderBlock extends BaseMetalLadder {
 
-    public NetheriteLadderBlock(Settings settings) {
+    public NetheriteLadderBlock(Properties settings) {
         super(settings, LadderType.NETHERITE);
      }
     @Override

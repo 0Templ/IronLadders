@@ -12,24 +12,62 @@ base {
 
 repositories {
 	maven {
+		name = "Progwml6's maven"
+		url = "https://dvs1.progwml6.com/files/maven/"
+	}
+	maven {
 		name = "Jared's maven"
 		url = "https://maven.blamejared.com/"
 	}
 	maven {
-		name = "CurseMaven"
-		url = "https://www.cursemaven.com"
-		content { includeGroup "curse.maven" }
+		name = "ModMaven"
+		url = "https://modmaven.dev"
+	}
+	maven {
+		url "https://maven.shedaniel.me"
+	}
+	maven {
+		name = 'Curseforge Maven'
+		url "https://www.cursemaven.com"
+		content {
+			includeGroup "curse.maven"
+		}
+	}
+	maven {
+		url "https://maven.parchmentmc.net/"
+		content {
+			includeGroup "org.parchmentmc.data"
+		}
 	}
 }
 
 dependencies {
-	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	mappings loom.layered() {
+		officialMojangMappings()
+		parchment("org.parchmentmc.data:parchment-1.20.1:2023.09.03@zip")
+	}
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	modImplementation "curse.maven:jade-324717:5106745"
-	modImplementation("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
+	//JADE
+	/*modLocalRuntime*/ modImplementation ("curse.maven:jade-324717:4973433"){
+		exclude group: "net.fabricmc"
+		exclude group: "net.fabricmc.fabric-api"
+	}
+	//JEI
+	modCompileOnly("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}") {
+		exclude group: "net.fabricmc"
+		exclude group: "net.fabricmc.fabric-api"
+	}
+	//REI
+	modLocalRuntime modCompileOnly("me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}") {
+		exclude group: "net.fabricmc"
+		exclude group: "net.fabricmc.fabric-api"
+	}
+	modImplementation ("curse.maven:cloth-config-348521:4973440") {
+		exclude group: "net.fabricmc"
+		exclude group: "net.fabricmc.fabric-api"
+	}
 }
 
 processResources {

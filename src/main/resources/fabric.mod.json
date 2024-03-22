@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "ironladders",
-	"version": "2.1.50",
+	"version": "2.2.0",
 	"name": "Iron Ladders",
 	"description": "Ladders that are faster than usual.",
 	"authors": [
@@ -20,8 +20,14 @@
 		"client": [
 			"com.nine.ironladders.IronLaddersClient"
 		],
+		"jei_mod_plugin": [
+			"com.nine.ironladders.compat.jei.JeiSetup"
+		],
 		"jade": [
-			"com.nine.ironladders.compat.jade.JadeRegistry"
+			"com.nine.ironladders.compat.jade.JadeSetup"
+		],
+		"rei_client": [
+			"com.nine.ironladders.compat.rei.ReiSetup"
 		]
 	},
 	"mixins": [

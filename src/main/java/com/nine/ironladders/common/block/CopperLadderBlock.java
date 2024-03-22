@@ -2,14 +2,15 @@ package com.nine.ironladders.common.block;
 
 import com.nine.ironladders.IronLadders;
 import com.nine.ironladders.common.utils.LadderType;
-import net.minecraft.block.Oxidizable;
-public class CopperLadderBlock extends BaseMetalLadder implements Oxidizable {
+import net.minecraft.world.level.block.WeatheringCopper;
 
-    private final Oxidizable.OxidationLevel oxidationLevel;
+public class CopperLadderBlock extends BaseMetalLadder implements WeatheringCopper {
 
-    public CopperLadderBlock(Oxidizable.OxidationLevel oxidationLevel, Settings settings) {
+    private final WeatherState weatherState;
+
+    public CopperLadderBlock(WeatherState weatherState, Properties settings) {
         super(settings, LadderType.COPPER);
-        this.oxidationLevel =oxidationLevel;
+        this.weatherState = weatherState;
     }
     @Override
     public int getSpeedMultiplier() {
@@ -17,7 +18,8 @@ public class CopperLadderBlock extends BaseMetalLadder implements Oxidizable {
     }
 
     @Override
-    public OxidationLevel getDegradationLevel() {
-        return this.oxidationLevel;
+    public WeatherState getAge() {
+        return this.weatherState;
     }
+
 }
