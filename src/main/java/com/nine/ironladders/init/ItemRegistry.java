@@ -1,17 +1,15 @@
 package com.nine.ironladders.init;
 
+import com.nine.ironladders.IronLadders;
 import com.nine.ironladders.common.item.CustomUpgradeItem;
 import com.nine.ironladders.common.item.MorphUpgradeItem;
 import com.nine.ironladders.common.item.UpgradeItem;
 import com.nine.ironladders.common.utils.UpgradeType;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import com.nine.ironladders.IronLadders;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import org.intellij.lang.annotations.Identifier;
 
 public class ItemRegistry {
     public static final Item WOOD_IRON_UPGRADE = registerItem("wood_iron_upgrade", new UpgradeItem(new FabricItemSettings().maxDamage(14), UpgradeType.DEFAULT_TO_IRON));

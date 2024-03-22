@@ -1,12 +1,12 @@
 package com.nine.ironladders;
 
 import com.nine.ironladders.common.CommonEvents;
-import com.nine.ironladders.init.*;
+import com.nine.ironladders.init.BlockRegistry;
+import com.nine.ironladders.init.CreativeTabGroup;
+import com.nine.ironladders.init.ItemRegistry;
 import net.fabricmc.api.ModInitializer;
-
 import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
 import net.fabricmc.loader.api.FabricLoader;
-
 
 import java.io.File;
 

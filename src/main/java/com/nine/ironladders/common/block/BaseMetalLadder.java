@@ -13,8 +13,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.function.ToIntFunction;
-
 public class BaseMetalLadder extends LadderBlock {
     private LadderType type;
   

@@ -4,14 +4,9 @@ package com.nine.ironladders.common;
 import com.nine.ironladders.common.block.BaseMetalLadder;
 import com.nine.ironladders.common.item.MorphUpgradeItem;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
-import net.fabricmc.fabric.api.event.player.UseBlockCallback;
-import net.fabricmc.fabric.impl.event.interaction.InteractionEventsRouter;
-import net.minecraft.client.Minecraft;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.BlockHitResult;
 
 
 public class CommonEvents {
