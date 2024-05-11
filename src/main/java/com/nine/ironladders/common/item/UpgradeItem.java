@@ -93,7 +93,6 @@ public class UpgradeItem extends Item {
         level.playSound(null, blockPos, SoundEvents.LADDER_PLACE, SoundSource.BLOCKS, 1F, 0.9F + level.random.nextFloat() * 0.2F);
         if (!player.getAbilities().instabuild){
             stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
-
         }
     }
 
