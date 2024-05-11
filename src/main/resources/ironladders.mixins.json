@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.nine.ironladders.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "ironladders.refmap.json",
+  "mixins": [
+    "LivingEntityMixin",
+    "LightningBoltMixin"
+  ],
+  "minVersion": "0.8"
+}

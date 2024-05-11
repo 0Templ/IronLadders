@@ -1,0 +1,3140 @@
+{
+  "variants": {
+    "facing=east,hidden=false,lighted=false,powered=false,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=false,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder"
+    },
+    "facing=south,hidden=false,lighted=false,powered=false,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=false,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder",
+      "y": 270
+    },
+    "facing=east,hidden=true,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder",
+      "y": 90
+    },
+    "facing=north,hidden=true,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder"
+    },
+    "facing=south,hidden=true,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder",
+      "y": 180
+    },
+    "facing=west,hidden=true,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder",
+      "y": 270
+    },
+
+    "facing=east,hidden=false,lighted=true,powered=false,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=false,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=false,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=false,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_single"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_single"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_bottom"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_bottom"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_top"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_top"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_single"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_single"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_bottom"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_bottom"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_top"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_top"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=none": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=false,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=false,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder"
+    },
+    "facing=south,hidden=false,lighted=false,powered=false,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=false,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder",
+      "y": 270
+    },
+    "facing=east,hidden=true,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder",
+      "y": 90
+    },
+    "facing=north,hidden=true,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder"
+    },
+    "facing=south,hidden=true,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder",
+      "y": 180
+    },
+    "facing=west,hidden=true,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=false,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=false,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=false,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=false,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_single"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_lit_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_lit_single"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_lit_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_lit_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_bottom"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_lit_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_lit_bottom"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_lit_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_lit_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_top"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_lit_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_lit_top"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_lit_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_lit_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_single"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_lit_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_lit_single"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_lit_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_lit_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_bottom"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_lit_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_lit_bottom"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_lit_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_lit_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_top"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_lit_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_lit_top"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_lit_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=gold": {
+      "model": "ironladders:block/gold/gold_ladder_powered_active_lit_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=false,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=false,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder"
+    },
+    "facing=south,hidden=false,lighted=false,powered=false,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=false,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder",
+      "y": 270
+    },
+    "facing=east,hidden=true,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder",
+      "y": 90
+    },
+    "facing=north,hidden=true,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder"
+    },
+    "facing=south,hidden=true,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder",
+      "y": 180
+    },
+    "facing=west,hidden=true,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=false,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=false,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=false,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=false,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_single"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_lit_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_lit_single"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_lit_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_lit_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_bottom"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_lit_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_lit_bottom"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_lit_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_lit_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_top"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_lit_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_lit_top"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_lit_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_lit_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_single"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_lit_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_lit_single"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_lit_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_lit_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_bottom"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_lit_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_lit_bottom"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_lit_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_lit_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_top"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_lit_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_lit_top"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_lit_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=iron": {
+      "model": "ironladders:block/iron/iron_ladder_powered_active_lit_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=false,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=false,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder"
+    },
+    "facing=south,hidden=false,lighted=false,powered=false,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=false,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder",
+      "y": 270
+    },
+    "facing=east,hidden=true,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder",
+      "y": 90
+    },
+    "facing=north,hidden=true,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder"
+    },
+    "facing=south,hidden=true,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder",
+      "y": 180
+    },
+    "facing=west,hidden=true,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=false,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=false,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=false,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=false,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_single"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_lit_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_lit_single"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_lit_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_lit_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_bottom"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_lit_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_lit_bottom"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_lit_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_lit_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_top"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_lit_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_lit_top"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_lit_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_lit_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_single"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_lit_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_lit_single"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_lit_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_lit_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_bottom"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_lit_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_lit_bottom"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_lit_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_lit_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_top"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_lit_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_lit_top"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_lit_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=diamond": {
+      "model": "ironladders:block/diamond/diamond_ladder_powered_active_lit_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=false,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=false,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder"
+    },
+    "facing=south,hidden=false,lighted=false,powered=false,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=false,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder",
+      "y": 270
+    },
+    "facing=east,hidden=true,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder",
+      "y": 90
+    },
+    "facing=north,hidden=true,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder"
+    },
+    "facing=south,hidden=true,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder",
+      "y": 180
+    },
+    "facing=west,hidden=true,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=false,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=false,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=false,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=false,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_single"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_lit_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_lit_single"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_lit_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_lit_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_bottom"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_lit_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_lit_bottom"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_lit_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_lit_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_top"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_lit_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_lit_top"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_lit_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_lit_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_single"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_lit_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_lit_single"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_lit_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_lit_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_bottom"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_lit_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_lit_bottom"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_lit_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_lit_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_top"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_lit_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_lit_top"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_lit_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=netherite": {
+      "model": "ironladders:block/netherite/netherite_ladder_powered_active_lit_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=false,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=false,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder"
+    },
+    "facing=south,hidden=false,lighted=false,powered=false,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=false,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder",
+      "y": 270
+    },
+    "facing=east,hidden=true,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder",
+      "y": 90
+    },
+    "facing=north,hidden=true,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder"
+    },
+    "facing=south,hidden=true,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder",
+      "y": 180
+    },
+    "facing=west,hidden=true,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=false,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=false,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=false,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=false,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_single"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_lit_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_lit_single"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_lit_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_lit_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_bottom"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_lit_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_lit_bottom"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_lit_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_lit_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_top"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_lit_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_lit_top"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_lit_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_lit_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_single"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_lit_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_lit_single"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_lit_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_lit_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_bottom"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_lit_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_lit_bottom"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_lit_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_lit_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_top"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_lit_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_lit_top"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_lit_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=exposed_copper": {
+      "model": "ironladders:block/exposed_copper/exposed_copper_ladder_powered_active_lit_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=false,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=false,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder"
+    },
+    "facing=south,hidden=false,lighted=false,powered=false,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=false,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder",
+      "y": 270
+    },
+    "facing=east,hidden=true,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder",
+      "y": 90
+    },
+    "facing=north,hidden=true,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder"
+    },
+    "facing=south,hidden=true,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder",
+      "y": 180
+    },
+    "facing=west,hidden=true,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=false,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=false,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=false,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=false,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_single"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_single"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_bottom"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_bottom"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_top"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_top"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_lit_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_single"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_single"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_bottom"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_bottom"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_top"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_top"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=weathered_copper": {
+      "model": "ironladders:block/weathered_copper/weathered_copper_ladder_powered_active_lit_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=false,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=false,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder"
+    },
+    "facing=south,hidden=false,lighted=false,powered=false,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=false,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder",
+      "y": 270
+    },
+    "facing=east,hidden=true,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder",
+      "y": 90
+    },
+    "facing=north,hidden=true,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder"
+    },
+    "facing=south,hidden=true,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder",
+      "y": 180
+    },
+    "facing=west,hidden=true,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=false,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=false,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=false,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=false,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_single"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_lit_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_lit_single"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_lit_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_lit_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_bottom"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_lit_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_lit_bottom"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_lit_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_lit_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_top"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_lit_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_lit_top"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_lit_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_lit_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_single"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_lit_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_lit_single"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_lit_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_lit_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_bottom"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_lit_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_lit_bottom"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_lit_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_lit_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_top"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_lit_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_lit_top"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_lit_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=oxidized_copper": {
+      "model": "ironladders:block/oxidized_copper/oxidized_copper_ladder_powered_active_lit_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=false,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=false,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder"
+    },
+    "facing=south,hidden=false,lighted=false,powered=false,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=false,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder",
+      "y": 270
+    },
+    "facing=east,hidden=true,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder",
+      "y": 90
+    },
+    "facing=north,hidden=true,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder"
+    },
+    "facing=south,hidden=true,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder",
+      "y": 180
+    },
+    "facing=west,hidden=true,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=false,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=false,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=false,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=false,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_single"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_lit_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_lit_single"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_lit_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_lit_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_bottom"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_lit_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_lit_bottom"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_lit_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_lit_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_top"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_lit_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_lit_top"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_lit_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_lit_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_single"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_lit_single",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_lit_single"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_lit_single",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_lit_single",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_lit",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_lit"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_lit",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_lit",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_bottom"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_lit_bottom",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_lit_bottom"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_lit_bottom",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_lit_bottom",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_top"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_lit_top",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_lit_top"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_lit_top",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=copper": {
+      "model": "ironladders:block/copper/copper_ladder_powered_active_lit_top",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=false,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=false,morph=default": {
+      "model": "ironladders:block/other/ladder"
+    },
+    "facing=south,hidden=false,lighted=false,powered=false,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=false,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 270
+    },
+    "facing=east,hidden=true,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 90
+    },
+    "facing=north,hidden=true,morph=default": {
+      "model": "ironladders:block/other/ladder"
+    },
+    "facing=south,hidden=true,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 180
+    },
+    "facing=west,hidden=true,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=false,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=false,morph=default": {
+      "model": "ironladders:block/other/ladder"
+    },
+    "facing=south,hidden=false,lighted=true,powered=false,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=false,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=default": {
+      "model": "ironladders:block/other/ladder"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=default": {
+      "model": "ironladders:block/other/ladder"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=default": {
+      "model": "ironladders:block/other/ladder"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=default": {
+      "model": "ironladders:block/other/ladder"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=default": {
+      "model": "ironladders:block/other/ladder"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=default": {
+      "model": "ironladders:block/other/ladder"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=default": {
+      "model": "ironladders:block/other/ladder"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=default": {
+      "model": "ironladders:block/other/ladder"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=default": {
+      "model": "ironladders:block/other/ladder"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=default": {
+      "model": "ironladders:block/other/ladder"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=default": {
+      "model": "ironladders:block/other/ladder"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=default": {
+      "model": "ironladders:block/other/ladder"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=default": {
+      "model": "ironladders:block/other/ladder"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=default": {
+      "model": "ironladders:block/other/ladder"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=default": {
+      "model": "ironladders:block/other/ladder"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=default": {
+      "model": "ironladders:block/other/ladder"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=default": {
+      "model": "ironladders:block/other/ladder",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=false,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=false,morph=vines": {
+      "model": "ironladders:block/other/vine"
+    },
+    "facing=south,hidden=false,lighted=false,powered=false,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=false,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 270
+    },
+    "facing=east,hidden=true,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 90
+    },
+    "facing=north,hidden=true,morph=vines": {
+      "model": "ironladders:block/other/vine"
+    },
+    "facing=south,hidden=true,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 180
+    },
+    "facing=west,hidden=true,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=false,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=false,morph=vines": {
+      "model": "ironladders:block/other/vine"
+    },
+    "facing=south,hidden=false,lighted=true,powered=false,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=false,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=vines": {
+      "model": "ironladders:block/other/vine"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=single,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=vines": {
+      "model": "ironladders:block/other/vine"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=single,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=vines": {
+      "model": "ironladders:block/other/vine"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_both,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=vines": {
+      "model": "ironladders:block/other/vine"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_both,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=vines": {
+      "model": "ironladders:block/other/vine"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_down,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=vines": {
+      "model": "ironladders:block/other/vine"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_down,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=vines": {
+      "model": "ironladders:block/other/vine"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=false,neighbour=has_up,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=vines": {
+      "model": "ironladders:block/other/vine"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=false,neighbour=has_up,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=vines": {
+      "model": "ironladders:block/other/vine"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=single,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=vines": {
+      "model": "ironladders:block/other/vine"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=single,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=vines": {
+      "model": "ironladders:block/other/vine"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_both,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=vines": {
+      "model": "ironladders:block/other/vine"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_both,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=vines": {
+      "model": "ironladders:block/other/vine"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_down,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=vines": {
+      "model": "ironladders:block/other/vine"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_down,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=vines": {
+      "model": "ironladders:block/other/vine"
+    },
+    "facing=south,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=false,powered=true,has_signal=true,neighbour=has_up,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 270
+    },
+    "facing=east,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 90
+    },
+    "facing=north,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=vines": {
+      "model": "ironladders:block/other/vine"
+    },
+    "facing=south,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 180
+    },
+    "facing=west,hidden=false,lighted=true,powered=true,has_signal=true,neighbour=has_up,morph=vines": {
+      "model": "ironladders:block/other/vine",
+      "y": 270
+    }
+  }
+}

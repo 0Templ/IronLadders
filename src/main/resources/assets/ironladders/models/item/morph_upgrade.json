@@ -1,0 +1,74 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ironladders:item/morph_upgrade"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "morph_type": 0
+      },
+      "model": "ironladders:item/morph_upgrade"
+    },
+    {
+      "predicate": {
+        "morph_type": 1
+      },
+      "model": "ironladders:item/morph_oxidized_copper_upgrade"
+    },
+    {
+      "predicate": {
+        "morph_type": 2
+      },
+      "model": "ironladders:item/morph_weathered_copper_upgrade"
+    },
+    {
+      "predicate": {
+        "morph_type": 3
+      },
+      "model": "ironladders:item/morph_exposed_copper_upgrade"
+    },
+    {
+      "predicate": {
+        "morph_type": 4
+      },
+      "model": "ironladders:item/morph_copper_upgrade"
+    },
+    {
+      "predicate": {
+        "morph_type": 5
+      },
+      "model": "ironladders:item/morph_iron_upgrade"
+    },
+    {
+      "predicate": {
+        "morph_type": 6
+      },
+      "model": "ironladders:item/morph_gold_upgrade"
+    },
+    {
+      "predicate": {
+        "morph_type": 7
+      },
+      "model": "ironladders:item/morph_diamond_upgrade"
+    },
+    {
+      "predicate": {
+        "morph_type": 8
+      },
+      "model": "ironladders:item/morph_netherite_upgrade"
+    },
+    {
+      "predicate": {
+        "morph_type": 9
+      },
+      "model": "ironladders:item/morph_vines_upgrade"
+    },
+    {
+      "predicate": {
+        "morph_type": 99
+      },
+      "model": "ironladders:item/morph_default_upgrade"
+    }
+  ]
+}
