@@ -57,7 +57,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block> CRYING_OBSIDIAN_LADDER = register("crying_obsidian_ladder",
             () -> new CryingObsidianLadder(BlockBehaviour.Properties.of().strength(12.0F, 1200.0F).requiresCorrectToolForDrops().pushReaction(PushReaction.BLOCK).mapColor(MapColor.COLOR_BLACK), LadderType.CRYING_OBSIDIAN));
     public static final RegistryObject<Block> NETHERITE_LADDER = register("netherite_ladder",
-            () -> new BaseMetalLadder(BlockBehaviour.Properties.of().strength(5F, 1200.0F).requiresCorrectToolForDrops().pushReaction(PushReaction.BLOCK).sound(SoundType.NETHERITE_BLOCK).mapColor(MapColor.COLOR_BLACK), LadderType.NETHERITE));
+            () -> new BaseMetalLadder(BlockBehaviour.Properties.of().strength(5F, 1200.0F).requiresCorrectToolForDrops().pushReaction(PushReaction.BLOCK).sound(SoundType.NETHERITE_BLOCK).mapColor(MapColor.COLOR_BLACK), LadderType.NETHERITE), new Item.Properties().fireResistant());
     public static final RegistryObject<Block> BEDROCK_LADDER = register("bedrock_ladder",
             () -> new BaseMetalLadder(BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).pushReaction(PushReaction.BLOCK).sound(SoundType.NETHERITE_BLOCK).mapColor(MapColor.STONE).noLootTable(), LadderType.NETHERITE));
 
@@ -75,9 +75,14 @@ public class BlockRegistry {
     public static final RegistryObject<Block> ALUMINUM_LADDER = register("aluminum_ladder",
             () -> new BaseMetalLadder(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.METAL).pushReaction(PushReaction.DESTROY).mapColor(MapColor.TERRACOTTA_WHITE), LadderType.ALUMINUM));
 
+
     public static <T extends Block> RegistryObject<T> register(String name, Supplier<Block> block) {
+        return register(name, block, new Item.Properties());
+    }
+
+    public static <T extends Block> RegistryObject<T> register(String name, Supplier<Block> block, Item.Properties props) {
         RegistryObject<? extends Block> ret = BLOCKS.register(name, block);
-        ITEMS.register(name, () -> new BlockItem(ret.get(), new Item.Properties()));
+        ITEMS.register(name, () -> new BlockItem(ret.get(), props));
         return (RegistryObject<T>) ret;
     }
 

@@ -21,6 +21,7 @@ import org.slf4j.LoggerFactory;
 
 @Mod(IronLadders.MODID)
 public class IronLadders {
+
     public static final String MODID = "ironladders";
 
     public IronLadders() {
