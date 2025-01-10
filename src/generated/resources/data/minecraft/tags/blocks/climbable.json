@@ -1,0 +1,25 @@
+{
+  "values": [
+    "ironladders:copper_ladder",
+    "ironladders:exposed_copper_ladder",
+    "ironladders:weathered_copper_ladder",
+    "ironladders:oxidized_copper_ladder",
+    "ironladders:waxed_copper_ladder",
+    "ironladders:waxed_exposed_copper_ladder",
+    "ironladders:waxed_weathered_copper_ladder",
+    "ironladders:waxed_oxidized_copper_ladder",
+    "ironladders:iron_ladder",
+    "ironladders:gold_ladder",
+    "ironladders:diamond_ladder",
+    "ironladders:obsidian_ladder",
+    "ironladders:crying_obsidian_ladder",
+    "ironladders:netherite_ladder",
+    "ironladders:bedrock_ladder",
+    "ironladders:lead_ladder",
+    "ironladders:tin_ladder",
+    "ironladders:steel_ladder",
+    "ironladders:bronze_ladder",
+    "ironladders:silver_ladder",
+    "ironladders:aluminum_ladder"
+  ]
+}

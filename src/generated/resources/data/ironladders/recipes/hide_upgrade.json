@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "tag": "forge:dyes/white"
+    },
+    "G": {
+      "tag": "forge:glass"
+    },
+    "L": {
+      "item": "minecraft:ladder"
+    }
+  },
+  "pattern": [
+    " GD",
+    " GG",
+    "L  "
+  ],
+  "result": {
+    "item": "ironladders:hiding_upgrade"
+  },
+  "show_notification": true
+}

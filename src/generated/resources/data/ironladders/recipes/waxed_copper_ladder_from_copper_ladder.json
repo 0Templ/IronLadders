@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "ladders_waxing",
+  "ingredients": [
+    {
+      "item": "ironladders:copper_ladder"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    }
+  ],
+  "result": {
+    "item": "ironladders:waxed_copper_ladder"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:repeater"
+    },
+    "L": {
+      "item": "minecraft:ladder"
+    },
+    "P": {
+      "item": "minecraft:piston"
+    },
+    "R": {
+      "tag": "forge:dusts/redstone"
+    },
+    "T": {
+      "item": "minecraft:redstone_torch"
+    }
+  },
+  "pattern": [
+    " DT",
+    " RP",
+    "L  "
+  ],
+  "result": {
+    "item": "ironladders:power_upgrade"
+  },
+  "show_notification": true
+}
