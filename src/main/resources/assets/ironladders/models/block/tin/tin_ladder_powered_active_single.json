@@ -1,0 +1,8 @@
+{
+  "parent": "ironladders:block/template/template_ladder_powered_active_single",
+  "textures": {
+    "power": "ironladders:block/tin/ladder_powered_tin_active",
+    "particle": "ironladders:block/tin/tin_ladder",
+    "texture": "ironladders:block/tin/tin_ladder"
+  }
+}

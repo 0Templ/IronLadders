@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "com.nine.ironladders.mixin",
+  "refmap": "ironladders.refmap.json",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "AbstractContainerMenuMixin",
+    "LightningBoltMixin",
+    "LivingEntityMixin",
+    "PlayerMixin"
+  ],
+  "minVersion": "0.8.5",
+  "client": [
+    "client.ItemRendererMixin",
+    "client.ModelBakerImplAccessor",
+    "client.ModelBakeryMixin",
+    "client.ModelManagerMixin"
+  ]
+}

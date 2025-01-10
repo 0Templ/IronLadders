@@ -1,0 +1,7 @@
+{
+  "parent": "ironladders:block/template/template_ladder",
+  "textures": {
+    "particle": "ironladders:block/weathered_copper/weathered_copper_ladder",
+    "texture": "ironladders:block/weathered_copper/weathered_copper_ladder"
+  }
+}
