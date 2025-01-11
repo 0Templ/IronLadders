@@ -65,7 +65,6 @@ public class CopperLadderBlock extends BaseMetalLadder implements WeatheringLadd
             ).orElse(InteractionResult.PASS);
         }
         return InteractionResult.PASS;
-
     }
 
     @Override

@@ -209,7 +209,7 @@ public class MorphUpgradeItem extends Item {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
         if (!ILConfig.enableMorphLaddersUpgrade.get()) {
-            tooltip.add(Component.translatable("tooltip.item.upgrade.disabled").withStyle(ChatFormatting.RED));
+            tooltip.add(Component.translatable("ironladders.tooltip.disabled").withStyle(ChatFormatting.RED));
             return;
         }
         boolean shiftDown = Screen.hasShiftDown();
@@ -222,12 +222,10 @@ public class MorphUpgradeItem extends Item {
                 tooltip.add(Component.translatable("ironladders.tooltip.morph_upgrade.type_0", morphContent).withStyle(ChatFormatting.GRAY));
             }
         }
-        Style style = Style.EMPTY.withColor(shiftDown ? 0xcbcbcb : 0x808080);
-        Component component1 = Component.translatable("ironladders.tooltip.shift").withStyle(style);
+        Component component1 = ClientHelper.componentWithColor(Component.translatable("ironladders.tooltip.shift"), shiftDown ? 0xcbcbcb : 0x808080);
         Component component2 = Component.translatable("ironladders.tooltip.hold_for", component1).withStyle(ChatFormatting.GRAY);
         tooltip.add(component2);
-        style = style.withColor(0xcbcbcb);
-        Component component3 = Component.translatable("ironladders.tooltip.morph_upgrade.info_2").withStyle(style);
+        Component component3 = ClientHelper.componentWithColor(Component.translatable("ironladders.tooltip.morph_upgrade.info_2"), 0xcbcbcb);
         if (shiftDown) {
             tooltip.add(Component.translatable("ironladders.tooltip.hiding_upgrade.info_0").withStyle(ChatFormatting.GRAY));
             tooltip.add(Component.translatable("ironladders.tooltip.morph_upgrade.info_1", component3).withStyle(ChatFormatting.GRAY));
@@ -236,6 +234,5 @@ public class MorphUpgradeItem extends Item {
                 tooltip.add(Component.translatable("ironladders.tooltip.warning.modernfix").withStyle(ChatFormatting.RED));
             }
         }
-
     }
 }

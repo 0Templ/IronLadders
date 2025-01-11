@@ -102,9 +102,6 @@ public class ILBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.FEATURES_CANNOT_REPLACE).add(
                 BlockRegistry.BEDROCK_LADDER.get()
         );
-        this.tag(BlockTags.INFINIBURN_END).add(
-                BlockRegistry.BEDROCK_LADDER.get()
-        );
         this.tag(BlockTags.WITHER_IMMUNE).add(
                 BlockRegistry.BEDROCK_LADDER.get()
         );

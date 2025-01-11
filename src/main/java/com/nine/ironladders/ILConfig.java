@@ -111,7 +111,7 @@ public class ILConfig {
                 comment("Will information about the condition of the ladders be shown in the tooltip from Jade?").
                 define("jadeIntegration", true);
         topIntegration = builder.
-                comment("Will information about the condition of the ladders be shown in the tooltip from Jade?").
+                comment("Will information about the condition of the ladders be shown in the tooltip from The One Probe?").
                 define("topIntegration", true);
         nonVanillaLadders = builder.
                 comment("Will there be an acceleration effect and also displayed in the tab ladders made of non-vanilla materials (lead, silver, etc.)").

@@ -43,13 +43,10 @@ public class CommonEvents {
                             serverPlayer.getAdvancements().award(advancement, "wax_off");
                         }
                     }
-                    CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer) player, event.getPos(), event.getHeldItemStack());
                 }
-            } else if (event.getToolAction().equals(ToolActions.AXE_SCRAPE)) {
+            }
+            else if (event.getToolAction().equals(ToolActions.AXE_SCRAPE)) {
                 WeatheringLadder.getPrevious(blockState).ifPresent(event::setFinalState);
-                if (player instanceof ServerPlayer) {
-                    CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer) player, event.getPos(), event.getHeldItemStack());
-                }
             }
         }
     }

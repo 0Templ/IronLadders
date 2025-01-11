@@ -14,7 +14,10 @@ import java.util.Set;
 public class ILLootGenerator extends LootTableProvider {
 
     public ILLootGenerator(PackOutput output) {
-        super(output, Set.of(), List.of(
+        super(
+                output,
+                Set.of(),
+                List.of(
                 new SubProviderEntry(ILLootTableProvider::new, LootContextParamSets.BLOCK)));
     }
 

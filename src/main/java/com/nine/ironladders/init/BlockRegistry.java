@@ -59,7 +59,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block> NETHERITE_LADDER = register("netherite_ladder",
             () -> new BaseMetalLadder(BlockBehaviour.Properties.of().strength(5F, 1200.0F).requiresCorrectToolForDrops().pushReaction(PushReaction.BLOCK).sound(SoundType.NETHERITE_BLOCK).mapColor(MapColor.COLOR_BLACK), LadderType.NETHERITE), new Item.Properties().fireResistant());
     public static final RegistryObject<Block> BEDROCK_LADDER = register("bedrock_ladder",
-            () -> new BaseMetalLadder(BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).pushReaction(PushReaction.BLOCK).sound(SoundType.NETHERITE_BLOCK).mapColor(MapColor.STONE).noLootTable(), LadderType.NETHERITE));
+            () -> new BaseMetalLadder(BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).pushReaction(PushReaction.BLOCK).mapColor(MapColor.STONE).noLootTable(), LadderType.NETHERITE));
 
 
     public static final RegistryObject<Block> STEEL_LADDER = register("steel_ladder",
@@ -93,6 +93,7 @@ public class BlockRegistry {
         return List.of(
                 ALUMINUM_LADDER.get(),
                 BRONZE_LADDER.get(),
+                BEDROCK_LADDER.get(),
                 COPPER_LADDER.get(),
                 DIAMOND_LADDER.get(),
                 OBSIDIAN_LADDER.get(),

@@ -87,7 +87,7 @@ public class CreativeTabRegistry {
             }).build());
 
     public static boolean hasMaterial(ResourceLocation tagLocation) {
-        if (!ILConfig.hideUncraftableLadders.get() || !FMLEnvironment.production) {
+        if (!ILConfig.hideUncraftableLadders.get()) {
             return true;
         }
         TagKey<Item> tag = ItemTags.create(tagLocation);

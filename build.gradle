@@ -79,6 +79,10 @@ repositories {
         url "https://maven.shedaniel.me"
     }
     maven {
+        name = "TerraformersMC"
+        url = "https://maven.terraformersmc.com/"
+    }
+    maven {
         name 'Curseforge Maven'
         url "https://www.cursemaven.com"
         content {
@@ -100,25 +104,23 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
     // REI
-    implementation fg.deobf("curse.maven:architectury-api-419699:${architectury_version}")
-    implementation fg.deobf("curse.maven:cloth-config-348521:${cloth_config_version}")
-    implementation fg.deobf("me.shedaniel:RoughlyEnoughItems-forge:${rei_version}")
-
+    compileOnly fg.deobf("curse.maven:architectury-api-419699:${architectury_version}")
+    compileOnly fg.deobf("curse.maven:cloth-config-348521:${cloth_config_version}")
+    compileOnly fg.deobf("me.shedaniel:RoughlyEnoughItems-forge:${rei_version}")
+    //EMI
+    compileOnly fg.deobf("dev.emi:emi-forge:${emi_version}:api")
+    runtimeOnly fg.deobf("dev.emi:emi-forge:${emi_version}")
     // ATO
     compileOnly fg.deobf("curse.maven:ato-405593:${all_the_ores_version}")
-
     // Mekanism
-    implementation fg.deobf("mekanism:Mekanism:${minecraft_version}-${mekanism_version}")
-
+    compileOnly fg.deobf("mekanism:Mekanism:${minecraft_version}-${mekanism_version}")
     // QUARK & ZETA
     if (!project.gradle.startParameter.taskNames.contains("runData") && !project.gradle.startParameter.taskNames.contains("runServer")){
         runtimeOnly fg.deobf("curse.maven:quark-243121:${quark_version}")
         runtimeOnly fg.deobf("curse.maven:zeta-968868:${zeta_version}")
     }
-
     //CREATE
-    compileOnly fg.deobf("curse.maven:create-328085:5838779")
-
+    compileOnly fg.deobf("curse.maven:create-328085:${create_version}")
     // Modern Fix
     implementation fg.deobf("curse.maven:modernfix-790626:${modernfix_version}")
 }

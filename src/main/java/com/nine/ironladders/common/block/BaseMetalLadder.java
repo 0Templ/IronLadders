@@ -264,7 +264,7 @@ public class BaseMetalLadder extends LadderBlock implements EntityBlock {
     @Override
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState stateBefore, boolean bool) {
         if (!stateBefore.is(state.getBlock())) {
-            level.updateNeighborsAt(pos, this);
+            level.updateNeighborsAt(pos,this);
         }
     }
 
