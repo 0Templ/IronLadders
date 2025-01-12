@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "tag": "c:ingots/iron"
+    },
+    "L": {
+      "item": "minecraft:ladder"
+    }
+  },
+  "pattern": [
+    "III",
+    " II",
+    "L I"
+  ],
+  "result": {
+    "count": 1,
+    "id": "ironladders:wood_iron_upgrade"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "tag": "c:ingots/iron"
+    },
+    "L": {
+      "item": "minecraft:ladder"
+    }
+  },
+  "pattern": [
+    "LIL",
+    "LIL",
+    "LIL"
+  ],
+  "result": {
+    "count": 7,
+    "id": "ironladders:iron_ladder"
+  }
+}

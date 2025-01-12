@@ -1,0 +1,9 @@
+{
+  "parent": "ironladders:block/template/template_ladder_powered_lit",
+  "textures": {
+    "light": "ironladders:block/ladder_lit",
+    "power": "ironladders:block/netherite/ladder_powered_netherite",
+    "particle": "ironladders:block/netherite/netherite_ladder",
+    "texture": "ironladders:block/netherite/netherite_ladder"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ironladders:item/bronze/wood_bronze_upgrade"
+  }
+}

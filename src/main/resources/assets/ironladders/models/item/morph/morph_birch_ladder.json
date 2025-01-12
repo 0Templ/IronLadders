@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ironladders:item/morph/morph_ladder_empty",
+    "layer1": "ironladders:item/morph/morph_birch_ladder"
+  }
+}

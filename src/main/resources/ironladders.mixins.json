@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "package": "com.nine.ironladders.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "client.BlockStateModelLoaderMixin",
+    "client.ItemRendererMixin",
+    "client.ModelBakerImplAccessor",
+    "client.ModelBakeryMixin",
+    "client.ModelManagerMixin"
+  ],
+  "minVersion": "0.8",
+  "mixins": [
+    "AbstractContainerMenuMixin",
+    "AxeItemMixin",
+    "LightningBoltMixin",
+    "LivingEntityMixin",
+    "PlayerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

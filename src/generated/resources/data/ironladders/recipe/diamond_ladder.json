@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "tag": "c:gems/diamond"
+    },
+    "L": {
+      "tag": "ironladders:upgrades_to_diamond"
+    }
+  },
+  "pattern": [
+    "LIL",
+    "LLL",
+    "LIL"
+  ],
+  "result": {
+    "count": 7,
+    "id": "ironladders:diamond_ladder"
+  }
+}

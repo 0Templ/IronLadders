@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:glowstone"
+    },
+    "D": {
+      "tag": "c:dusts/glowstone"
+    },
+    "L": {
+      "item": "minecraft:ladder"
+    }
+  },
+  "pattern": [
+    " DB",
+    " DD",
+    "L  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "ironladders:light_upgrade"
+  }
+}
