@@ -25,11 +25,6 @@ import java.util.Map;
 @Mixin(BlockStateModelLoader.class)
 public abstract class BlockStateModelLoaderMixin {
 
-
-    @Shadow @Final private ProfilerFiller profiler;
-
-    @Shadow @Final private static Map<ResourceLocation, StateDefinition<Block, BlockState>> STATIC_DEFINITIONS;
-
     @Shadow public abstract void loadBlockStateDefinitions(ResourceLocation blockStateId, StateDefinition<Block, BlockState> stateDefenition);
 
     @Inject(method = "loadAllBlockStates", at = @At("HEAD"), cancellable = true)
@@ -37,14 +32,10 @@ public abstract class BlockStateModelLoaderMixin {
         if (!ModList.get().isLoaded("modernfix")) {
             return;
         }
-        profiler.push("static_definitions");
-        STATIC_DEFINITIONS.forEach(this::loadBlockStateDefinitions);
-        this.profiler.popPush("blocks");
         for (Block block : BlockRegistry.getLadders()) {
             block.getStateDefinition().getPossibleStates().forEach((state) -> {
                 this.loadBlockStateDefinitions(block.builtInRegistryHolder().key().location(), block.getStateDefinition());
             });
         }
-        this.profiler.pop();
     }
 }
