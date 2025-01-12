@@ -1,9 +1,7 @@
 package com.nine.ironladders.mixin;
 
 import com.nine.ironladders.common.block.WeatheringLadder;
-import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
-import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;

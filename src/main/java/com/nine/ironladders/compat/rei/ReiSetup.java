@@ -1,6 +1,5 @@
 package com.nine.ironladders.compat.rei;
 
-import com.nine.ironladders.IronLadders;
 import com.nine.ironladders.init.CreativeTabRegistry;
 import com.nine.ironladders.init.ItemRegistry;
 import me.shedaniel.rei.api.client.entry.filtering.base.BasicFilteringRule;

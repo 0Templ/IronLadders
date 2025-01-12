@@ -5,7 +5,6 @@ import com.nine.ironladders.ILConfig;
 import com.nine.ironladders.client.ClientHelper;
 import com.nine.ironladders.common.block.BaseMetalLadder;
 import com.nine.ironladders.common.utils.PlayerInputDataProvider;
-import com.nine.ironladders.network.MorphPacket;
 import com.nine.ironladders.network.SyncPlayerInputData;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

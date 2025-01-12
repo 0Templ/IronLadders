@@ -2,7 +2,6 @@ package com.nine.ironladders.compat.jei;
 
 
 import com.nine.ironladders.IronLadders;
-import com.nine.ironladders.init.BlockRegistry;
 import com.nine.ironladders.init.CreativeTabRegistry;
 import com.nine.ironladders.init.ItemRegistry;
 import mezz.jei.api.IModPlugin;
@@ -10,21 +9,15 @@ import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.RecipeTypes;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.recipe.IRecipeManager;
-import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.IRecipeRegistration;
 import mezz.jei.api.runtime.IJeiRuntime;
 import net.minecraft.client.Minecraft;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CraftingRecipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 @JeiPlugin

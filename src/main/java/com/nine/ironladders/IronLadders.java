@@ -9,7 +9,6 @@ import com.nine.ironladders.init.CreativeTabRegistry;
 import com.nine.ironladders.init.ItemRegistry;
 import com.nine.ironladders.network.MorphPacket;
 import com.nine.ironladders.network.SyncPlayerInputData;
-import net.minecraft.client.resources.model.ModelBakery;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;

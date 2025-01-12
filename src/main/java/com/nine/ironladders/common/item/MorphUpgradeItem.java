@@ -7,7 +7,6 @@ import com.nine.ironladders.common.block.entity.MetalLadderEntity;
 import com.nine.ironladders.common.component.CustomComponents;
 import com.nine.ironladders.common.utils.LadderProperties;
 import com.nine.ironladders.common.utils.LadderType;
-import com.nine.ironladders.common.utils.UpgradeType;
 import com.nine.ironladders.network.MorphPacket;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;

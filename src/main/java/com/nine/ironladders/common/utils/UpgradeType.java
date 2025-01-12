@@ -1,7 +1,6 @@
 package com.nine.ironladders.common.utils;
 
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
 
 public enum UpgradeType {
 

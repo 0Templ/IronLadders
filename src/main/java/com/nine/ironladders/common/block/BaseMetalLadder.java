@@ -2,7 +2,6 @@ package com.nine.ironladders.common.block;
 
 import com.nine.ironladders.ILConfig;
 import com.nine.ironladders.common.block.entity.MetalLadderEntity;
-import com.nine.ironladders.common.utils.BlockStateUtils;
 import com.nine.ironladders.common.utils.LadderPositions;
 import com.nine.ironladders.common.utils.LadderProperties;
 import com.nine.ironladders.common.utils.LadderType;
