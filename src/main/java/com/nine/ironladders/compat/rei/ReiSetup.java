@@ -1,6 +1,6 @@
 package com.nine.ironladders.compat.rei;
 
-import com.nine.ironladders.init.BlockRegistry;
+import com.nine.ironladders.IronLadders;
 import com.nine.ironladders.init.CreativeTabRegistry;
 import com.nine.ironladders.init.ItemRegistry;
 import me.shedaniel.rei.api.client.entry.filtering.base.BasicFilteringRule;
@@ -11,7 +11,7 @@ import me.shedaniel.rei.api.common.util.EntryStacks;
 import me.shedaniel.rei.forge.REIPluginClient;
 import me.shedaniel.rei.plugin.common.displays.DefaultInformationDisplay;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 
 @REIPluginClient
 public class ReiSetup implements REIClientPlugin {
@@ -19,32 +19,10 @@ public class ReiSetup implements REIClientPlugin {
 
     @Override
     public void registerBasicEntryFiltering(BasicFilteringRule<?> rule) {
-        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/tin"))) {
-            rule.hide(EntryStacks.of(ItemRegistry.WOOD_TIN_UPGRADE.get()));
-            rule.hide(EntryStacks.of(BlockRegistry.TIN_LADDER.get().asItem()));
+        for (Item item : CreativeTabRegistry.getItemsToHide()){
+            IronLadders.LOGGER.debug("Hiding {} recipes from REI", CreativeTabRegistry.getItemsToHide().size());
+            rule.hide(EntryStacks.of(item));
         }
-        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/bronze"))) {
-            rule.hide(EntryStacks.of(ItemRegistry.WOOD_BRONZE_UPGRADE.get()));
-            rule.hide(EntryStacks.of(BlockRegistry.BRONZE_LADDER.get().asItem()));
-        }
-        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/lead"))) {
-            rule.hide(EntryStacks.of(ItemRegistry.WOOD_LEAD_UPGRADE.get()));
-            rule.hide(EntryStacks.of(BlockRegistry.LEAD_LADDER.get().asItem()));
-        }
-        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/steel"))) {
-            rule.hide(EntryStacks.of(ItemRegistry.WOOD_STEEL_UPGRADE.get()));
-            rule.hide(EntryStacks.of(BlockRegistry.STEEL_LADDER.get().asItem()));
-        }
-        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/aluminum"))) {
-            rule.hide(EntryStacks.of(ItemRegistry.WOOD_ALUMINUM_UPGRADE.get()));
-            rule.hide(EntryStacks.of(BlockRegistry.ALUMINUM_LADDER.get().asItem()));
-        }
-        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/silver"))) {
-            rule.hide(EntryStacks.of(ItemRegistry.WOOD_SILVER_UPGRADE.get()));
-            rule.hide(EntryStacks.of(BlockRegistry.SILVER_LADDER.get().asItem()));
-        }
-        rule.hide(EntryStacks.of(BlockRegistry.CRYING_OBSIDIAN_LADDER.get()));
-        rule.hide(EntryStacks.of(BlockRegistry.BEDROCK_LADDER.get()));
     }
 
     @Override
@@ -54,32 +32,10 @@ public class ReiSetup implements REIClientPlugin {
 
     @Override
     public void registerEntries(EntryRegistry registry) {
-        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/tin"))) {
-            registry.removeEntry(EntryStacks.of(ItemRegistry.WOOD_TIN_UPGRADE.get()));
-            registry.removeEntry(EntryStacks.of(BlockRegistry.TIN_LADDER.get().asItem()));
+        for (Item item : CreativeTabRegistry.getItemsToHide()){
+            IronLadders.LOGGER.debug("Hiding {} items from REI", CreativeTabRegistry.getItemsToHide().size());
+            registry.removeEntry(EntryStacks.of(item));
         }
-        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/bronze"))) {
-            registry.removeEntry(EntryStacks.of(ItemRegistry.WOOD_BRONZE_UPGRADE.get()));
-            registry.removeEntry(EntryStacks.of(BlockRegistry.BRONZE_LADDER.get().asItem()));
-        }
-        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/lead"))) {
-            registry.removeEntry(EntryStacks.of(ItemRegistry.WOOD_LEAD_UPGRADE.get()));
-            registry.removeEntry(EntryStacks.of(BlockRegistry.LEAD_LADDER.get().asItem()));
-        }
-        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/steel"))) {
-            registry.removeEntry(EntryStacks.of(ItemRegistry.WOOD_STEEL_UPGRADE.get()));
-            registry.removeEntry(EntryStacks.of(BlockRegistry.STEEL_LADDER.get().asItem()));
-        }
-        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/aluminum"))) {
-            registry.removeEntry(EntryStacks.of(ItemRegistry.WOOD_ALUMINUM_UPGRADE.get()));
-            registry.removeEntry(EntryStacks.of(BlockRegistry.ALUMINUM_LADDER.get().asItem()));
-        }
-        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/silver"))) {
-            registry.removeEntry(EntryStacks.of(ItemRegistry.WOOD_SILVER_UPGRADE.get()));
-            registry.removeEntry(EntryStacks.of(BlockRegistry.SILVER_LADDER.get().asItem()));
-        }
-        registry.removeEntry(EntryStacks.of(BlockRegistry.CRYING_OBSIDIAN_LADDER.get()));
-        registry.removeEntry(EntryStacks.of(BlockRegistry.BEDROCK_LADDER.get()));
     }
 
     private void registerDescriptions(DisplayRegistry registry) {

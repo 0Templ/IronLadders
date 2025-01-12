@@ -84,7 +84,7 @@
   "ironladders.tooltip.shift": "Шифт",
   "ironladders.tooltip.upgrade.not_consumable": "Не тратится при использовании",
   "ironladders.tooltip.speed_bonus": "Бонус к скорости: %s",
-  "ironladders.tooltip.warning.modernfix": "Установлен ModernFix, функция превращения может работать некоректно",
+  "ironladders.tooltip.warning.modernfix": "Установлен %s, функция превращения может работать некоректно",
   "ironladders.tooltip.upgrade_item.info_0": "Может улучшить до §l%s §rлестниц",
   "ironladders.tooltip.upgrade_item.info_1": "[%s] для многократного применения",
   "ironladders.tooltip.upgrade_item.info_2": "Шифт + ПКМ",

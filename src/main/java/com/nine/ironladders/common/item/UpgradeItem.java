@@ -3,7 +3,6 @@ package com.nine.ironladders.common.item;
 import com.nine.ironladders.ILConfig;
 import com.nine.ironladders.client.ClientHelper;
 import com.nine.ironladders.common.block.BaseMetalLadder;
-import com.nine.ironladders.common.utils.BlockStateUtils;
 import com.nine.ironladders.common.utils.LadderProperties;
 import com.nine.ironladders.common.utils.LadderType;
 import com.nine.ironladders.common.utils.UpgradeType;
@@ -26,6 +25,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LadderBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -143,14 +143,14 @@ public class UpgradeItem extends Item {
             if ((canGoUp || canGoDown) && stack.getDamageValue() < stack.getMaxDamage()) {
                 if (canGoUp) {
                     if (upperType == startType) {
-                        newState = BlockStateUtils.getStateWithSyncedProps(newState, stateAbove);
+                        newState = newState.getBlock().withPropertiesOf(stateAbove);
                         upgradeSingleBlock(level, player, abovePos, newState, stack);
                         ladderCount++;
                     }
                 }
                 if (canGoDown && ladderCount != stack.getMaxDamage()) {
                     if (bottomType == startType) {
-                        newState = BlockStateUtils.getStateWithSyncedProps(newState, stateBelow);
+                        newState = newState.getBlock().withPropertiesOf(stateBelow);
                         upgradeSingleBlock(level, player, belowPos, newState, stack);
                         ladderCount++;
                     }
@@ -191,10 +191,14 @@ public class UpgradeItem extends Item {
         Component component2 = Component.translatable("ironladders.tooltip.hold_for", component1).withStyle(ChatFormatting.GRAY);
         tooltip.add(component2);
         if (shiftDown) {
-            Component component3 = ClientHelper.componentWithColor(Component.translatable("ironladders.tooltip.upgrade_item.info_2"), 0xcbcbcb);
-            Component amount = ClientHelper.componentWithColor(Component.literal(String.valueOf((stack.getMaxDamage() - stack.getDamageValue()))), 0xcbcbcb);
-            tooltip.add(Component.translatable("ironladders.tooltip.upgrade_item.info_0", amount).withStyle(ChatFormatting.GRAY));
-            tooltip.add(Component.translatable("ironladders.tooltip.upgrade_item.info_1", component3).withStyle(ChatFormatting.GRAY));
+            Component component3 = ClientHelper.componentWithColor(Component.translatable("ironladders.tooltip.morph_upgrade.info_2"), 0xcbcbcb);
+            tooltip.add(Component.translatable("ironladders.tooltip.hiding_upgrade.info_0").withStyle(ChatFormatting.GRAY));
+            tooltip.add(Component.translatable("ironladders.tooltip.morph_upgrade.info_1", component3).withStyle(ChatFormatting.GRAY));
+            tooltip.add(Component.translatable("ironladders.tooltip.morph_upgrade.info_3").withStyle(ChatFormatting.GRAY));
+            if (ModList.get().getModContainerById("modernfix").isPresent()) {
+                Component mod = ClientHelper.componentWithColor(Component.literal(ModList.get().getModContainerById("modernfix").get().getModInfo().getDisplayName()), 0xf33838);
+                tooltip.add(Component.translatable("ironladders.tooltip.warning.modernfix", mod).withStyle(ChatFormatting.RED));
+            }
         }
     }
 }

@@ -84,7 +84,7 @@
   "ironladders.tooltip.shift": "Shift",
   "ironladders.tooltip.upgrade.not_consumable": "Not Consumable",
   "ironladders.tooltip.speed_bonus": "Speed bonus: %s",
-  "ironladders.tooltip.warning.modernfix": "ModernFix installed, morph may not work properly",
+  "ironladders.tooltip.warning.modernfix": "%s installed, morph may not work properly",
   "ironladders.tooltip.upgrade_item.info_0": "Upgrades up to §l%s §rladders",
   "ironladders.tooltip.upgrade_item.info_1": "Use [%s] for multiple use",
   "ironladders.tooltip.upgrade_item.info_2": "Shift + RBM",

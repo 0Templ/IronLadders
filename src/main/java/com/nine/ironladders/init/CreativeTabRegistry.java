@@ -15,6 +15,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CreativeTabRegistry {
 
 
@@ -97,5 +100,37 @@ public class CreativeTabRegistry {
             }
         }
         return false;
+    }
+
+    public static List<Item> getItemsToHide(){
+        List<Item> items = new ArrayList<>();
+        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/tin"))) {
+            items.add(ItemRegistry.WOOD_TIN_UPGRADE.get());
+            items.add(BlockRegistry.TIN_LADDER.get().asItem());
+        }
+        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/bronze"))) {
+            items.add(ItemRegistry.WOOD_BRONZE_UPGRADE.get());
+            items.add(BlockRegistry.BRONZE_LADDER.get().asItem());
+        }
+        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/lead"))) {
+            items.add(ItemRegistry.WOOD_LEAD_UPGRADE.get());
+            items.add(BlockRegistry.LEAD_LADDER.get().asItem());
+        }
+        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/steel"))) {
+            items.add(ItemRegistry.WOOD_STEEL_UPGRADE.get());
+            items.add(BlockRegistry.STEEL_LADDER.get().asItem());
+        }
+        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/aluminum"))) {
+            items.add(ItemRegistry.WOOD_ALUMINUM_UPGRADE.get());
+            items.add(BlockRegistry.ALUMINUM_LADDER.get().asItem());
+        }
+        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/silver"))) {
+            items.add(ItemRegistry.WOOD_SILVER_UPGRADE.get());
+            items.add(BlockRegistry.SILVER_LADDER.get().asItem());
+        }
+        items.add(BlockRegistry.CRYING_OBSIDIAN_LADDER.get().asItem());
+        items.add(BlockRegistry.BEDROCK_LADDER.get().asItem());
+
+        return items;
     }
 }

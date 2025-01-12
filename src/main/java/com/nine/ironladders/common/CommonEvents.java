@@ -6,7 +6,6 @@ import com.nine.ironladders.common.block.WeatheringLadder;
 import com.nine.ironladders.common.block.entity.MetalLadderEntity;
 import com.nine.ironladders.common.item.MorphUpgradeItem;
 import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;

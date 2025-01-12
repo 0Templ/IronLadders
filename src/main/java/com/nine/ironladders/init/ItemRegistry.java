@@ -31,7 +31,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> POWER_UPGRADE_ITEM = ITEMS.register("power_upgrade", () -> new CustomUpgradeItem(new Item.Properties().stacksTo(1), UpgradeType.ANY_TO_POWERED));
     public static final RegistryObject<Item> LIGHT_UPGRADE_ITEM = ITEMS.register("light_upgrade", () -> new CustomUpgradeItem(new Item.Properties().stacksTo(1), UpgradeType.ANY_TO_GLOWING));
     public static final RegistryObject<Item> HIDE_UPGRADE_ITEM = ITEMS.register("hiding_upgrade", () -> new CustomUpgradeItem(new Item.Properties().stacksTo(1), UpgradeType.ANY_TO_HIDDEN));
-    public static final RegistryObject<Item> MORPH_UPGRADE_ITEM = ITEMS.register("morph_upgrade", () -> new MorphUpgradeItem(new Item.Properties().stacksTo(1), UpgradeType.ANY_TO_MORPHED));
+    public static final RegistryObject<Item> MORPH_UPGRADE_ITEM = ITEMS.register("morph_upgrade", () -> new MorphUpgradeItem(new Item.Properties().stacksTo(1)));
 
     //Non-vanilla
     public static final RegistryObject<Item> WOOD_BRONZE_UPGRADE = ITEMS.register("wood_bronze_upgrade", () -> new UpgradeItem(new Item.Properties().durability(14), UpgradeType.DEFAULT_TO_BRONZE));
@@ -45,11 +45,11 @@ public class ItemRegistry {
         if (item.equals(POWER_UPGRADE_ITEM.get())) {
             return !ILConfig.enablePoweredLaddersUpgrade.get();
         } else if (item.equals(LIGHT_UPGRADE_ITEM.get())) {
-            return !ILConfig.enablePoweredLaddersUpgrade.get();
+            return !ILConfig.enableGlowingLaddersUpgrade.get();
         } else if (item.equals(MORPH_UPGRADE_ITEM.get())) {
             return !ILConfig.enableMorphLaddersUpgrade.get();
-        } else if (item.equals(LIGHT_UPGRADE_ITEM.get())) {
-            return !ILConfig.enableGlowingLaddersUpgrade.get();
+        } else if (item.equals(HIDE_UPGRADE_ITEM.get())) {
+            return !ILConfig.hideUncraftableLadders.get();
         }
         return false;
     }

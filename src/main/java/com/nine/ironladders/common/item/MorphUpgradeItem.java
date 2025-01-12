@@ -6,7 +6,6 @@ import com.nine.ironladders.common.block.BaseMetalLadder;
 import com.nine.ironladders.common.block.entity.MetalLadderEntity;
 import com.nine.ironladders.common.utils.LadderProperties;
 import com.nine.ironladders.common.utils.LadderType;
-import com.nine.ironladders.common.utils.UpgradeType;
 import com.nine.ironladders.network.MorphPacket;
 import com.nine.ironladders.network.NetworkHandler;
 import net.minecraft.ChatFormatting;
@@ -15,7 +14,6 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -43,11 +41,9 @@ import java.util.Objects;
 
 public class MorphUpgradeItem extends Item {
 
-    UpgradeType type;
 
-    public MorphUpgradeItem(Properties properties, UpgradeType type) {
+    public MorphUpgradeItem(Properties properties) {
         super(properties);
-        this.type = type;
     }
 
     @Override
@@ -230,8 +226,9 @@ public class MorphUpgradeItem extends Item {
             tooltip.add(Component.translatable("ironladders.tooltip.hiding_upgrade.info_0").withStyle(ChatFormatting.GRAY));
             tooltip.add(Component.translatable("ironladders.tooltip.morph_upgrade.info_1", component3).withStyle(ChatFormatting.GRAY));
             tooltip.add(Component.translatable("ironladders.tooltip.morph_upgrade.info_3").withStyle(ChatFormatting.GRAY));
-            if (ModList.get().isLoaded("modernfix")) {
-                tooltip.add(Component.translatable("ironladders.tooltip.warning.modernfix").withStyle(ChatFormatting.RED));
+            if (ModList.get().getModContainerById("modernfix").isPresent()) {
+                Component mod = ClientHelper.componentWithColor(Component.literal(ModList.get().getModContainerById("modernfix").get().getModInfo().getDisplayName()), 0xf33838);
+                tooltip.add(Component.translatable("ironladders.tooltip.warning.modernfix", mod).withStyle(ChatFormatting.RED));
             }
         }
     }

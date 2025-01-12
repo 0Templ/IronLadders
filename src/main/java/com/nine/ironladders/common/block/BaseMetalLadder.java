@@ -2,7 +2,6 @@ package com.nine.ironladders.common.block;
 
 import com.nine.ironladders.ILConfig;
 import com.nine.ironladders.common.block.entity.MetalLadderEntity;
-import com.nine.ironladders.common.utils.BlockStateUtils;
 import com.nine.ironladders.common.utils.LadderPositions;
 import com.nine.ironladders.common.utils.LadderProperties;
 import com.nine.ironladders.common.utils.LadderType;
@@ -163,13 +162,11 @@ public class BaseMetalLadder extends LadderBlock implements EntityBlock {
             if (canGoDown || canGoUp) {
                 if (canGoUp) {
                     if ((hasActiveInARow(level, posAbove) || level.hasNeighborSignal(posAbove)) != stateAbove.getValue(LadderProperties.HAS_SIGNAL)) {
-                        stateAbove = BlockStateUtils.getStateWithSyncedProps(stateAbove, stateAbove);
                         level.setBlock(posAbove, stateAbove.cycle(LadderProperties.HAS_SIGNAL), 3);
                     }
                 }
                 if (canGoDown) {
                     if ((hasActiveInARow(level, posBelow) || level.hasNeighborSignal(posBelow)) != stateBelow.getValue(LadderProperties.HAS_SIGNAL)) {
-                        stateBelow = BlockStateUtils.getStateWithSyncedProps(stateBelow, stateBelow);
                         level.setBlock(posBelow, stateBelow.cycle(LadderProperties.HAS_SIGNAL), 3);
                     }
                 }
