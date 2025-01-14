@@ -29,7 +29,7 @@ public class IronLadders {
 
     public static final String MODID = "ironladders";
 
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public IronLadders(IEventBus modEventBus, Dist dist) {
         ModLoadingContext.get().getActiveContainer().registerConfig(ModConfig.Type.COMMON, ILConfig.COMMON);

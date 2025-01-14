@@ -1,6 +1,6 @@
 package com.nine.ironladders.compat.rei;
 
-import com.nine.ironladders.init.CreativeTabRegistry;
+import com.nine.ironladders.common.utils.TagHelper;
 import com.nine.ironladders.init.ItemRegistry;
 import me.shedaniel.rei.api.client.entry.filtering.base.BasicFilteringRule;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
@@ -18,7 +18,7 @@ public class ReiSetup implements REIClientPlugin {
 
     @Override
     public void registerBasicEntryFiltering(BasicFilteringRule<?> rule) {
-        for (Item item : CreativeTabRegistry.getItemsToHide()){
+        for (Item item : TagHelper.getItemsToHide()){
             rule.hide(EntryStacks.of(item));
         }
     }
@@ -30,7 +30,7 @@ public class ReiSetup implements REIClientPlugin {
 
     @Override
     public void registerEntries(EntryRegistry registry) {
-        for (Item item : CreativeTabRegistry.getItemsToHide()){
+        for (Item item : TagHelper.getItemsToHide()){
             registry.removeEntry(EntryStacks.of(item));
         }
     }

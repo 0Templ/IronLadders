@@ -1,6 +1,6 @@
 package com.nine.ironladders.mixin.client;
 
-import com.nine.ironladders.IronLadders;
+import com.nine.ironladders.client.ClientHelper;
 import com.nine.ironladders.common.item.MorphUpgradeItem;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.ItemModelShaper;
@@ -11,6 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.neoforged.fml.ModList;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -29,21 +30,32 @@ public class ItemRendererMixin {
 
     @Inject(method = "getModel", at = @At(value = "HEAD"), cancellable = true)
     public void getModel(ItemStack stack, @Nullable Level level, @Nullable LivingEntity entity, int seed, CallbackInfoReturnable<BakedModel> cir) {
-        if (stack.getItem() instanceof MorphUpgradeItem) {
-            if (!MorphUpgradeItem.getMorphType(stack).isEmpty()) {
-                BakedModel bakedmodel = itemModelShaper.getModelManager().getModel(getCustomMorphModel(MorphUpgradeItem.getMorphType(stack).split(":")[1]));
-                BakedModel bakedModelRet = bakedmodel.getOverrides().resolve(bakedmodel, stack, (ClientLevel) level, entity, seed);
-                if (bakedModelRet.getParticleIcon().contents().name().toString().equals("minecraft:missingno")) {
-                    cir.setReturnValue(itemModelShaper.getModelManager().getModel(getCustomMorphModel("unknown_ladder")));
-                    return;
+        if (!ModList.get().isLoaded("fabric_model_loading_api_v1")) {
+            if (stack.getItem() instanceof MorphUpgradeItem) {
+                String morphType = MorphUpgradeItem.getMorphType(stack);
+                if (!morphType.isEmpty()) {
+                    try {
+                        morphType = morphType.split(":")[1];
+                        var availableModels = ClientHelper.morphModels;
+                        if (!availableModels.isEmpty() && availableModels.containsKey(morphType)) {
+                            BakedModel bakedmodel = itemModelShaper.getModelManager().getModel(getCustomMorphModel(availableModels.get(morphType)));
+                            BakedModel bakedModelRet = bakedmodel.getOverrides().resolve(bakedmodel, stack, (ClientLevel) level, entity, seed);
+                            if (!bakedModelRet.getParticleIcon().contents().name().toString().equals("minecraft:missingno")) {
+                                cir.setReturnValue(bakedModelRet);
+                            }
+                        } else {
+                            cir.setReturnValue(itemModelShaper.getModelManager().getModel(getCustomMorphModel("ironladders:morph_ladders/morph_unknown_ladder")));
+                        }
+                    } catch (Exception e) {
+                        cir.setReturnValue(itemModelShaper.getModelManager().getModel(getCustomMorphModel("ironladders:morph_ladders/morph_unknown_ladder")));
+                    }
                 }
-                cir.setReturnValue(bakedModelRet);
             }
         }
     }
 
     @Unique
     private static ModelResourceLocation getCustomMorphModel(String name) {
-        return new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(IronLadders.MODID, "morph/morph_" + name), "inventory");
+        return new ModelResourceLocation(ResourceLocation.parse(name), "inventory");
     }
 }

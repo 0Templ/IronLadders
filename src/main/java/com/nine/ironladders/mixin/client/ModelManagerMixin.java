@@ -21,9 +21,7 @@ import static com.mojang.text2speech.Narrator.LOGGER;
 @Mixin(ModelManager.class)
 public class ModelManagerMixin {
 
-    @Inject(method = "loadModels", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/profiling/ProfilerFiller;popPush(Ljava/lang/String;)V",
-            ordinal = 1
-    ))
+    @Inject(method = "loadModels", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/profiling/ProfilerFiller;popPush(Ljava/lang/String;)V", ordinal = 1))
     private void ironladders$loadModels(ProfilerFiller profilerFiller, Map<ResourceLocation, AtlasSet.StitchResult> resultMap, ModelBakery modelBakery, CallbackInfoReturnable<ModelManager.ReloadState> cir) {
         modelBakery.bakedTopLevelModels.entrySet().stream()
                 .filter(entry -> "ironladders".equals(entry.getKey().id().getNamespace()))

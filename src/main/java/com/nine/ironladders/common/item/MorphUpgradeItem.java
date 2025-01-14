@@ -70,9 +70,9 @@ public class MorphUpgradeItem extends Item {
 
     private static void setMorphType(ItemStack stack, Level level, BlockPos pos, BlockState state) {
         String valueToSet = Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(state.getBlock())).toString();
-        Minecraft mc = Minecraft.getInstance();
         if (level.getBlockEntity(pos) instanceof MetalLadderEntity ladderEntity && ladderEntity.getMorphState() != null) {
             if (level.isClientSide) {
+                Minecraft mc = Minecraft.getInstance();
                 boolean ctrlPressed = (GLFW.glfwGetKey(mc.getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_ALT) == GLFW.GLFW_PRESS
                         || GLFW.glfwGetKey(mc.getWindow().getWindow(), GLFW.GLFW_KEY_RIGHT_ALT) == GLFW.GLFW_PRESS);
                 if (ctrlPressed) {

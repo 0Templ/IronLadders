@@ -1,4 +1,4 @@
-package com.nine.ironladders.mixin;
+package com.nine.ironladders.mixin.client;
 
 import com.nine.ironladders.client.ClientHelper;
 import com.nine.ironladders.common.item.MorphUpgradeItem;

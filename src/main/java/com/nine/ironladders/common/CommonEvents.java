@@ -26,21 +26,21 @@ public class CommonEvents {
         ItemStack stack = event.getItemStack();
         Level level = event.getLevel();
         Player player = event.getEntity();
-        if (event.getHand() == InteractionHand.MAIN_HAND && stack.getItem() instanceof MorphUpgradeItem morphUpgradeItem && !player.getCooldowns().isOnCooldown(morphUpgradeItem)) {
+        if (event.getHand() == InteractionHand.MAIN_HAND && stack.getItem() instanceof MorphUpgradeItem morphUpgradeItem && !player.getCooldowns().isOnCooldown(morphUpgradeItem) && player.isShiftKeyDown()) {
             BlockPos pos = event.getPos();
             BlockState state = level.getBlockState(pos);
             Block block = state.getBlock();
             if (block instanceof BaseMetalLadder baseMetalLadder) {
                 MetalLadderEntity entity = (MetalLadderEntity) level.getBlockEntity(pos);
-                if (player.isShiftKeyDown() && entity != null) {
+                if (entity != null) {
                     player.getCooldowns().addCooldown(morphUpgradeItem, 10);
                     if (morphUpgradeItem.morphSingleBlock(level, pos, stack)) {
                         level.playSound(null, pos, SoundEvents.LADDER_PLACE, SoundSource.PLAYERS, 1.0F, 1.0F);
                     }
                     morphUpgradeItem.morphMultipleLadders(entity, level, pos, state, stack);
                     baseMetalLadder.updateChain(level, pos);
-                    event.setCanceled(true);
                 }
+                event.setCanceled(true);
             }
         }
     }

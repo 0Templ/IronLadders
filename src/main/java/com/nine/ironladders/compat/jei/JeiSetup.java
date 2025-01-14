@@ -2,7 +2,7 @@ package com.nine.ironladders.compat.jei;
 
 
 import com.nine.ironladders.IronLadders;
-import com.nine.ironladders.init.CreativeTabRegistry;
+import com.nine.ironladders.common.utils.TagHelper;
 import com.nine.ironladders.init.ItemRegistry;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
@@ -31,16 +31,15 @@ public class JeiSetup implements IModPlugin {
             var recipesToHide = vanillaRecipeManager.getRecipes().stream()
                     .filter(holder -> holder.value() instanceof CraftingRecipe)
                     .map(holder -> (RecipeHolder<CraftingRecipe>) holder)
-                    .filter(recipe -> CreativeTabRegistry.getItemsToHide().contains(recipe.value().getResultItem(Minecraft.getInstance().getConnection().registryAccess()).getItem()))
+                    .filter(recipe -> TagHelper.getItemsToHide().contains(recipe.value().getResultItem(Minecraft.getInstance().getConnection().registryAccess()).getItem()))
                     .toList();
             recipeManager.hideRecipes(RecipeTypes.CRAFTING, recipesToHide);
         }
-
     }
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
-        registration.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, CreativeTabRegistry.getItemsToHide().stream().map(item -> item.asItem().getDefaultInstance()).toList());
+        registration.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, TagHelper.getItemsToHide().stream().map(item -> item.asItem().getDefaultInstance()).toList());
 
         registration.addIngredientInfo(new ItemStack(ItemRegistry.HIDE_UPGRADE_ITEM.get()), VanillaTypes.ITEM_STACK,
                 Component.translatable("ironladders.nei.hiding_upgrade.desc"));

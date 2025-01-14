@@ -31,7 +31,7 @@ public class BlockRegistry {
     public static final DeferredBlock<Block> WAXED_EXPOSED_COPPER_LADDER = register("waxed_exposed_copper_ladder",
             () -> new CopperLadderBlock(WeatheringCopper.WeatherState.EXPOSED, BlockBehaviour.Properties.of().strength(0.8F, 6.0F).sound(SoundType.COPPER).pushReaction(PushReaction.DESTROY).mapColor(MapColor.TERRACOTTA_LIGHT_GRAY)));
     public static final DeferredBlock<Block> WAXED_COPPER_LADDER = register("waxed_copper_ladder",
-            () -> new CopperLadderBlock(WeatheringCopper.WeatherState.UNAFFECTED, BlockBehaviour.Properties.of().strength(0.8F, 6.0F).sound(SoundType.COPPER).pushReaction(PushReaction.DESTROY).mapColor(MapColor.COLOR_ORANGE)));
+            () -> new CopperLadderBlock(WeatheringCopper.WeatherState.UNAFFECTED, BlockBehaviour.Properties.of().strength(0.8F, 6.0F).sound(SoundType.COPPER).pushReaction(PushReaction.DESTROY).mapColor(MapColor.TERRACOTTA_LIGHT_GRAY)));
 
     public static final DeferredBlock<Block> OXIDIZED_COPPER_LADDER = register("oxidized_copper_ladder",
             () -> new CopperLadderBlock(WeatheringCopper.WeatherState.OXIDIZED, BlockBehaviour.Properties.of().strength(0.8F, 6.0F).sound(SoundType.COPPER).pushReaction(PushReaction.DESTROY).mapColor(MapColor.WARPED_NYLIUM)));

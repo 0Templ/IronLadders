@@ -77,6 +77,9 @@ repositories {
         }
     }
     maven {
+        url "https://maven.su5ed.dev/releases"
+    }
+    maven {
         name = "TerraformersMC"
         url = "https://maven.terraformersmc.com/"
     }
@@ -93,19 +96,19 @@ dependencies {
     // JADE
     compileOnly "curse.maven:jade-324717:${jade_version}"
     // TOP
-    implementation "curse.maven:the-one-probe-245211:${the_one_probe_version}"
+    compileOnly "curse.maven:the-one-probe-245211:${the_one_probe_version}"
     // JEI
-    implementation("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
-    implementation("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+    compileOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+    compileOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
     // REI
-    compileOnly "curse.maven:architectury-api-419699:${architectury_version}"
-    compileOnly "curse.maven:cloth-config-348521:${cloth_config_version}"
-    compileOnly "me.shedaniel:RoughlyEnoughItems-neoforge:${rei_version}"
+    implementation "curse.maven:architectury-api-419699:${architectury_version}"
+    implementation "curse.maven:cloth-config-348521:${cloth_config_version}"
+    implementation "me.shedaniel:RoughlyEnoughItems-neoforge:${rei_version}"
     //EMI
     compileOnly "dev.emi:emi-neoforge:${emi_version}:api"
     compileOnly "dev.emi:emi-neoforge:${emi_version}"
     // ATO
-    compileOnly "curse.maven:ato-405593:${all_the_ores_version}"
+    implementation "curse.maven:ato-405593:${all_the_ores_version}"
     // Mekanism
     // implementation "mekanism:Mekanism:${minecraft_version}-${mekanism_version}"
     // QUARK
@@ -114,8 +117,12 @@ dependencies {
     }
     //CREATE
     //compileOnly "curse.maven:create-328085:${create_version}"
+
+    //Fabric api
+    //compileOnly "org.sinytra.forgified-fabric-api:forgified-fabric-api:0.107.0+2.0.22+1.21.1"
+
     // Modern Fix
-    implementation "curse.maven:modernfix-790626:${modernfix_version}"
+    compileOnly "curse.maven:modernfix-790626:${modernfix_version}"
 }
 
 tasks.withType(ProcessResources).configureEach {
