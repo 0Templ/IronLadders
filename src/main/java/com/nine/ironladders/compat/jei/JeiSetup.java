@@ -2,7 +2,7 @@ package com.nine.ironladders.compat.jei;
 
 
 import com.nine.ironladders.IronLadders;
-import com.nine.ironladders.init.CreativeTabRegistry;
+import com.nine.ironladders.common.utils.TagHelper;
 import com.nine.ironladders.init.ItemRegistry;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
@@ -30,7 +30,7 @@ public class JeiSetup implements IModPlugin {
             var recipesToHide = vanillaRecipeManager.getRecipes().stream()
                     .filter(recipe -> recipe instanceof CraftingRecipe)
                     .map(recipe -> (CraftingRecipe) recipe)
-                    .filter(recipe -> CreativeTabRegistry.getItemsToHide().contains(recipe.getResultItem(Minecraft.getInstance().getConnection().registryAccess()).getItem()))
+                    .filter(recipe -> TagHelper.getItemsToHide().contains(recipe.getResultItem(Minecraft.getInstance().getConnection().registryAccess()).getItem()))
                     .toList();
             IronLadders.LOGGER.info("Hiding {} recipes from JEI", recipesToHide.size());
             recipeManager.hideRecipes(RecipeTypes.CRAFTING, recipesToHide);
@@ -41,9 +41,8 @@ public class JeiSetup implements IModPlugin {
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
-        registration.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, CreativeTabRegistry.getItemsToHide().stream().map(item -> item.asItem().getDefaultInstance()).toList());
-        IronLadders.LOGGER.info("Hiding {} items from JEI", CreativeTabRegistry.getItemsToHide());
-
+        registration.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, TagHelper.getItemsToHide().stream().map(item -> item.asItem().getDefaultInstance()).toList());
+        IronLadders.LOGGER.info("Hiding {} items from JEI panel", TagHelper.getItemsToHide().size());
         registration.addIngredientInfo(new ItemStack(ItemRegistry.HIDE_UPGRADE_ITEM.get()), VanillaTypes.ITEM_STACK,
                 Component.translatable("ironladders.nei.hiding_upgrade.desc"));
         registration.addIngredientInfo(new ItemStack(ItemRegistry.LIGHT_UPGRADE_ITEM.get()), VanillaTypes.ITEM_STACK,

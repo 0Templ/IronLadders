@@ -1,4 +1,4 @@
-package com.nine.ironladders.mixin;
+package com.nine.ironladders.mixin.client;
 
 import com.nine.ironladders.client.ClientHelper;
 import com.nine.ironladders.common.item.MorphUpgradeItem;
@@ -24,14 +24,14 @@ public class AbstractContainerMenuMixin {
     @Inject(method = "doClick", at = @At("HEAD"), cancellable = true)
     private void ironladders$doClick(int slotId, int button, ClickType clickType, Player player, CallbackInfo ci) {
         AbstractContainerMenu containerMenu = (AbstractContainerMenu) (Object) this;
+        ItemStack heldItem = player.containerMenu.getCarried();
         if (ClientHelper.shiftPressed()) {
             if (slotId < 0) {
                 return;
             }
-            ItemStack heldItem = player.containerMenu.getCarried();
             Slot slot4 = containerMenu.slots.get(slotId);
             ItemStack itemStack7 = slot4.getItem();
-            if (itemStack7.getItem() instanceof BlockItem ladderBlock && heldItem.getItem() instanceof MorphUpgradeItem morphUpgradeItem) {
+            if (heldItem.getItem() instanceof MorphUpgradeItem &&  itemStack7.getItem() instanceof BlockItem ladderBlock) {
                 if (ladderBlock.getBlock() instanceof LadderBlock ladder) {
                     MorphUpgradeItem.writeMorphType(heldItem, Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(ladder)).toString());
                     if (!player.isSilent()) {

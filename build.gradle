@@ -3,6 +3,7 @@ plugins {
     id 'idea'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
     id 'org.spongepowered.mixin' version '0.7.+'
 }
 version = minecraft_version+"-"+mod_version+"-forge"
@@ -18,6 +19,7 @@ println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty '
 minecraft {
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
+    //mappings channel: mapping_channel, version: mapping_version
     mappings channel: mapping_channel, version: mapping_version
     copyIdeResources = true
 
@@ -100,24 +102,24 @@ dependencies {
     // TOP
     compileOnly fg.deobf("curse.maven:the-one-probe-245211:${the_one_probe_version}")
     // JEI
-    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
-    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
-    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
+    implementation fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+    implementation fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+    implementation fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
     // REI
     compileOnly fg.deobf("curse.maven:architectury-api-419699:${architectury_version}")
     compileOnly fg.deobf("curse.maven:cloth-config-348521:${cloth_config_version}")
     compileOnly fg.deobf("me.shedaniel:RoughlyEnoughItems-forge:${rei_version}")
     //EMI
-    implementation fg.deobf("dev.emi:emi-forge:${emi_version}:api")
-    implementation fg.deobf("dev.emi:emi-forge:${emi_version}")
+    compileOnly fg.deobf("dev.emi:emi-forge:${emi_version}:api")
+    compileOnly fg.deobf("dev.emi:emi-forge:${emi_version}")
     // ATO
     compileOnly fg.deobf("curse.maven:ato-405593:${all_the_ores_version}")
     // Mekanism
-    compileOnly fg.deobf("mekanism:Mekanism:${minecraft_version}-${mekanism_version}")
+    implementation fg.deobf("mekanism:Mekanism:${minecraft_version}-${mekanism_version}")
     // QUARK & ZETA
     if (!project.gradle.startParameter.taskNames.contains("runData") && !project.gradle.startParameter.taskNames.contains("runServer")){
-        runtimeOnly fg.deobf("curse.maven:quark-243121:${quark_version}")
-        runtimeOnly fg.deobf("curse.maven:zeta-968868:${zeta_version}")
+        compileOnly fg.deobf("curse.maven:quark-243121:${quark_version}")
+        compileOnly fg.deobf("curse.maven:zeta-968868:${zeta_version}")
     }
     //CREATE
     compileOnly fg.deobf("curse.maven:create-328085:${create_version}")

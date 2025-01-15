@@ -4,16 +4,19 @@
   "refmap": "ironladders.refmap.json",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "AbstractContainerMenuMixin",
+    "HoneycombItemMixin",
     "LightningBoltMixin",
     "LivingEntityMixin",
-    "PlayerMixin"
+    "PlayerMixin",
+    "ServerPlayerGameModeMixin"
   ],
   "minVersion": "0.8.5",
   "client": [
+    "client.AbstractContainerMenuMixin",
     "client.ItemRendererMixin",
     "client.ModelBakerImplAccessor",
     "client.ModelBakeryMixin",
-    "client.ModelManagerMixin"
+    "client.ModelManagerMixin",
+    "client.MultiPlayerGameModeMixin"
   ]
 }

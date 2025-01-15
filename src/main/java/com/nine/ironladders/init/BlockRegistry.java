@@ -23,7 +23,6 @@ import java.util.function.Supplier;
 
 public class BlockRegistry {
 
-
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, IronLadders.MODID);
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, IronLadders.MODID);
@@ -61,7 +60,6 @@ public class BlockRegistry {
     public static final RegistryObject<Block> BEDROCK_LADDER = register("bedrock_ladder",
             () -> new BaseMetalLadder(BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).pushReaction(PushReaction.BLOCK).mapColor(MapColor.STONE).noLootTable(), LadderType.NETHERITE));
 
-
     public static final RegistryObject<Block> STEEL_LADDER = register("steel_ladder",
             () -> new BaseMetalLadder(BlockBehaviour.Properties.of().strength(2F, 9.0F).sound(SoundType.METAL).requiresCorrectToolForDrops().pushReaction(PushReaction.DESTROY).mapColor(MapColor.DEEPSLATE), LadderType.STEEL));
     public static final RegistryObject<Block> TIN_LADDER = register("tin_ladder",
@@ -75,11 +73,11 @@ public class BlockRegistry {
     public static final RegistryObject<Block> ALUMINUM_LADDER = register("aluminum_ladder",
             () -> new BaseMetalLadder(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.METAL).pushReaction(PushReaction.DESTROY).mapColor(MapColor.TERRACOTTA_WHITE), LadderType.ALUMINUM));
 
-
     public static <T extends Block> RegistryObject<T> register(String name, Supplier<Block> block) {
         return register(name, block, new Item.Properties());
     }
 
+    @SuppressWarnings("unchecked")
     public static <T extends Block> RegistryObject<T> register(String name, Supplier<Block> block, Item.Properties props) {
         RegistryObject<? extends Block> ret = BLOCKS.register(name, block);
         ITEMS.register(name, () -> new BlockItem(ret.get(), props));

@@ -25,7 +25,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LadderBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -195,10 +194,6 @@ public class UpgradeItem extends Item {
             tooltip.add(Component.translatable("ironladders.tooltip.hiding_upgrade.info_0").withStyle(ChatFormatting.GRAY));
             tooltip.add(Component.translatable("ironladders.tooltip.morph_upgrade.info_1", component3).withStyle(ChatFormatting.GRAY));
             tooltip.add(Component.translatable("ironladders.tooltip.morph_upgrade.info_3").withStyle(ChatFormatting.GRAY));
-            if (ModList.get().getModContainerById("modernfix").isPresent()) {
-                Component mod = ClientHelper.componentWithColor(Component.literal(ModList.get().getModContainerById("modernfix").get().getModInfo().getDisplayName()), 0xf33838);
-                tooltip.add(Component.translatable("ironladders.tooltip.warning.modernfix", mod).withStyle(ChatFormatting.RED));
-            }
         }
     }
 }

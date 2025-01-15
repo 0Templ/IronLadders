@@ -15,9 +15,9 @@ public interface WeatheringLadder extends WeatheringCopper {
 
     Supplier<BiMap<Block, Block>> NEXT_BY_BLOCK = Suppliers.memoize(() -> ImmutableBiMap.<Block, Block>builder().put(BlockRegistry.COPPER_LADDER.get(), BlockRegistry.EXPOSED_COPPER_LADDER.get()).put(BlockRegistry.EXPOSED_COPPER_LADDER.get(), BlockRegistry.WEATHERED_COPPER_LADDER.get()).put(BlockRegistry.WEATHERED_COPPER_LADDER.get(), BlockRegistry.OXIDIZED_COPPER_LADDER.get()).build());
 
-    Supplier<BiMap<Block, Block>> WAXED = Suppliers.memoize(() -> ImmutableBiMap.<Block, Block>builder().put(BlockRegistry.COPPER_LADDER.get(), BlockRegistry.WAXED_COPPER_LADDER.get()).put(BlockRegistry.EXPOSED_COPPER_LADDER.get(), BlockRegistry.WAXED_EXPOSED_COPPER_LADDER.get()).put(BlockRegistry.WEATHERED_COPPER_LADDER.get(), BlockRegistry.WAXED_WEATHERED_COPPER_LADDER.get()).put(BlockRegistry.OXIDIZED_COPPER_LADDER.get(), BlockRegistry.WAXED_OXIDIZED_COPPER_LADDER.get()).build());
+    Supplier<BiMap<Block, Block>> WAXABLES = Suppliers.memoize(() -> ImmutableBiMap.<Block, Block>builder().put(BlockRegistry.COPPER_LADDER.get(), BlockRegistry.WAXED_COPPER_LADDER.get()).put(BlockRegistry.EXPOSED_COPPER_LADDER.get(), BlockRegistry.WAXED_EXPOSED_COPPER_LADDER.get()).put(BlockRegistry.WEATHERED_COPPER_LADDER.get(), BlockRegistry.WAXED_WEATHERED_COPPER_LADDER.get()).put(BlockRegistry.OXIDIZED_COPPER_LADDER.get(), BlockRegistry.WAXED_OXIDIZED_COPPER_LADDER.get()).build());
 
-    Supplier<BiMap<Block, Block>> UNWAXED = Suppliers.memoize(() -> WAXED.get().inverse());
+    Supplier<BiMap<Block, Block>> WAX_OFF_BY_BLOCK = Suppliers.memoize(() -> WAXABLES.get().inverse());
 
     Supplier<BiMap<Block, Block>> PREVIOUS_BY_BLOCK = Suppliers.memoize(() -> NEXT_BY_BLOCK.get().inverse());
 
@@ -29,20 +29,12 @@ public interface WeatheringLadder extends WeatheringCopper {
         return getWaxed(state.getBlock()).map((block) -> block.withPropertiesOf(state));
     }
 
-    static Optional<BlockState> getUnWaxed(BlockState state) {
-        return getUnWaxed(state.getBlock()).map((block) -> block.withPropertiesOf(state));
-    }
-
     static Optional<Block> getWaxed(Block block) {
-        return Optional.ofNullable(WAXED.get().get(block));
-    }
-
-    static Optional<Block> getUnWaxed(Block block) {
-        return Optional.ofNullable(UNWAXED.get().get(block));
+        return Optional.ofNullable(WAXABLES.get().get(block));
     }
 
     static Optional<BlockState> getPrevious(BlockState state) {
-        return getPrevious(state.getBlock()).map((p_154903_) -> p_154903_.withPropertiesOf(state));
+        return getPrevious(state.getBlock()).map((block) -> block.withPropertiesOf(state));
     }
 
     static Optional<Block> getNext(Block block) {

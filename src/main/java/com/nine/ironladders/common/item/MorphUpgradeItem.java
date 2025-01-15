@@ -69,6 +69,24 @@ public class MorphUpgradeItem extends Item {
         return InteractionResult.FAIL;
     }
 
+    public void morphMultipleLadders(Player player, ItemStack stack, Level level, BlockPos pos){
+        if (!player.getCooldowns().isOnCooldown(this) && player.isShiftKeyDown()) {
+            BlockState state = level.getBlockState(pos);
+            Block block = state.getBlock();
+            if (block instanceof BaseMetalLadder baseMetalLadder) {
+                MetalLadderEntity entity = (MetalLadderEntity) level.getBlockEntity(pos);
+                if (entity != null) {
+                    player.getCooldowns().addCooldown(this, 10);
+                    if (this.morphSingleBlock(level, pos, stack)) {
+                        level.playSound(null, pos, SoundEvents.LADDER_PLACE, SoundSource.PLAYERS, 1.0F, 1.0F);
+                    }
+                    this.morphBlocks(entity, level, pos, state, stack);
+                    baseMetalLadder.updateChain(level, pos);
+                }
+            }
+        }
+    }
+
     private static void setMorphType(ItemStack stack, Level level, BlockPos pos, BlockState state) {
         String valueToSet = Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(state.getBlock())).toString();
         Minecraft mc = Minecraft.getInstance();
@@ -108,7 +126,7 @@ public class MorphUpgradeItem extends Item {
         return false;
     }
 
-    public void morphMultipleLadders(MetalLadderEntity entity, Level level, BlockPos blockPos, BlockState state, ItemStack stack) {
+    public void morphBlocks(MetalLadderEntity entity, Level level, BlockPos blockPos, BlockState state, ItemStack stack) {
         int height = 1;
         boolean canGoUp = true;
         boolean canGoDown = true;

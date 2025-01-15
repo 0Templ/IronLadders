@@ -1,22 +1,14 @@
 package com.nine.ironladders.init;
 
-import com.nine.ironladders.ILConfig;
 import com.nine.ironladders.IronLadders;
+import com.nine.ironladders.common.utils.TagHelper;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class CreativeTabRegistry {
 
@@ -60,77 +52,30 @@ public class CreativeTabRegistry {
                     output.accept(BlockRegistry.BEDROCK_LADDER.get());
                 }
                 output.accept(BlockRegistry.NETHERITE_LADDER.get());
-
                 //Non vanilla
-
-                if (hasMaterial(new ResourceLocation("forge:ingots/tin"))) {
+                if (TagHelper.hasMaterial(TagHelper.tin)) {
                     output.accept(ItemRegistry.WOOD_TIN_UPGRADE.get());
                     output.accept(BlockRegistry.TIN_LADDER.get());
                 }
-                if (hasMaterial(new ResourceLocation("forge:ingots/bronze"))) {
+                if (TagHelper.hasMaterial(TagHelper.bronze)) {
                     output.accept(ItemRegistry.WOOD_BRONZE_UPGRADE.get());
                     output.accept(BlockRegistry.BRONZE_LADDER.get());
                 }
-                if (hasMaterial(new ResourceLocation("forge:ingots/lead"))) {
+                if (TagHelper.hasMaterial(TagHelper.lead)) {
                     output.accept(ItemRegistry.WOOD_LEAD_UPGRADE.get());
                     output.accept(BlockRegistry.LEAD_LADDER.get());
                 }
-                if (hasMaterial(new ResourceLocation("forge:ingots/steel"))) {
+                if (TagHelper.hasMaterial(TagHelper.steel)) {
                     output.accept(ItemRegistry.WOOD_STEEL_UPGRADE.get());
                     output.accept(BlockRegistry.STEEL_LADDER.get());
                 }
-                if (hasMaterial(new ResourceLocation("forge:ingots/aluminum"))) {
+                if (TagHelper.hasMaterial(TagHelper.aluminum)) {
                     output.accept(ItemRegistry.WOOD_ALUMINUM_UPGRADE.get());
                     output.accept(BlockRegistry.ALUMINUM_LADDER.get());
                 }
-                if (hasMaterial(new ResourceLocation("forge:ingots/silver"))) {
+                if (TagHelper.hasMaterial(TagHelper.silver)) {
                     output.accept(ItemRegistry.WOOD_SILVER_UPGRADE.get());
                     output.accept(BlockRegistry.SILVER_LADDER.get());
                 }
             }).build());
-
-    public static boolean hasMaterial(ResourceLocation tagLocation) {
-        if (!ILConfig.hideUncraftableLadders.get()) {
-            return true;
-        }
-        TagKey<Item> tag = ItemTags.create(tagLocation);
-        for (Item item : ForgeRegistries.ITEMS) {
-            if (item.builtInRegistryHolder().is(tag)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public static List<Item> getItemsToHide(){
-        List<Item> items = new ArrayList<>();
-        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/tin"))) {
-            items.add(ItemRegistry.WOOD_TIN_UPGRADE.get());
-            items.add(BlockRegistry.TIN_LADDER.get().asItem());
-        }
-        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/bronze"))) {
-            items.add(ItemRegistry.WOOD_BRONZE_UPGRADE.get());
-            items.add(BlockRegistry.BRONZE_LADDER.get().asItem());
-        }
-        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/lead"))) {
-            items.add(ItemRegistry.WOOD_LEAD_UPGRADE.get());
-            items.add(BlockRegistry.LEAD_LADDER.get().asItem());
-        }
-        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/steel"))) {
-            items.add(ItemRegistry.WOOD_STEEL_UPGRADE.get());
-            items.add(BlockRegistry.STEEL_LADDER.get().asItem());
-        }
-        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/aluminum"))) {
-            items.add(ItemRegistry.WOOD_ALUMINUM_UPGRADE.get());
-            items.add(BlockRegistry.ALUMINUM_LADDER.get().asItem());
-        }
-        if (!CreativeTabRegistry.hasMaterial(new ResourceLocation("forge:ingots/silver"))) {
-            items.add(ItemRegistry.WOOD_SILVER_UPGRADE.get());
-            items.add(BlockRegistry.SILVER_LADDER.get().asItem());
-        }
-        items.add(BlockRegistry.CRYING_OBSIDIAN_LADDER.get().asItem());
-        items.add(BlockRegistry.BEDROCK_LADDER.get().asItem());
-
-        return items;
-    }
 }
