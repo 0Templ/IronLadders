@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "ironladders:item/gold_ladder"
+  }
+}

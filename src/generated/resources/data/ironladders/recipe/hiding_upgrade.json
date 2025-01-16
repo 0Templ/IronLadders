@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": "#c:dyes/white",
+    "G": "#c:glass_blocks/cheap",
+    "L": "minecraft:ladder"
+  },
+  "pattern": [
+    " GD",
+    " GG",
+    "L  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "ironladders:hiding_upgrade"
+  }
+}

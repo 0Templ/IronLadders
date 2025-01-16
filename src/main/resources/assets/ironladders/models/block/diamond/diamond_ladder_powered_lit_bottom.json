@@ -1,0 +1,9 @@
+{
+  "parent": "ironladders:block/template/template_ladder_powered_lit_bottom",
+  "textures": {
+    "light": "ironladders:block/ladder_lit",
+    "power": "ironladders:block/diamond/ladder_powered_diamond",
+    "particle": "ironladders:block/diamond/diamond_ladder",
+    "texture": "ironladders:block/diamond/diamond_ladder"
+  }
+}

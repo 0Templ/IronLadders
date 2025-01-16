@@ -1,0 +1,7 @@
+{
+  "parent": "ironladders:block/template/template_ladder",
+  "textures": {
+    "particle": "ironladders:block/silver/silver_ladder",
+    "texture": "ironladders:block/silver/silver_ladder"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "#c:ingots/silver",
+    "L": "#ironladders:upgrades_to_gold_upgrade"
+  },
+  "pattern": [
+    " II",
+    " II",
+    "L  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "ironladders:wood_silver_upgrade"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "values": {
+    "ironladders:copper_ladder": {
+      "next_oxidation_stage": "ironladders:exposed_copper_ladder"
+    },
+    "ironladders:exposed_copper_ladder": {
+      "next_oxidation_stage": "ironladders:weathered_copper_ladder"
+    },
+    "ironladders:weathered_copper_ladder": {
+      "next_oxidation_stage": "ironladders:oxidized_copper_ladder"
+    }
+  }
+}

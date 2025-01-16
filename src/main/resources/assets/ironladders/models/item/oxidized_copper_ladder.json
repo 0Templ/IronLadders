@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ironladders:block/oxidized_copper/oxidized_copper_ladder"
+  }
+}

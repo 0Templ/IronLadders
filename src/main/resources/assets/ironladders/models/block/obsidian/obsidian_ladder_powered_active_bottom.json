@@ -1,0 +1,8 @@
+{
+  "parent": "ironladders:block/template/template_ladder_powered_active_bottom",
+  "textures": {
+    "power": "ironladders:block/obsidian/ladder_powered_obsidian_active",
+    "particle": "ironladders:block/obsidian/obsidian_ladder",
+    "texture": "ironladders:block/obsidian/obsidian_ladder"
+  }
+}

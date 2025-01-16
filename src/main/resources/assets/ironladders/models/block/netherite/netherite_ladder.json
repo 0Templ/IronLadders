@@ -1,0 +1,7 @@
+{
+  "parent": "ironladders:block/template/template_ladder",
+  "textures": {
+    "particle": "ironladders:block/netherite/netherite_ladder",
+    "texture": "ironladders:block/netherite/netherite_ladder"
+  }
+}

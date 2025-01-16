@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": "minecraft:ladder",
+    "P": "minecraft:paper",
+    "S": "#c:slime_balls"
+  },
+  "pattern": [
+    " SP",
+    " SS",
+    "L  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "ironladders:morph_upgrade"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "#c:ingots/netherite",
+    "L": "#ironladders:upgrades_to_netherite_upgrade"
+  },
+  "pattern": [
+    " II",
+    " II",
+    "L  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "ironladders:wood_netherite_upgrade"
+  }
+}

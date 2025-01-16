@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "ironladders:item/exposed_copper_ladder"
+  }
+}

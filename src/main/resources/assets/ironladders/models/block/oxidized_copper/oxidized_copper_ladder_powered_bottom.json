@@ -1,0 +1,8 @@
+{
+  "parent": "ironladders:block/template/template_ladder_powered_bottom",
+  "textures": {
+    "power": "ironladders:block/oxidized_copper/ladder_powered_oxidized_copper",
+    "particle": "ironladders:block/oxidized_copper/oxidized_copper_ladder",
+    "texture": "ironladders:block/oxidized_copper/oxidized_copper_ladder"
+  }
+}
