@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
+import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -34,26 +35,11 @@ public class ClientHelper {
         return component.copy().withStyle(style);
     }
 
-    public static void spawnMorphParticles(BlockPos blockPos, BlockState state, Level level) {
-        if (level.isClientSide) {
-            VoxelShape shape = state.getShape(level, blockPos);
-            RandomSource random = level.random;
-            shape.forAllBoxes((minX, minY, minZ, maxX, maxY, maxZ) -> {
-                for (int i = 0; i < 7; i++) {
-                    double x = blockPos.getX() + random.nextDouble() * (maxX - minX) + minX;
-                    double y = blockPos.getY() + random.nextDouble() * (maxY - minY) + minY;
-                    double z = blockPos.getZ() + random.nextDouble() * (maxZ - minZ) + minZ;
-                    level.addParticle(
-                            new BlockParticleOption(ParticleTypes.BLOCK, state),
-                            x, y, z,
-                            0.0, 0.0, 0.0
-                    );
-                }
-            });
-        }
+    public static void addParticles(BlockPos blockPos, BlockState state, Level level) {
+        addParticles(blockPos, state, level, new BlockParticleOption(ParticleTypes.BLOCK, state));
     }
 
-    public static void spawnUpgradeParticles(BlockPos blockPos, BlockState state, Level level) {
+    public static void addParticles(BlockPos blockPos, BlockState state, Level level, ParticleOptions particleOptions) {
         if (level.isClientSide) {
             VoxelShape shape = state.getShape(level, blockPos);
             RandomSource random = level.random;
@@ -63,7 +49,7 @@ public class ClientHelper {
                     double y = blockPos.getY() + random.nextDouble() * (maxY - minY) + minY;
                     double z = blockPos.getZ() + random.nextDouble() * (maxZ - minZ) + minZ;
                     level.addParticle(
-                            ParticleTypes.HAPPY_VILLAGER,
+                            particleOptions,
                             x, y, z,
                             0.0, 0.0, 0.0
                     );

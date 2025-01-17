@@ -3,6 +3,7 @@
   "package": "com.nine.ironladders.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
+    "client.AbstractContainerMenuMixin",
     "client.ItemModelResolverMixin",
     "client.MultiPlayerGameModeMixin"
   ],
@@ -12,8 +13,7 @@
     "HoneycombItemMixin",
     "LivingEntityMixin",
     "PlayerMixin",
-    "ServerPlayerGameModeMixin",
-    "client.AbstractContainerMenuMixin"
+    "ServerPlayerGameModeMixin"
   ],
   "injectors": {
     "defaultRequire": 1

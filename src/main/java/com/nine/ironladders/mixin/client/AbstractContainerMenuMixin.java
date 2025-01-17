@@ -31,7 +31,7 @@ public class AbstractContainerMenuMixin {
             ItemStack heldItem = player.containerMenu.getCarried();
             Slot slot4 = containerMenu.slots.get(slotId);
             ItemStack itemStack7 = slot4.getItem();
-            if (itemStack7.getItem() instanceof BlockItem ladderBlock && heldItem.getItem() instanceof MorphUpgradeItem morphUpgradeItem) {
+            if (itemStack7.getItem() instanceof BlockItem ladderBlock && heldItem.getItem() instanceof MorphUpgradeItem) {
                 if (ladderBlock.getBlock() instanceof LadderBlock ladder) {
                     MorphUpgradeItem.writeMorphType(heldItem, Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(ladder)).toString());
                     if (!player.isSilent()) {

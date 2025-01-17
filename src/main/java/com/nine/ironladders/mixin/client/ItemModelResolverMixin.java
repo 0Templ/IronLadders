@@ -33,9 +33,6 @@ public abstract class ItemModelResolverMixin {
     @Final
     private Function<ResourceLocation, ItemModel> modelGetter;
 
-    @Shadow
-    private static void fixupSkullProfile(ItemStack stack) {
-    }
 
     @Unique
     private ResourceManager resourceManager;

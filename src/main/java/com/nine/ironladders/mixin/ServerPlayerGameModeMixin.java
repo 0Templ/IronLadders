@@ -24,17 +24,19 @@ public class ServerPlayerGameModeMixin {
     @Shadow protected ServerLevel level;
 
     @Inject(method = "handleBlockBreakAction", at = @At("HEAD"), cancellable = true)
-    public void handleBlockBreakAction(BlockPos pos, ServerboundPlayerActionPacket.Action action, Direction face, int maxBuildHeight, int sequence, CallbackInfo ci) {
+    public void ironladders$handleBlockBreakAction(BlockPos pos, ServerboundPlayerActionPacket.Action action, Direction face, int maxBuildHeight, int sequence, CallbackInfo ci) {
         ItemStack stack = player.getMainHandItem();
         if (action == ServerboundPlayerActionPacket.Action.START_DESTROY_BLOCK &&
                 stack.getItem() instanceof MorphUpgradeItem morphUpgradeItem &&
                 player.isShiftKeyDown() &&
                 level.getBlockState(pos).getBlock() instanceof BaseMetalLadder
         ){
-            if (!player.getCooldowns().isOnCooldown(stack) && player.isShiftKeyDown()) {
+            if (!player.getCooldowns().isOnCooldown(stack)) {
                 morphUpgradeItem.morphMultipleLadders(player, stack, level, pos);
             }
-            ci.cancel();
+            if (player.isCreative()){
+                ci.cancel();
+            }
         }
     }
 }
