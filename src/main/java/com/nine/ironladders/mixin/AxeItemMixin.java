@@ -1,5 +1,6 @@
 package com.nine.ironladders.mixin;
 
+import com.nine.ironladders.common.block.BaseMetalLadder;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -18,7 +19,7 @@ public class AxeItemMixin {
     @Inject(method = "useOn", at = @At(value = "INVOKE", target = "Lnet/minecraft/advancements/critereon/ItemUsedOnLocationTrigger;trigger(Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/item/ItemStack;)V"))
     private void ironladders$useOn(UseOnContext context, CallbackInfoReturnable<InteractionResult> cir) {
         Player player = context.getPlayer();
-        if (player instanceof ServerPlayer serverPlayer){
+        if (player instanceof ServerPlayer serverPlayer && context.getLevel().getBlockState(context.getClickedPos()).getBlock() instanceof BaseMetalLadder){
             ResourceLocation advancementId = ResourceLocation.fromNamespaceAndPath("minecraft", "husbandry/wax_off");
             AdvancementHolder advancement = serverPlayer.server.getAdvancements().get(advancementId);
             if (advancement != null) {

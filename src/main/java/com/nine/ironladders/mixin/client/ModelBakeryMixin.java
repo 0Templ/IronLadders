@@ -19,9 +19,11 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public abstract class ModelBakeryMixin {
 
 
-    @Shadow public abstract UnbakedModel getModel(ResourceLocation modelLocation);
+    @Shadow
+    public abstract UnbakedModel getModel(ResourceLocation modelLocation);
 
-    @Shadow protected abstract void registerModelAndLoadDependencies(ModelResourceLocation modelLocation, UnbakedModel model);
+    @Shadow
+    protected abstract void registerModelAndLoadDependencies(ModelResourceLocation modelLocation, UnbakedModel model);
 
     @Redirect(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/profiling/ProfilerFiller;push(Ljava/lang/String;)V"))
     private void ModelBakery(ProfilerFiller instance, String s) {
@@ -29,14 +31,14 @@ public abstract class ModelBakeryMixin {
             ResourceManager resourceManager = Minecraft.getInstance().getResourceManager();
             ClientHelper.initializeMorphModels(resourceManager);
             for (var entry : ClientHelper.morphModels.entrySet()) {
-                loadItemModelAndDependencies_fabric(ResourceLocation.parse(entry.getValue()));
+                loadItemModelAndDependencies(ResourceLocation.parse(entry.getValue()));
             }
         }
         instance.push("missing_model");
     }
 
     @Unique
-    private void loadItemModelAndDependencies_fabric(ResourceLocation modelLocation) {
+    private void loadItemModelAndDependencies(ResourceLocation modelLocation) {
         ModelResourceLocation modelresourcelocation = ModelResourceLocation.inventory(modelLocation);
         ResourceLocation resourcelocation = modelLocation.withPrefix("item/");
         UnbakedModel unbakedmodel = getModel(resourcelocation);

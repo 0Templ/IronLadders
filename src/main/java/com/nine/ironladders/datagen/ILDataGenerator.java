@@ -26,6 +26,6 @@ public class ILDataGenerator {
         generator.addProvider(event.includeServer(), new ILItemTagProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter()));
         generator.addProvider(event.includeServer(), new ILRecipeProvider(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new ILLootGenerator(packOutput, lookupProvider));
-        generator.addProvider(event.includeServer(), new ILDataMapsPapProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new ILDataMapsProvider(packOutput, lookupProvider));
     }
 }

@@ -44,14 +44,19 @@ public class ItemRendererMixin {
                                 cir.setReturnValue(bakedModelRet);
                             }
                         } else {
-                            cir.setReturnValue(itemModelShaper.getModelManager().getModel(getCustomMorphModel("ironladders:morph_ladders/morph_unknown_ladder")));
+                            cir.setReturnValue(unknownMorphLadder());
                         }
                     } catch (Exception e) {
-                        cir.setReturnValue(itemModelShaper.getModelManager().getModel(getCustomMorphModel("ironladders:morph_ladders/morph_unknown_ladder")));
+                        cir.setReturnValue(unknownMorphLadder());
                     }
                 }
             }
         }
+    }
+
+    @Unique
+    private BakedModel unknownMorphLadder(){
+        return itemModelShaper.getModelManager().getModel(getCustomMorphModel("ironladders:morph_ladders/morph_unknown_ladder"));
     }
 
     @Unique

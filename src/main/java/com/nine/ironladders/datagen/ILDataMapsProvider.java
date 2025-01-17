@@ -10,9 +10,9 @@ import net.neoforged.neoforge.registries.datamaps.builtin.Waxable;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ILDataMapsPapProvider extends DataMapProvider {
+public class ILDataMapsProvider extends DataMapProvider {
 
-    protected ILDataMapsPapProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+    protected ILDataMapsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(packOutput, lookupProvider);
     }
 

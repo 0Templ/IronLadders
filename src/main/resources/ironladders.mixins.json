@@ -8,14 +8,16 @@
     "client.ItemRendererMixin",
     "client.ModelBakerImplAccessor",
     "client.ModelBakeryMixin",
-    "client.ModelManagerMixin"
+    "client.ModelManagerMixin",
+    "client.MultiPlayerGameModeMixin"
   ],
   "minVersion": "0.8",
   "mixins": [
     "AxeItemMixin",
     "HoneycombItemMixin",
     "LivingEntityMixin",
-    "PlayerMixin"
+    "PlayerMixin",
+    "ServerPlayerGameModeMixin"
   ],
   "injectors": {
     "defaultRequire": 1
