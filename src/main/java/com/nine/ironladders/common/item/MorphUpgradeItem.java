@@ -13,8 +13,12 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.BlockParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
@@ -31,7 +35,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.ModList;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.lwjgl.glfw.GLFW;
@@ -62,40 +65,37 @@ public class MorphUpgradeItem extends Item {
                 setMorphType(stack, level, blockPos, blockState);
             } else if (block instanceof BaseMetalLadder) {
                 if (morphSingleBlock(level, blockPos, stack)) {
-                    level.playSound(null, blockPos, SoundEvents.LADDER_PLACE, SoundSource.PLAYERS, 1.0F, 1.0F);
+                    playMorphPlaceSound(stack, level, blockPos);
                 }
             }
         }
         return InteractionResult.FAIL;
     }
 
-    public void morphMultipleLadders(Player player, ItemStack stack, Level level, BlockPos pos){
-        if (!player.getCooldowns().isOnCooldown(this) && player.isShiftKeyDown()) {
-            BlockState state = level.getBlockState(pos);
-            Block block = state.getBlock();
-            if (block instanceof BaseMetalLadder baseMetalLadder) {
-                MetalLadderEntity entity = (MetalLadderEntity) level.getBlockEntity(pos);
-                if (entity != null) {
-                    player.getCooldowns().addCooldown(this, 10);
-                    if (this.morphSingleBlock(level, pos, stack)) {
-                        level.playSound(null, pos, SoundEvents.LADDER_PLACE, SoundSource.PLAYERS, 1.0F, 1.0F);
-                    }
-                    this.morphBlocks(entity, level, pos, state, stack);
-                    baseMetalLadder.updateChain(level, pos);
-                }
+    private void playMorphPlaceSound(ItemStack stack, Level level, BlockPos pos){
+        Block block = BuiltInRegistries.BLOCK.get(new ResourceLocation(getMorphType(stack)));
+        SoundEvent event = SoundEvents.LADDER_PLACE;
+        if (block != null) {
+            event = block.soundType.getPlaceSound();
+        }
+        if (level.getBlockEntity(pos) instanceof MetalLadderEntity entity){
+            BlockState morphState = entity.getMorphState();
+            if (morphState == null){
+                event = level.getBlockState(pos).getBlock().soundType.getPlaceSound();
             }
         }
+        level.playSound(null, pos, event, SoundSource.PLAYERS, 1.0F, 1.0F);
     }
 
     private static void setMorphType(ItemStack stack, Level level, BlockPos pos, BlockState state) {
-        String valueToSet = Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(state.getBlock())).toString();
-        Minecraft mc = Minecraft.getInstance();
+        String valueToSet = Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(state.getBlock())).toString();
         if (level.getBlockEntity(pos) instanceof MetalLadderEntity ladderEntity && ladderEntity.getMorphState() != null) {
             if (level.isClientSide) {
+                Minecraft mc = Minecraft.getInstance();
                 boolean ctrlPressed = (GLFW.glfwGetKey(mc.getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_ALT) == GLFW.GLFW_PRESS
                         || GLFW.glfwGetKey(mc.getWindow().getWindow(), GLFW.GLFW_KEY_RIGHT_ALT) == GLFW.GLFW_PRESS);
                 if (ctrlPressed) {
-                    valueToSet = Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(ladderEntity.getMorphState().getBlock())).toString();
+                    valueToSet = Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(ladderEntity.getMorphState().getBlock())).toString();
                 }
                 NetworkHandler.CHANNEL.sendToServer(new MorphPacket(valueToSet));
                 writeMorphType(stack, valueToSet);
@@ -107,23 +107,44 @@ public class MorphUpgradeItem extends Item {
 
     public boolean morphSingleBlock(Level level, BlockPos blockPos, ItemStack stack) {
         if (level.getBlockEntity(blockPos) instanceof MetalLadderEntity metalLadderEntity) {
-            Block block1 = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(getMorphType(stack)));
+            Block block1 = BuiltInRegistries.BLOCK.get(new ResourceLocation(getMorphType(stack)));
             Block block2 = level.getBlockState(blockPos).getBlock();
+            BlockState morphState = metalLadderEntity.getMorphState();
             if (block1 != null) {
                 if (block1 == block2) {
-                    if (metalLadderEntity.getMorphState() != null) {
+                    if (morphState != null) {
                         metalLadderEntity.setMorphState(null);
-                        ClientHelper.spawnMorphParticles(blockPos, block2.defaultBlockState(), level);
+                        ClientHelper.addParticles(blockPos, block2.defaultBlockState(), level, new BlockParticleOption(ParticleTypes.BLOCK, block2.defaultBlockState()));
+                        return true;
                     }
                     return false;
                 }
                 BlockState state = block1.withPropertiesOf(level.getBlockState(blockPos));
-                metalLadderEntity.setMorphState((metalLadderEntity.getMorphState() != null && metalLadderEntity.getMorphState().is(state.getBlock())) ? null : state);
-                ClientHelper.spawnMorphParticles(blockPos, metalLadderEntity.getMorphState() != null && metalLadderEntity.getMorphState().is(state.getBlock()) ? state : level.getBlockState(blockPos), level);
+                metalLadderEntity.setMorphState((morphState != null && morphState.is(state.getBlock())) ? null : state);
+                morphState = metalLadderEntity.getMorphState();
+                ClientHelper.addParticles(blockPos, morphState != null && morphState.is(state.getBlock()) ? state : level.getBlockState(blockPos), level);
                 return true;
             }
         }
         return false;
+    }
+
+    public void morphMultipleLadders(Player player, ItemStack stack, Level level, BlockPos pos){
+        if (!player.getCooldowns().isOnCooldown(this) && player.isShiftKeyDown()) {
+            BlockState state = level.getBlockState(pos);
+            Block block = state.getBlock();
+            if (block instanceof BaseMetalLadder baseMetalLadder) {
+                MetalLadderEntity entity = (MetalLadderEntity) level.getBlockEntity(pos);
+                if (entity != null) {
+                    player.getCooldowns().addCooldown(this, 10);
+                    if (this.morphSingleBlock(level, pos, stack)) {
+                        playMorphPlaceSound(stack, level, pos);
+                    }
+                    this.morphBlocks(entity, level, pos, state, stack);
+                    baseMetalLadder.updateChain(level, pos);
+                }
+            }
+        }
     }
 
     public void morphBlocks(MetalLadderEntity entity, Level level, BlockPos blockPos, BlockState state, ItemStack stack) {

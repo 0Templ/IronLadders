@@ -8,7 +8,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -16,34 +15,20 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(MultiPlayerGameMode.class)
 public class MultiPlayerGameModeMixin {
 
-    @Inject(
-            method = "destroyBlock",
-            at = @At(value = "HEAD"
-            ),
-            cancellable = true
-    )
-    public void destroyBlock(BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
+    @Inject(method = "destroyBlock", at = @At(value = "HEAD"), cancellable = true)
+    public void ironladders$destroyBlock(BlockPos loc, CallbackInfoReturnable<Boolean> cir) {
         Player player = Minecraft.getInstance().player;
-        if (
-                player != null &&
-                        player.isShiftKeyDown() &&
-                        player.getMainHandItem().getItem() instanceof MorphUpgradeItem &&
-                        player.level().getBlockState(pos).getBlock() instanceof BaseMetalLadder
+        if (player == null) return;
+        ItemStack stack = player.getMainHandItem();
+        if (player.isShiftKeyDown() &&
+                stack.getItem() instanceof MorphUpgradeItem morphUpgradeItem &&
+                player.level().getBlockState(loc).getBlock() instanceof BaseMetalLadder &&
+                player.isCreative()
         ) {
-            if (!player.getCooldowns().isOnCooldown(player.getMainHandItem().getItem())) {
-                multipleMorph(player, pos);
-            }
-            cir.setReturnValue(false);
-        }
-    }
-
-    @Unique
-    private void multipleMorph(Player player, BlockPos loc) {
-        if (player != null && player.isShiftKeyDown()) {
-            ItemStack stack = player.getMainHandItem();
-            if (stack.getItem() instanceof MorphUpgradeItem morphUpgradeItem && !player.getCooldowns().isOnCooldown(morphUpgradeItem)) {
+            if (!player.getCooldowns().isOnCooldown(morphUpgradeItem)) {
                 morphUpgradeItem.morphMultipleLadders(player, stack, Minecraft.getInstance().level, loc);
             }
+            cir.setReturnValue(false);
         }
     }
 }

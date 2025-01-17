@@ -10,6 +10,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -89,7 +90,7 @@ public class UpgradeItem extends Item {
     private static void upgradeSingleBlock(Level level, Player player, BlockPos blockPos, BlockState upgradeState, ItemStack stack) {
         level.removeBlock(blockPos, false);
         level.setBlock(blockPos, upgradeState, 3);
-        ClientHelper.spawnUpgradeParticles(blockPos, upgradeState, level);
+        ClientHelper.addParticles(blockPos, upgradeState, level, ParticleTypes.HAPPY_VILLAGER);
         level.playSound(null, blockPos, SoundEvents.LADDER_PLACE, SoundSource.BLOCKS, 1F, 0.9F + level.random.nextFloat() * 0.2F);
         if (!player.getAbilities().instabuild) {
             stack.hurt(1, level.getRandom(), null);
