@@ -191,10 +191,10 @@ public class UpgradeItem extends Item {
         Component component2 = Component.translatable("ironladders.tooltip.hold_for", component1).withStyle(ChatFormatting.GRAY);
         tooltip.add(component2);
         if (shiftDown) {
-            Component component3 = ClientHelper.componentWithColor(Component.translatable("ironladders.tooltip.morph_upgrade.info_2"), 0xcbcbcb);
-            tooltip.add(Component.translatable("ironladders.tooltip.hiding_upgrade.info_0").withStyle(ChatFormatting.GRAY));
-            tooltip.add(Component.translatable("ironladders.tooltip.morph_upgrade.info_1", component3).withStyle(ChatFormatting.GRAY));
-            tooltip.add(Component.translatable("ironladders.tooltip.morph_upgrade.info_3").withStyle(ChatFormatting.GRAY));
+            Component component3 = ClientHelper.componentWithColor(Component.translatable("ironladders.tooltip.upgrade_item.info_2"), 0xcbcbcb);
+            Component amount = ClientHelper.componentWithColor(Component.literal(String.valueOf((stack.getMaxDamage() - stack.getDamageValue()))), 0xcbcbcb);
+            tooltip.add(Component.translatable("ironladders.tooltip.upgrade_item.info_0", amount).withStyle(ChatFormatting.GRAY));
+            tooltip.add(Component.translatable("ironladders.tooltip.upgrade_item.info_1", component3).withStyle(ChatFormatting.GRAY));
         }
     }
 }

@@ -75,6 +75,30 @@ public class BaseMetalLadder extends LadderBlock implements EntityBlock {
     }
 
     @Override
+    public int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
+        int lightLevel = this == BlockRegistry.CRYING_OBSIDIAN_LADDER.get() ? 10 : 0;
+        if (level.getBlockEntity(pos) instanceof MetalLadderEntity ladderEntity && ladderEntity.getMorphState() != null) {
+            BlockState morphState = ladderEntity.getMorphState();
+            if (morphState.getBlock() instanceof CryingObsidianLadder) {
+                lightLevel = 10;
+            } else if (!(morphState.getBlock() instanceof BaseMetalLadder)) {
+                lightLevel = morphState.getLightEmission(level, pos);
+            }
+        }
+        if (state.getValue(LadderProperties.LIGHTED)) {
+            lightLevel = Math.max(lightLevel, 13);
+        }
+        return lightLevel;
+    }
+
+    @Override
+    public void onPlace(BlockState state, Level level, BlockPos pos, BlockState stateBefore, boolean bool) {
+        if (!stateBefore.is(state.getBlock())) {
+            level.updateNeighborsAt(pos,this);
+        }
+    }
+
+    @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         BlockEntity blockEntity = level.getBlockEntity(pos);
         if (blockEntity instanceof MetalLadderEntity metalLadderEntity) {
@@ -100,6 +124,15 @@ public class BaseMetalLadder extends LadderBlock implements EntityBlock {
                     level.setBlock(pos, blockState.cycle(LadderProperties.HAS_SIGNAL), 3);
                     updateChain(level, pos);
                 }
+            }
+        }
+    }
+
+    @Override
+    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource p_221940_) {
+        if (state.getValue(LadderProperties.POWERED)) {
+            if (state.getValue(LadderProperties.HAS_SIGNAL) && !level.hasNeighborSignal(pos) && !hasActiveInARow(level, pos)) {
+                level.setBlock(pos, state.cycle(LadderProperties.HAS_SIGNAL), 3);
             }
         }
     }
@@ -223,15 +256,6 @@ public class BaseMetalLadder extends LadderBlock implements EntityBlock {
     }
 
     @Override
-    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource p_221940_) {
-        if (state.getValue(LadderProperties.POWERED)) {
-            if (state.getValue(LadderProperties.HAS_SIGNAL) && !level.hasNeighborSignal(pos) && !hasActiveInARow(level, pos)) {
-                level.setBlock(pos, state.cycle(LadderProperties.HAS_SIGNAL), 3);
-            }
-        }
-    }
-
-    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
         builder.add(LadderProperties.POWERED);
@@ -239,30 +263,6 @@ public class BaseMetalLadder extends LadderBlock implements EntityBlock {
         builder.add(LadderProperties.HIDDEN);
         builder.add(LadderProperties.STATE_IN_CHAIN);
         builder.add(LadderProperties.HAS_SIGNAL);
-    }
-
-    @Override
-    public int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
-        int lightLevel = this == BlockRegistry.CRYING_OBSIDIAN_LADDER.get() ? 10 : 0;
-        if (level.getBlockEntity(pos) instanceof MetalLadderEntity ladderEntity && ladderEntity.getMorphState() != null) {
-            BlockState morphState = ladderEntity.getMorphState();
-            if (morphState.getBlock() instanceof CryingObsidianLadder) {
-                lightLevel = 10;
-            } else if (!(morphState.getBlock() instanceof BaseMetalLadder)) {
-                lightLevel = morphState.getLightEmission(level, pos);
-            }
-        }
-        if (state.getValue(LadderProperties.LIGHTED)) {
-            lightLevel = Math.max(lightLevel, 13);
-        }
-        return lightLevel;
-    }
-
-    @Override
-    public void onPlace(BlockState state, Level level, BlockPos pos, BlockState stateBefore, boolean bool) {
-        if (!stateBefore.is(state.getBlock())) {
-            level.updateNeighborsAt(pos,this);
-        }
     }
 
     public LadderType getType() {
