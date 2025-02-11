@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
+  "group": "wood_tin_upgrade",
   "key": {
     "I": {
       "tag": "forge:ingots/tin"

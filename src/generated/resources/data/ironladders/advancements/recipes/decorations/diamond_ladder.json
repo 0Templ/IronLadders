@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "tag": "ironladders:upgrades_to_diamond"
+            "items": [
+              "ironladders:gold_ladder"
+            ]
           }
         ]
       },

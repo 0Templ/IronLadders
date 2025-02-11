@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "wood_lead_upgrade",
+  "key": {
+    "I": {
+      "tag": "forge:ingots/lead"
+    },
+    "R": {
+      "item": "ironladders:wood_tin_upgrade"
+    }
+  },
+  "pattern": [
+    " II",
+    " II",
+    "R  "
+  ],
+  "result": {
+    "item": "ironladders:wood_lead_upgrade"
+  },
+  "show_notification": true
+}

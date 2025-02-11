@@ -1,12 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
+  "group": "silver_ladder",
   "key": {
     "I": {
       "tag": "forge:ingots/silver"
     },
     "L": {
-      "tag": "ironladders:upgrades_to_gold"
+      "item": "ironladders:iron_ladder"
     }
   },
   "pattern": [

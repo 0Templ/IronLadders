@@ -24,6 +24,8 @@ public class IronLadders {
 
     public static final String MODID = "ironladders";
 
+    public static final Logger LOGGER = LoggerFactory.getLogger(IronLadders.class);
+
     public IronLadders() {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ILConfig.COMMON);
 
@@ -40,7 +42,6 @@ public class IronLadders {
 
     }
 
-    public static final Logger LOGGER = LoggerFactory.getLogger(IronLadders.class);
 
     public void imeRegistry(InterModEnqueueEvent evt) {
         if (ModList.get().isLoaded("theoneprobe")) {

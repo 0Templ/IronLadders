@@ -1,12 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
+  "group": "steel_ladder",
   "key": {
     "I": {
       "tag": "forge:ingots/steel"
     },
     "L": {
-      "tag": "ironladders:upgrades_to_iron"
+      "tag": "ironladders:copper_ladder"
     }
   },
   "pattern": [

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "silver_ladder",
+  "key": {
+    "I": {
+      "tag": "forge:ingots/silver"
+    },
+    "L": {
+      "item": "ironladders:steel_ladder"
+    }
+  },
+  "pattern": [
+    "LIL",
+    "LLL",
+    "LIL"
+  ],
+  "result": {
+    "count": 7,
+    "item": "ironladders:silver_ladder"
+  },
+  "show_notification": true
+}

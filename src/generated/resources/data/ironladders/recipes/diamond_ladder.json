@@ -1,12 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
+  "group": "diamond_ladder",
   "key": {
     "I": {
       "tag": "forge:gems/diamond"
     },
     "L": {
-      "tag": "ironladders:upgrades_to_diamond"
+      "item": "ironladders:gold_ladder"
     }
   },
   "pattern": [

@@ -6,6 +6,7 @@ plugins {
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
     id 'org.spongepowered.mixin' version '0.7.+'
 }
+
 version = minecraft_version+"-"+mod_version+"-forge"
 group = mod_group_id
 
@@ -17,9 +18,8 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
-    //mappings channel: mapping_channel, version: mapping_version
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
     mappings channel: mapping_channel, version: mapping_version
     copyIdeResources = true
 
@@ -93,37 +93,64 @@ repositories {
     }
 }
 
+configurations {
+    jei
+    rei
+    emi
+}
+
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-
     // JADE
     implementation fg.deobf("curse.maven:jade-324717:${jade_version}")
+
     // TOP
     compileOnly fg.deobf("curse.maven:the-one-probe-245211:${the_one_probe_version}")
+
     // JEI
-    implementation fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
-    implementation fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
-    implementation fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
-    // REI
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
+
+    // REI + Cloth Config + Architectury
     compileOnly fg.deobf("curse.maven:architectury-api-419699:${architectury_version}")
     compileOnly fg.deobf("curse.maven:cloth-config-348521:${cloth_config_version}")
     compileOnly fg.deobf("me.shedaniel:RoughlyEnoughItems-forge:${rei_version}")
+
     //EMI
     compileOnly fg.deobf("dev.emi:emi-forge:${emi_version}:api")
     compileOnly fg.deobf("dev.emi:emi-forge:${emi_version}")
+
+
+    if (nei_variant == "jei"){
+        runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+    }
+    else if(nei_variant == "rei"){
+        runtimeOnly fg.deobf("me.shedaniel:RoughlyEnoughItems-forge:${rei_version}")
+        runtimeOnly fg.deobf("curse.maven:architectury-api-419699:${architectury_version}")
+        runtimeOnly fg.deobf("curse.maven:cloth-config-348521:${cloth_config_version}")
+    }
+    else if(nei_variant == "emi"){
+        runtimeOnly fg.deobf("dev.emi:emi-forge:${emi_version}")
+    }
+
     // ATO
     compileOnly fg.deobf("curse.maven:ato-405593:${all_the_ores_version}")
+
     // Mekanism
-    implementation fg.deobf("mekanism:Mekanism:${minecraft_version}-${mekanism_version}")
+    compileOnly fg.deobf("mekanism:Mekanism:${minecraft_version}-${mekanism_version}")
+
     // QUARK & ZETA
     if (!project.gradle.startParameter.taskNames.contains("runData") && !project.gradle.startParameter.taskNames.contains("runServer")){
         compileOnly fg.deobf("curse.maven:quark-243121:${quark_version}")
         compileOnly fg.deobf("curse.maven:zeta-968868:${zeta_version}")
     }
+
     //CREATE
-    compileOnly fg.deobf("curse.maven:create-328085:${create_version}")
-    // Modern Fix
+    implementation fg.deobf("curse.maven:create-328085:${create_version}")
+
+   // Modern Fix
     implementation fg.deobf("curse.maven:modernfix-790626:${modernfix_version}")
 }
 

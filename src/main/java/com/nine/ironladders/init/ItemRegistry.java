@@ -38,8 +38,10 @@ public class ItemRegistry {
     public static final RegistryObject<Item> WOOD_LEAD_UPGRADE = ITEMS.register("wood_lead_upgrade", () -> new UpgradeItem(new Item.Properties().durability(14), UpgradeType.DEFAULT_TO_LEAD));
     public static final RegistryObject<Item> WOOD_STEEL_UPGRADE = ITEMS.register("wood_steel_upgrade", () -> new UpgradeItem(new Item.Properties().durability(14), UpgradeType.DEFAULT_TO_STEEL));
     public static final RegistryObject<Item> WOOD_TIN_UPGRADE = ITEMS.register("wood_tin_upgrade", () -> new UpgradeItem(new Item.Properties().durability(14), UpgradeType.DEFAULT_TO_TIN));
-    public static final RegistryObject<Item> WOOD_ALUMINUM_UPGRADE = ITEMS.register("wood_aluminum_upgrade", () -> new UpgradeItem(new Item.Properties().durability(24), UpgradeType.DEFAULT_TO_ALUMINUM));
     public static final RegistryObject<Item> WOOD_SILVER_UPGRADE = ITEMS.register("wood_silver_upgrade", () -> new UpgradeItem(new Item.Properties().durability(14), UpgradeType.DEFAULT_TO_SILVER));
+
+    //Unused
+    public static final RegistryObject<Item> WOOD_ALUMINUM_UPGRADE = ITEMS.register("wood_aluminum_upgrade", () -> new UpgradeItem(new Item.Properties().durability(24), UpgradeType.DEFAULT_TO_ALUMINUM));
 
     public static boolean checkDisabled(Item item) {
         if (item.equals(POWER_UPGRADE_ITEM.get())) {

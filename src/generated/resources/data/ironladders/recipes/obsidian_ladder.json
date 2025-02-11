@@ -1,12 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
+  "group": "obsidian_ladder",
   "key": {
     "I": {
       "tag": "forge:obsidian"
     },
     "L": {
-      "tag": "ironladders:upgrades_to_obsidian"
+      "item": "ironladders:diamond_ladder"
     }
   },
   "pattern": [

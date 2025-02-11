@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "wood_netherite_upgrade",
+  "key": {
+    "I": {
+      "tag": "forge:ingots/netherite"
+    },
+    "R": {
+      "item": "ironladders:wood_diamond_upgrade"
+    }
+  },
+  "pattern": [
+    " II",
+    " II",
+    "R  "
+  ],
+  "result": {
+    "item": "ironladders:wood_netherite_upgrade"
+  },
+  "show_notification": true
+}

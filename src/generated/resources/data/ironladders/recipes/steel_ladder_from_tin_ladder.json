@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "steel_ladder",
+  "key": {
+    "I": {
+      "tag": "forge:ingots/steel"
+    },
+    "L": {
+      "item": "ironladders:tin_ladder"
+    }
+  },
+  "pattern": [
+    "LIL",
+    "LLL",
+    "LIL"
+  ],
+  "result": {
+    "count": 7,
+    "item": "ironladders:steel_ladder"
+  },
+  "show_notification": true
+}

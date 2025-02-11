@@ -13,10 +13,12 @@
   "minVersion": "0.8.5",
   "client": [
     "client.AbstractContainerMenuMixin",
+    "client.ClientPackerListenerMixin",
     "client.ItemRendererMixin",
     "client.ModelBakerImplAccessor",
     "client.ModelBakeryMixin",
     "client.ModelManagerMixin",
-    "client.MultiPlayerGameModeMixin"
+    "client.MultiPlayerGameModeMixin",
+    "client.RecipeButtonMixin"
   ]
 }

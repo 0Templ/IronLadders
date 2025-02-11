@@ -1,12 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
+  "group": "bronze_ladder",
   "key": {
     "I": {
       "tag": "forge:ingots/bronze"
     },
     "L": {
-      "tag": "ironladders:upgrades_to_iron"
+      "item": "minecraft:ladder"
     }
   },
   "pattern": [

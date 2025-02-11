@@ -1,12 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
+  "group": "netherite_ladder",
   "key": {
     "I": {
       "tag": "forge:ingots/netherite"
     },
     "L": {
-      "tag": "ironladders:upgrades_to_netherite"
+      "item": "ironladders:diamond_ladder"
     }
   },
   "pattern": [
@@ -15,7 +16,7 @@
     "LIL"
   ],
   "result": {
-    "count": 7,
+    "count": 14,
     "item": "ironladders:netherite_ladder"
   },
   "show_notification": true

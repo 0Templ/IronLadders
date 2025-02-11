@@ -53,27 +53,27 @@ public class CreativeTabRegistry {
                 }
                 output.accept(BlockRegistry.NETHERITE_LADDER.get());
                 //Non vanilla
-                if (TagHelper.hasMaterial(TagHelper.tin)) {
+                if (TagHelper.hasMaterial(TagHelper.TIN)) {
                     output.accept(ItemRegistry.WOOD_TIN_UPGRADE.get());
                     output.accept(BlockRegistry.TIN_LADDER.get());
                 }
-                if (TagHelper.hasMaterial(TagHelper.bronze)) {
+                if (TagHelper.hasMaterial(TagHelper.BRONZE)) {
                     output.accept(ItemRegistry.WOOD_BRONZE_UPGRADE.get());
                     output.accept(BlockRegistry.BRONZE_LADDER.get());
                 }
-                if (TagHelper.hasMaterial(TagHelper.lead)) {
+                if (TagHelper.hasMaterial(TagHelper.LEAD)) {
                     output.accept(ItemRegistry.WOOD_LEAD_UPGRADE.get());
                     output.accept(BlockRegistry.LEAD_LADDER.get());
                 }
-                if (TagHelper.hasMaterial(TagHelper.steel)) {
+                if (TagHelper.hasMaterial(TagHelper.STEEL)) {
                     output.accept(ItemRegistry.WOOD_STEEL_UPGRADE.get());
                     output.accept(BlockRegistry.STEEL_LADDER.get());
                 }
-                if (TagHelper.hasMaterial(TagHelper.aluminum)) {
-                    output.accept(ItemRegistry.WOOD_ALUMINUM_UPGRADE.get());
+                if (TagHelper.hasMaterial(TagHelper.ALUMINUM)) {
+                    //output.accept(ItemRegistry.WOOD_ALUMINUM_UPGRADE.get());
                     output.accept(BlockRegistry.ALUMINUM_LADDER.get());
                 }
-                if (TagHelper.hasMaterial(TagHelper.silver)) {
+                if (TagHelper.hasMaterial(TagHelper.SILVER)) {
                     output.accept(ItemRegistry.WOOD_SILVER_UPGRADE.get());
                     output.accept(BlockRegistry.SILVER_LADDER.get());
                 }

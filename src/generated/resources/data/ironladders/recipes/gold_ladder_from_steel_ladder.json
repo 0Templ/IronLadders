@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "gold_ladder",
+  "key": {
+    "I": {
+      "tag": "forge:ingots/gold"
+    },
+    "L": {
+      "item": "ironladders:steel_ladder"
+    }
+  },
+  "pattern": [
+    "LIL",
+    "LLL",
+    "LIL"
+  ],
+  "result": {
+    "count": 7,
+    "item": "ironladders:gold_ladder"
+  },
+  "show_notification": true
+}

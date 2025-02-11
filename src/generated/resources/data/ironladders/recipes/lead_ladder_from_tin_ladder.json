@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "lead_ladder",
+  "key": {
+    "I": {
+      "tag": "forge:ingots/lead"
+    },
+    "L": {
+      "item": "ironladders:tin_ladder"
+    }
+  },
+  "pattern": [
+    "LIL",
+    "LLL",
+    "LIL"
+  ],
+  "result": {
+    "count": 7,
+    "item": "ironladders:lead_ladder"
+  },
+  "show_notification": true
+}

@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:ladder"
-            ]
+            "tag": "ironladders:copper_ladder"
           }
         ]
       },

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "wood_steel_upgrade",
+  "key": {
+    "I": {
+      "tag": "forge:ingots/steel"
+    },
+    "R": {
+      "item": "ironladders:wood_bronze_upgrade"
+    }
+  },
+  "pattern": [
+    " II",
+    " II",
+    "R  "
+  ],
+  "result": {
+    "item": "ironladders:wood_steel_upgrade"
+  },
+  "show_notification": true
+}

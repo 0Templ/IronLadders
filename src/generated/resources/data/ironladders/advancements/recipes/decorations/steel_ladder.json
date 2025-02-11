@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "ironladders:upgrades_to_iron"
+            "tag": "ironladders:copper_ladder"
           }
         ]
       },

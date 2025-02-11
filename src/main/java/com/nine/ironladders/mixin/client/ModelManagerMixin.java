@@ -26,6 +26,7 @@ import static com.mojang.text2speech.Narrator.LOGGER;
 @Mixin(ModelManager.class)
 public class ModelManagerMixin {
 
+
     @Inject(method = "loadModels", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/profiling/ProfilerFiller;popPush(Ljava/lang/String;)V",
             ordinal = 1
     ))

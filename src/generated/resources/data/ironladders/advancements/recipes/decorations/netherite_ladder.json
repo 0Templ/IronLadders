@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "tag": "ironladders:upgrades_to_netherite"
+            "items": [
+              "ironladders:diamond_ladder"
+            ]
           }
         ]
       },

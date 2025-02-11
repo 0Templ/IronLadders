@@ -1,12 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
+  "group": "lead_ladder",
   "key": {
     "I": {
       "tag": "forge:ingots/lead"
     },
     "L": {
-      "item": "minecraft:ladder"
+      "tag": "ironladders:copper_ladder"
     }
   },
   "pattern": [
