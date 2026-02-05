@@ -1,0 +1,33 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.nine.ironladders.mixin",
+  "refmap": "ironladders.refmap.json",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "accessor.common.RecipeProviderAccessor",
+    "accessor.common.TextureSlotAccessor",
+    "feature.inventory.common.AbstractContainerMenuMixin",
+    "feature.movement.common.LivingEntityMixin",
+    "feature.movement.common.PlayerMixin",
+    "feature.multiselect.common.ServerPlayerGameModeMixin",
+    "feature.recipe.common.RecipeManagerMixin"
+  ],
+  "client": [
+    "accessor.client.AbstractContainerScreenAccessor",
+    "accessor.client.GuiAccessor",
+    "accessor.client.ItemPropertiesAccessor",
+    "feature.model.client.ModelManagerMixin",
+    "feature.inventory.client.AbstractContainerScreenMixin",
+    "feature.inventory.client.GuiGraphicsMixin",
+    "feature.multiselect.client.MultiPlayerGameModeMixin",
+    "feature.scroll.client.MouseHandlerMixin",
+    "feature.tooltip.client.ItemMixin",
+    "feature.tooltip.client.RecipeBookComponentMixin"
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

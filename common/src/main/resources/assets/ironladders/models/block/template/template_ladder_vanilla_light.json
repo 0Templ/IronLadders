@@ -1,0 +1,50 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"render_type": "minecraft:cutout",
+	"texture_size": [32, 32],
+	"textures": {
+		"light_texture": "ironladders:block/light/light"
+	},
+	"elements": [
+		{
+			"name": "light_1",
+			"from": [12, 7, 15.19],
+			"to": [14, 9, 15.19],
+      "shade": false,
+      "rotation": {"angle": 0, "axis": "y", "origin": [13, 7, 15]},
+			"faces": {
+				"north": {"uv": [2, 2, 4, 4], "texture": "#light_texture"},
+				"east": {"uv": [1, 0, 1, 1], "texture": "#light_texture"},
+				"south": {"uv": [2, 2, 4, 4], "texture": "#light_texture"},
+				"west": {"uv": [0, 0, 0, 1], "texture": "#light_texture"},
+				"up": {"uv": [0, 0, 1, 0], "texture": "#light_texture"},
+				"down": {"uv": [0, 1, 1, 1], "texture": "#light_texture"}
+			}
+		},
+		{
+			"name": "light_2",
+			"from": [2, 7, 15.19],
+			"to": [4, 9, 15.19],
+      "shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [3, 7, 15]},
+			"faces": {
+				"north": {"uv": [2, 2, 4, 4], "texture": "#light_texture"},
+				"east": {"uv": [1, 0, 1, 1], "texture": "#light_texture"},
+				"south": {"uv": [2, 2, 4, 4], "texture": "#light_texture"},
+				"west": {"uv": [0, 0, 0, 1], "texture": "#light_texture"},
+				"up": {"uv": [0, 0, 1, 0], "texture": "#light_texture"},
+				"down": {"uv": [0, 1, 1, 1], "texture": "#light_texture"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "light",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1]
+		}
+	]
+}

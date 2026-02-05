@@ -1,0 +1,61 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"render_type": "cutout",
+	"texture_size": [32, 32],
+	"textures": {
+		"light_texture": "ironladders:block/light/light",
+		"ladder_texture": "ironladders:block/copper/copper_ladder_block"
+	},
+	"elements": [
+		{
+			"name": "light_1",
+			"from": [11.875, 7, 14.375],
+			"to": [14.125, 9, 16],
+			"faces": {
+				"north": {"uv": [2, 2, 4, 4], "texture": "#light_texture"},
+				"east": {"uv": [0, 2, 2, 4], "texture": "#light_texture"},
+				"south": {"uv": [2, 2, 4.1, 4], "texture": "#light_texture"},
+				"west": {"uv": [4, 2, 6, 4], "texture": "#light_texture"}
+			}
+		},
+		{
+			"name": "light_cover_1",
+			"from": [11.875, 7, 14.375],
+			"to": [14.125, 9, 16],
+			"faces": {
+				"up": {"uv": [1, 3.5, 2, 4.5], "texture": "#ladder_texture"},
+				"down": {"uv": [1, 3.5, 2, 4.5], "texture": "#ladder_texture"}
+			}
+		},
+		{
+			"name": "light_cover_2",
+			"from": [1.875, 7, 14.375],
+			"to": [4.125, 9, 16],
+			"faces": {
+				"up": {"uv": [1, 3.5, 2, 4.5], "texture": "#ladder_texture"},
+				"down": {"uv": [1, 3.5, 2, 4.5], "texture": "#ladder_texture"}
+			}
+		},
+		{
+			"name": "light_2",
+			"from": [1.875, 7, 14.375],
+			"to": [4.125, 9, 16],
+			"faces": {
+				"north": {"uv": [2, 2, 4, 4], "texture": "#light_texture"},
+				"east": {"uv": [0, 2, 2, 4], "texture": "#light_texture"},
+				"south": {"uv": [2, 2, 4.1, 4], "texture": "#light_texture"},
+				"west": {"uv": [4, 2, 6, 4], "texture": "#light_texture"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "light",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1, 2, 3]
+		}
+	]
+}

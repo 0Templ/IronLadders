@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "minecraft:ladder"
+    },
+    "M": {
+      "tag": "forge:ingots/aluminum"
+    }
+  },
+  "pattern": [
+    "LLL",
+    "LML",
+    "LLL"
+  ],
+  "result": {
+    "count": 8,
+    "item": "ironladders:aluminium_ladder"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,356 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_0"
+      },
+      "when": {
+        "facing": "north",
+        "variant": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_0",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "variant": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_0",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "variant": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_0",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "variant": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_1"
+      },
+      "when": {
+        "facing": "north",
+        "variant": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_1",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "variant": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_1",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "variant": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_1",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "variant": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_0_light"
+      },
+      "when": {
+        "facing": "north",
+        "lighted": "true",
+        "variant": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_0_light",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "lighted": "true",
+        "variant": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_0_light",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "lighted": "true",
+        "variant": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_0_light",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "lighted": "true",
+        "variant": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_1_light"
+      },
+      "when": {
+        "facing": "north",
+        "lighted": "true",
+        "variant": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_1_light",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "lighted": "true",
+        "variant": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_1_light",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "lighted": "true",
+        "variant": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_1_light",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "lighted": "true",
+        "variant": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_0_sensor_on"
+      },
+      "when": {
+        "facing": "north",
+        "has_sensor": "true",
+        "sensor_active": "true",
+        "variant": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_0_sensor_off"
+      },
+      "when": {
+        "facing": "north",
+        "has_sensor": "true",
+        "sensor_active": "false",
+        "variant": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_0_sensor_on",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "has_sensor": "true",
+        "sensor_active": "true",
+        "variant": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_0_sensor_off",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "has_sensor": "true",
+        "sensor_active": "false",
+        "variant": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_0_sensor_on",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "has_sensor": "true",
+        "sensor_active": "true",
+        "variant": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_0_sensor_off",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "has_sensor": "true",
+        "sensor_active": "false",
+        "variant": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_0_sensor_on",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "has_sensor": "true",
+        "sensor_active": "true",
+        "variant": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_0_sensor_off",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "has_sensor": "true",
+        "sensor_active": "false",
+        "variant": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_1_sensor_on"
+      },
+      "when": {
+        "facing": "north",
+        "has_sensor": "true",
+        "sensor_active": "true",
+        "variant": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_1_sensor_off"
+      },
+      "when": {
+        "facing": "north",
+        "has_sensor": "true",
+        "sensor_active": "false",
+        "variant": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_1_sensor_on",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "has_sensor": "true",
+        "sensor_active": "true",
+        "variant": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_1_sensor_off",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "has_sensor": "true",
+        "sensor_active": "false",
+        "variant": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_1_sensor_on",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "has_sensor": "true",
+        "sensor_active": "true",
+        "variant": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_1_sensor_off",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "has_sensor": "true",
+        "sensor_active": "false",
+        "variant": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_1_sensor_on",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "has_sensor": "true",
+        "sensor_active": "true",
+        "variant": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/diamond_ladder_v2_variant_1_sensor_off",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "has_sensor": "true",
+        "sensor_active": "false",
+        "variant": "1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "tag": "c:dyes"
+    },
+    "G": {
+      "tag": "c:glass_blocks"
+    },
+    "L": {
+      "item": "minecraft:ladder"
+    }
+  },
+  "pattern": [
+    " GD",
+    " GG",
+    "L  "
+  ],
+  "result": {
+    "item": "ironladders:ladder_casing_tool"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ironladders:block/tungsten_steel/tungsten_steel_ladder"
+  }
+}

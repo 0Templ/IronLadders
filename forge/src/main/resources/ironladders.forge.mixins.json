@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.nine.ironladders.mixin",
+  "refmap": "ironladders.refmap.json",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+  ],
+  "client": [
+
+    "client.CreativeModeInventoryScreenMixin",
+    "feature.scroll.client.GuiMixin",
+    "client.ForgeTierLadderBlockEntityMixin"
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

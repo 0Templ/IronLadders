@@ -1,0 +1,203 @@
+plugins {
+    id 'multiloader-loader'
+    id 'com.github.johnrengelman.shadow'
+    id "me.shedaniel.unified-publishing"
+    id 'fabric-loom'
+}
+
+dependencies {
+
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    mappings loom.layered {
+        officialMojangMappings()
+        parchment("org.parchmentmc.data:parchment-${parchment_minecraft}:${parchment_version}@zip")
+    }
+
+    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
+    compileOnly(annotationProcessor("org.parchmentmc.data:parchment-${parchment_minecraft}:${parchment_version}@zip"))
+
+    modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+    implementation project(":common")
+
+    // Mixin Extras
+    modImplementation "io.github.llamalad7:mixinextras-fabric:0.5.0"
+    include "io.github.llamalad7:mixinextras-fabric:0.5.0"
+
+    // JEI
+    modCompileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
+    modCompileOnly "mezz.jei:jei-${minecraft_version}-fabric-api:${jei_version}"
+
+    // REI
+    modCompileOnly "me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}"
+
+    // EMI
+    modCompileOnly "dev.emi:emi-fabric:${emi_version}+${minecraft_version}:api"
+
+    // NEI
+    if (fabric_nei == 'JEI') {
+        modRuntimeOnly "mezz.jei:jei-${minecraft_version}-fabric:${jei_version}"
+    } else if (fabric_nei == 'REI') {
+        modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}"
+    } else if (fabric_nei == 'EMI') {
+        modRuntimeOnly "dev.emi:emi-fabric:${emi_version}+${minecraft_version}"
+    }
+
+    // JADE
+    modCompileOnly "maven.modrinth:nvQzSEkH:${jade_fabric_version}"
+
+    // WTHIT + BadPackets
+    modCompileOnly "maven.modrinth:6AQIaxuO:${wthit_fabric_version}"
+    modCompileOnly "maven.modrinth:ftdbN0KK:${badpackets_fabric_version}"
+
+    // WAILA
+    if (fabric_waila == 'JADE') {
+        modRuntimeOnly "maven.modrinth:nvQzSEkH:${jade_fabric_version}"
+    }
+    else if (fabric_waila == 'WTHIT') {
+        modRuntimeOnly "maven.modrinth:6AQIaxuO:${wthit_fabric_version}"
+        modRuntimeOnly "maven.modrinth:ftdbN0KK:${badpackets_fabric_version}"
+    }
+
+    // TechReborn
+    modCompileOnly modApi("teamreborn:energy:${teamreborn_energy_version}") {
+        exclude(group: "net.fabricmc.fabric-api")
+    }
+    modCompileOnly ("curse.maven:reborncore-${reborncore_curse_project_id}:${reborncore_fabric_curse_file_id}"){
+    }
+    modCompileOnly ("curse.maven:techreborn-${techreborn_curse_project_id}:${techreborn_fabric_curse_file_id}"){
+    }
+
+
+    //Mod Menu
+    modImplementation("com.terraformersmc:modmenu:${modmenu_version}")
+
+    // Night Config
+    implementation 'com.electronwill.night-config:core:3.6.6'
+    implementation 'com.electronwill.night-config:toml:3.6.6'
+
+    shadow 'com.electronwill.night-config:core:3.6.6'
+    shadow 'com.electronwill.night-config:toml:3.6.6'
+}
+
+processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    inputs.property "version", project.version
+    inputs.property "mod_id", mod_id
+    inputs.property "mod_name", mod_name
+    inputs.property "description", description
+    inputs.property "mod_author", mod_author
+    inputs.property "license", license
+    inputs.property "minecraft_version", minecraft_version
+
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version,
+               "mod_id": mod_id,
+               "mod_name": mod_name,
+               "description": description,
+               "mod_author": mod_author,
+               "license": license,
+               "minecraft_version": minecraft_version
+    }
+}
+
+shadowJar {
+    dependsOn jar
+    configurations = [project.configurations.shadow]
+    destinationDirectory.set(file("${project.layout.buildDirectory.get()}/devlibs"))
+    archiveClassifier.set("dev")
+    relocate "com.electronwill.nightconfig", "${group}.shadow.nightconfig"
+}
+
+remapJar.dependsOn(shadowJar)
+
+loom {
+    if (project(":common").file("src/main/resources/${mod_id}.accesswidener").exists()) {
+        accessWidenerPath.set(project(":common").file("src/main/resources/${mod_id}.accesswidener"))
+    }
+    mixin {
+        defaultRefmapName.set("${mod_id}.refmap.json")
+    }
+    runs {
+        client {
+            client()
+            setConfigName("Fabric Client")
+            ideConfigGenerated(true)
+            runDir("run")
+        }
+        server {
+            server()
+            setConfigName("Fabric Server")
+            ideConfigGenerated(true)
+            runDir("run")
+        }
+    }
+}
+
+setupDatagenTask('dataCommon', 'common', project(":common").file("src/generated/resources"))
+setupDatagenTask('dataFabric', 'fabric', project.file("src/generated/resources"))
+setupDatagenTask('dataForge', 'forge', project(":forge").file("src/generated/resources"))
+
+def setupDatagenTask(String name, String platform, File outputDir) {
+    loom.runs.create(name) {
+        client()
+        setConfigName("Datagen: ${platform}")
+        ideConfigGenerated(true)
+        runDir("build/datagen")
+
+        vmArg "-Dfabric-api.datagen"
+        vmArg "-Dfabric-api.datagen.output-dir=${outputDir}"
+        vmArg "-Dfabric-api.datagen.modid=${mod_id}"
+        vmArg "-Dplatform=${platform}"
+        vmArg "-Ddatagen=true"
+        vmArg "-Dfabric.debug.disableModIds=techreborn,reborncore,team_reborn_energy"
+    }
+}
+
+
+sourceSets {
+    main {
+        resources {
+            srcDirs 'src/generated/resources'
+            srcDirs project(':common').file('src/generated/resources')
+        }
+    }
+}
+
+
+unifiedPublishing {
+    project {
+        displayName = "[Fabric]${getModNameForPublishing(project.mod_name)}-${project.minecraft_version}-${project.version}"
+        releaseType = rootProject.fabric_release_type
+        changelog = changelogForVersion(project.version)
+        gameVersions = [project.minecraft_version]
+        gameLoaders = ["fabric"]
+
+        relations {
+            depends {
+                modrinth = "fabric-api"
+                curseforge = "fabric-api"
+            }
+        }
+
+        def publicationJar = tasks.named("remapJar").get()
+        mainPublication publicationJar
+        var mrToken = project.findProperty("MODRINTH_TOKEN") ?: System.getenv("MODRINTH_TOKEN")
+        if (mrToken != null) {
+            modrinth {
+                token = mrToken
+                id = project.modrinth_project_id
+                version = project.version
+            }
+        }
+        var cfToken = project.findProperty("CURSEFORGE_TOKEN") ?: System.getenv("CURSEFORGE_TOKEN")
+        if (cfToken != null) {
+            curseforge {
+                token = cfToken
+                id = rootProject.curseforge_project_id
+            }
+        }
+    }
+}
+

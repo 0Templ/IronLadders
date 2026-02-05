@@ -1,0 +1,7 @@
+{
+  "parent": "ironladders:block/template/template_ladder_v2_sensor",
+  "textures": {
+    "ladder_texture": "ironladders:block/copper/weathered_copper_ladder_block_variant_1",
+    "sensor_signal_texture": "ironladders:block/sensor/sensor_off"
+  }
+}

@@ -1,0 +1,169 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"render_type": "cutout",
+	"texture_size": [32, 32],
+	"textures": {
+		"particle": "ironladders:block/copper/copper_ladder_block",
+		"ladder_texture": "ironladders:block/copper/copper_ladder_block"
+	},
+	"elements": [
+		{
+			"name": "rail_1_right",
+			"from": [12, 0, 14.5],
+			"to": [12, 16, 16],
+			"faces": {
+				"east": {"uv": [9, 0, 10, 8], "texture": "#ladder_texture"},
+				"west": {"uv": [10.5, 0, 11.5, 8], "texture": "#ladder_texture"}
+			}
+		},
+		{
+			"name": "rail_1_bot",
+			"from": [12, 0, 14.5],
+			"to": [14, 0, 16],
+			"faces": {
+				"up": {"uv": [8.5, 13.5, 9.5, 14.5], "texture": "#ladder_texture"},
+				"down": {"uv": [8.5, 13.5, 9.5, 14.5], "texture": "#ladder_texture"}
+			}
+		},
+		{
+			"name": "rail_1_top",
+			"from": [12, 16, 14.5],
+			"to": [14, 16, 16],
+			"faces": {
+				"up": {"uv": [8.5, 8.5, 9.5, 9.5], "texture": "#ladder_texture"},
+				"down": {"uv": [8.5, 8.5, 9.5, 9.5], "texture": "#ladder_texture"}
+			}
+		},
+		{
+			"name": "rail_1_left",
+			"from": [14, 0, 14.5],
+			"to": [14, 16, 16],
+			"faces": {
+				"east": {"uv": [9, 0, 10, 8], "texture": "#ladder_texture"},
+				"west": {"uv": [14, 0, 15, 8], "texture": "#ladder_texture"}
+			}
+		},
+		{
+			"name": "rail_1_front",
+			"from": [12, 0, 14.5],
+			"to": [14, 16, 14.5],
+			"faces": {
+				"north": {"uv": [1, 0, 2, 8], "texture": "#ladder_texture"},
+				"south": {"uv": [1, 0, 2, 8], "texture": "#ladder_texture"}
+			}
+		},
+		{
+			"name": "rail_2_right",
+			"from": [2, 0, 14.5],
+			"to": [2, 16, 16],
+			"faces": {
+				"east": {"uv": [12.5, 0, 13.5, 8], "texture": "#ladder_texture"},
+				"west": {"uv": [14, 0, 15, 8], "texture": "#ladder_texture"}
+			}
+		},
+		{
+			"name": "rail_2_left",
+			"from": [4, 0, 14.5],
+			"to": [4, 16, 16],
+			"faces": {
+				"east": {"uv": [12.5, 0, 13.5, 8], "texture": "#ladder_texture"},
+				"west": {"uv": [14, 0, 15, 8], "texture": "#ladder_texture"}
+			}
+		},
+		{
+			"name": "rail_2_top",
+			"from": [2, 16, 14.5],
+			"to": [4, 16, 16],
+			"faces": {
+				"up": {"uv": [14.5, 8.5, 15.5, 9.5], "texture": "#ladder_texture"},
+				"down": {"uv": [14.5, 8.5, 15.5, 9.5], "texture": "#ladder_texture"}
+			}
+		},
+		{
+			"name": "rail_2_bot",
+			"from": [2, 0, 14.5],
+			"to": [4, 0, 16],
+			"faces": {
+				"up": {"uv": [14.5, 13.5, 15.5, 14.5], "texture": "#ladder_texture"},
+				"down": {"uv": [14.5, 13.5, 15.5, 14.5], "texture": "#ladder_texture"}
+			}
+		},
+		{
+			"name": "rail_2_front",
+			"from": [2, 0, 14.5],
+			"to": [4, 16, 14.5],
+			"faces": {
+				"north": {"uv": [6, 0, 7, 8], "texture": "#ladder_texture"},
+				"south": {"uv": [1, 0, 2, 8], "texture": "#ladder_texture"}
+			}
+		},
+		{
+			"name": "rung_1",
+			"from": [1, 1, 15],
+			"to": [15, 3, 16],
+			"faces": {
+				"north": {"uv": [0.5, 6.5, 7.5, 7.5], "texture": "#ladder_texture"},
+				"east": {"uv": [9.5, 12.5, 9, 13.5], "texture": "#ladder_texture"},
+				"south": {"uv": [0.5, 6.5, 7.5, 7.5], "texture": "#ladder_texture"},
+				"west": {"uv": [14.5, 12.5, 15, 13.5], "texture": "#ladder_texture"},
+				"up": {"uv": [7.5, 15, 0.5, 14.5], "texture": "#ladder_texture"},
+				"down": {"uv": [7.5, 15, 0.5, 15.5], "texture": "#ladder_texture"}
+			}
+		},
+		{
+			"name": "rung_2",
+			"from": [1, 5, 15],
+			"to": [15, 7, 16],
+			"faces": {
+				"north": {"uv": [0.5, 4.5, 7.5, 5.5], "texture": "#ladder_texture"},
+				"east": {"uv": [9, 11.5, 9.5, 12.5], "texture": "#ladder_texture"},
+				"south": {"uv": [0.5, 4.5, 7.5, 5.5], "texture": "#ladder_texture"},
+				"west": {"uv": [14.5, 11.5, 15, 12.5], "texture": "#ladder_texture"},
+				"up": {"uv": [7.5, 12.5, 0.5, 13], "texture": "#ladder_texture"},
+				"down": {"uv": [7.5, 13, 0.5, 13.5], "texture": "#ladder_texture"}
+			}
+		},
+		{
+			"name": "rung_3",
+			"from": [1, 9, 15],
+			"to": [15, 11, 16],
+			"faces": {
+				"north": {"uv": [0.5, 2.5, 7.5, 3.5], "texture": "#ladder_texture"},
+				"east": {"uv": [9, 10.5, 9.5, 11.5], "texture": "#ladder_texture"},
+				"south": {"uv": [0.5, 2.5, 7.5, 3.5], "texture": "#ladder_texture"},
+				"west": {"uv": [14.5, 10.5, 15, 11.5], "texture": "#ladder_texture"},
+				"up": {"uv": [7.5, 10.5, 0.5, 11], "texture": "#ladder_texture"},
+				"down": {"uv": [7.5, 11, 0.5, 11.5], "texture": "#ladder_texture"}
+			}
+		},
+		{
+			"name": "rung_4",
+			"from": [1, 13, 15],
+			"to": [15, 15, 16],
+			"faces": {
+				"north": {"uv": [0.5, 0.5, 7.5, 1.5], "texture": "#ladder_texture"},
+				"east": {"uv": [9, 9.5, 9.5, 10.5], "texture": "#ladder_texture"},
+				"south": {"uv": [0.5, 0.5, 7.5, 1.5], "texture": "#ladder_texture"},
+				"west": {"uv": [14.5, 9.5, 15, 10.5], "texture": "#ladder_texture"},
+				"up": {"uv": [7.5, 8.5, 0.5, 9], "texture": "#ladder_texture"},
+				"down": {"uv": [7.5, 9, 0.5, 9.5], "texture": "#ladder_texture"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "rails",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+		},
+		{
+			"name": "rungs",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [10, 11, 12, 13]
+		}
+	]
+}

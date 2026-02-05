@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "ironladders",
+  "version": "${version}",
+  "name": "${mod_name}",
+  "description": "${description}",
+  "authors": [
+    "${mod_author}"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/iron-ladders",
+    "sources": "https://github.com/0Templ/IronLadders",
+    "issues": "https://github.com/0Templ/IronLadders/issues"
+  },
+  "license": "${license}",
+  "icon": "assets/ironladders/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.nine.ironladders.datagen.ILDataGenerator"
+    ],
+    "main": [
+      "com.nine.ironladders.ILFabric"
+    ],
+    "client": [
+      "com.nine.ironladders.ILFabricClient"
+    ],
+    "modmenu": [
+      "com.nine.ironladders.compat.modmenu.ModMenuSetup"
+    ],
+    "jei_plugins": [
+      "com.nine.ironladders.compat.jei.JEISetup"
+    ],
+    "rei_client": [
+      "com.nine.ironladders.compat.rei.FabricREISetup"
+    ],
+    "emi": [
+      "com.nine.ironladders.compat.emi.FabricEMISetup"
+    ]
+  },
+  "mixins": [
+    "ironladders.mixins.json",
+    "ironladders.fabric.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "java": ">=${java_version}"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "ironladders:block/advanced_alloy_ladder_v1"
+      },
+      "when": {
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/advanced_alloy_ladder_v1",
+        "y": 90
+      },
+      "when": {
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/advanced_alloy_ladder_v1",
+        "y": 180
+      },
+      "when": {
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/advanced_alloy_ladder_v1",
+        "y": 270
+      },
+      "when": {
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/advanced_alloy_ladder_v1_light"
+      },
+      "when": {
+        "facing": "north",
+        "lighted": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/advanced_alloy_ladder_v1_light",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "lighted": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/advanced_alloy_ladder_v1_light",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "lighted": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/advanced_alloy_ladder_v1_light",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "lighted": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/advanced_alloy_ladder_v1_sensor_on"
+      },
+      "when": {
+        "facing": "north",
+        "has_sensor": "true",
+        "sensor_active": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/advanced_alloy_ladder_v1_sensor_off"
+      },
+      "when": {
+        "facing": "north",
+        "has_sensor": "true",
+        "sensor_active": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/advanced_alloy_ladder_v1_sensor_on",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "has_sensor": "true",
+        "sensor_active": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/advanced_alloy_ladder_v1_sensor_off",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "has_sensor": "true",
+        "sensor_active": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/advanced_alloy_ladder_v1_sensor_on",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "has_sensor": "true",
+        "sensor_active": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/advanced_alloy_ladder_v1_sensor_off",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "has_sensor": "true",
+        "sensor_active": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/advanced_alloy_ladder_v1_sensor_on",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "has_sensor": "true",
+        "sensor_active": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "ironladders:block/advanced_alloy_ladder_v1_sensor_off",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "has_sensor": "true",
+        "sensor_active": "false"
+      }
+    }
+  ]
+}

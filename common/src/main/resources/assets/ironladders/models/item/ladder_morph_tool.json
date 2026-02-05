@@ -1,0 +1,88 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ironladders:item/ladder_morph_tool"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "ironladders:morph_type": 1
+      },
+      "model": "ironladders:item/morph/morph_copper"
+    },
+    {
+      "predicate": {
+        "ironladders:morph_type": 2
+      },
+      "model": "ironladders:item/morph/morph_exposed_copper"
+    },
+    {
+      "predicate": {
+        "ironladders:morph_type": 3
+      },
+      "model": "ironladders:item/morph/morph_weathered_copper"
+    },
+    {
+      "predicate": {
+        "ironladders:morph_type": 4
+      },
+      "model": "ironladders:item/morph/morph_oxidized_copper"
+    },
+    {
+      "predicate": {
+        "ironladders:morph_type": 5
+      },
+      "model": "ironladders:item/morph/morph_iron"
+    },
+    {
+      "predicate": {
+        "ironladders:morph_type": 6
+      },
+      "model": "ironladders:item/morph/morph_golden"
+    },
+    {
+      "predicate": {
+        "ironladders:morph_type": 7
+      },
+      "model": "ironladders:item/morph/morph_diamond"
+    },
+    {
+      "predicate": {
+        "ironladders:morph_type": 8
+      },
+      "model": "ironladders:item/morph/morph_netherite"
+    },
+    {
+      "predicate": {
+        "ironladders:morph_type": 9
+      },
+      "model": "ironladders:item/morph/morph_obsidian"
+    },
+
+
+    {
+      "predicate": {
+        "ironladders:morph_type": 30
+      },
+      "model": "ironladders:item/morph/morph_bedrock"
+    },
+    {
+      "predicate": {
+        "ironladders:morph_type": 31
+      },
+      "model": "ironladders:item/morph/morph_crying_obsidian"
+    },
+    {
+      "predicate": {
+        "ironladders:morph_type": 32
+      },
+      "model": "ironladders:item/morph/morph_wooden"
+    },
+    {
+      "predicate": {
+        "ironladders:morph_type": 99
+      },
+      "model": "ironladders:item/morph/morph_unknown"
+    }
+  ]
+}

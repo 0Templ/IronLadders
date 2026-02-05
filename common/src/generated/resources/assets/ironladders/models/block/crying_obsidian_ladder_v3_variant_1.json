@@ -1,0 +1,7 @@
+{
+  "parent": "ironladders:block/template/template_ladder_v3",
+  "textures": {
+    "ladder_texture": "ironladders:block/crying_obsidian/crying_obsidian_ladder_block_variant_1",
+    "particle": "ironladders:block/crying_obsidian/crying_obsidian_ladder"
+  }
+}

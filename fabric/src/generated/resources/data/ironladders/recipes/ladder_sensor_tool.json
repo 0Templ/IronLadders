@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "tag": "c:redstone_dusts"
+    },
+    "L": {
+      "item": "minecraft:ladder"
+    },
+    "O": {
+      "item": "minecraft:observer"
+    },
+    "T": {
+      "item": "minecraft:redstone_torch"
+    }
+  },
+  "pattern": [
+    " TO",
+    " DD",
+    "L  "
+  ],
+  "result": {
+    "item": "ironladders:ladder_sensor_tool"
+  },
+  "show_notification": true
+}

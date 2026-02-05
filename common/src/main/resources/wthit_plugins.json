@@ -1,0 +1,9 @@
+{
+  "ironladders:wthit": {
+    "entrypoints": {
+      "client": "com.nine.ironladders.compat.wthit.WTHITClientSetup"
+    },
+    "side": "client",
+    "defaultEnabled": true
+  }
+}

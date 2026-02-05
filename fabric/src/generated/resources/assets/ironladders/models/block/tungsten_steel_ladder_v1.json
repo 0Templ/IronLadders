@@ -1,0 +1,7 @@
+{
+  "parent": "ironladders:block/template/template_ladder_v1",
+  "textures": {
+    "ladder_texture": "ironladders:block/tungsten_steel/tungsten_steel_ladder_block",
+    "particle": "ironladders:block/tungsten_steel/tungsten_steel_ladder"
+  }
+}

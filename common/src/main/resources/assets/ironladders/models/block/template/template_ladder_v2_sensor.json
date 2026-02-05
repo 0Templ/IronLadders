@@ -1,0 +1,49 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"texture_size": [32, 32],
+	"textures": {
+		"sensor_signal_texture": "ironladders:block/sensor/sensor_on",
+		"ladder_texture": "ironladders:block/bronze/bronze_ladder_block",
+		"particle": "ironladders:block/netherite/netherite_ladder_block_variant_1"
+	},
+	"elements": [
+		{
+			"name": "sensor_shell",
+			"from": [6, 7, 15],
+			"to": [10, 9, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [14, 11, 14]},
+			"faces": {
+				"north": {"uv": [11, 9, 13, 10], "texture": "#ladder_texture"},
+				"east": {"uv": [10.5, 9, 11, 10], "texture": "#ladder_texture"},
+				"south": {"uv": [11, 10, 13, 9], "texture": "#ladder_texture"},
+				"west": {"uv": [13, 9, 13.5, 10], "texture": "#ladder_texture"},
+				"up": {"uv": [3, 3, 5, 3.5], "texture": "#ladder_texture"},
+				"down": {"uv": [3, 4.5, 5, 5], "texture": "#ladder_texture"}
+			}
+		},
+		{
+			"name": "sensor_core",
+			"from": [7, 7, 15],
+			"to": [9, 9, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 7, 14]},
+			"faces": {
+				"north": {"uv": [7, 7, 9, 9], "texture": "#sensor_signal_texture"},
+				"east": {"uv": [0, 0, 0.5, 1], "texture": "#sensor_signal_texture"},
+				"south": {"uv": [7, 7, 9, 9], "texture": "#sensor_signal_texture"},
+				"west": {"uv": [0.5, 0, 1, 1], "texture": "#sensor_signal_texture"},
+				"up": {"uv": [0, 0.5, 1, 1], "texture": "#sensor_signal_texture"},
+				"down": {"uv": [0, 0, 1, 0.5], "texture": "#sensor_signal_texture"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "sensor",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1]
+		}
+	]
+}
