@@ -136,8 +136,7 @@ unifiedPublishing {
         changelog = changelogForVersion(project.version)
         gameVersions = [project.minecraft_version]
         gameLoaders = ["forge", "neoforge"]
-
-        def publicationJar = tasks.named("jar").get()
+        def publicationJar = tasks.named("reobfJar").get()
         mainPublication publicationJar
         var mrToken = project.findProperty("MODRINTH_TOKEN") ?: System.getenv("MODRINTH_TOKEN")
         if (mrToken != null) {
