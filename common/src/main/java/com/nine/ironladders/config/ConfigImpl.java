@@ -2,11 +2,7 @@ package com.nine.ironladders.config;
 
 import com.electronwill.nightconfig.core.file.CommentedFileConfig;
 import com.nine.ironladders.ILCommon;
-import com.nine.ironladders.config.option.ConfigComment;
-import com.nine.ironladders.config.option.ConfigOption;
-import com.nine.ironladders.config.option.ConfigRange;
-import com.nine.ironladders.config.option.ConfigSection;
-import com.nine.ironladders.config.option.ConfigSide;
+import com.nine.ironladders.config.option.*;
 import com.nine.ironladders.platform.Platform;
 import com.nine.ironladders.platform.util.LoaderTarget;
 import net.minecraft.util.Mth;

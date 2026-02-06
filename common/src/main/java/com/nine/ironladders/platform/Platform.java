@@ -1,6 +1,5 @@
 package com.nine.ironladders.platform;
 
-import com.nine.ironladders.config.ConfigImpl;
 import java.util.ServiceLoader;
 
 public class Platform {

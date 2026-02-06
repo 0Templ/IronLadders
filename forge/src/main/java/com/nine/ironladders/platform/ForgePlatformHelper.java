@@ -2,8 +2,9 @@ package com.nine.ironladders.platform;
 
 
 import com.nine.ironladders.platform.util.LoaderTarget;
-import net.minecraftforge.fml.loading.FMLPaths;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.loading.FMLPaths;
+
 import java.io.File;
 
 public class ForgePlatformHelper implements IPlatformHelper {

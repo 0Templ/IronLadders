@@ -2,6 +2,7 @@ package com.nine.ironladders.platform;
 
 import com.nine.ironladders.platform.util.LoaderTarget;
 import net.fabricmc.loader.api.FabricLoader;
+
 import java.io.File;
 
 public class FabricPlatformHelper implements IPlatformHelper {

@@ -1,7 +1,6 @@
 package com.nine.ironladders.config.option;
 
 import com.nine.ironladders.config.ConfigSpec;
-import net.minecraft.util.Mth;
 
 public class ConfigRange<T extends Number & Comparable<T>> implements ConfigOption {
 	

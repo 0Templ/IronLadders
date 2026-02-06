@@ -1,6 +1,5 @@
 package com.nine.ironladders.client.tab;
 
-import com.nine.ironladders.ILCommon;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.WeatheringCopper;

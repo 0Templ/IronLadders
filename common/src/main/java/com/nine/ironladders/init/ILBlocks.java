@@ -1,20 +1,21 @@
 package com.nine.ironladders.init;
 
 import com.nine.ironladders.ILCommon;
-import com.nine.ironladders.client.ItemProperties;
+import com.nine.ironladders.common.block.CopperLadderBlock;
 import com.nine.ironladders.common.block.CryingObsidianLadderBlock;
 import com.nine.ironladders.common.block.MetalLadderBlock;
 import com.nine.ironladders.common.block.VariantLadderBlock;
-import com.nine.ironladders.common.block.CopperLadderBlock;
 import com.nine.ironladders.common.item.MetalLadderItem;
 import com.nine.ironladders.common.util.LadderType;
 import com.nine.ironladders.common.util.PlatformObjects;
-import com.nine.ironladders.platform.util.LoaderTarget;
 import com.nine.ironladders.platform.Platform;
+import com.nine.ironladders.platform.util.LoaderTarget;
 import com.nine.ironladders.platform.util.RegistryProvider;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;

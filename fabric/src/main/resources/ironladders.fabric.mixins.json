@@ -7,9 +7,9 @@
   "mixins": [
   ],
   "client": [
-    "feature.scroll.client.GuiMixin",
+    "client.CreativeModeInventoryScreenMixin",
     "client.FabricTierLadderBlockEntityMixin",
-    "client.CreativeModeInventoryScreenMixin"
+    "feature.scroll.client.GuiMixin"
   ],
   "server": [
   ],

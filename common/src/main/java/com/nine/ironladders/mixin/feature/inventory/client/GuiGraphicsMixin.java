@@ -26,7 +26,7 @@ public abstract class GuiGraphicsMixin {
 	
 	@Inject(method = "renderItemDecorations(Lnet/minecraft/client/gui/Font;Lnet/minecraft/world/item/ItemStack;IILjava/lang/String;)V",
 	at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/PoseStack;pushPose()V", shift = At.Shift.AFTER))
-	public void renderItemDecorations(Font font, ItemStack stack, int x, int y, String text, CallbackInfo ci) {
+	public void il$renderItemDecorations(Font font, ItemStack stack, int x, int y, String text, CallbackInfo ci) {
 		if (stack.getItem() instanceof StoredChargeToolItem){
 			il$renderChargableToolToDoChangeThisNamingDecorations(font, stack, x, y);
 		}

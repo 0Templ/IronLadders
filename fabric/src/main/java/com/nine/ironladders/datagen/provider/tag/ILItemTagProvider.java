@@ -2,8 +2,8 @@ package com.nine.ironladders.datagen.provider.tag;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.nine.ironladders.init.ILBlocks;
 import com.nine.ironladders.common.util.ILTags;
+import com.nine.ironladders.init.ILBlocks;
 import com.nine.ironladders.platform.util.LoaderTarget;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;

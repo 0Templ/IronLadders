@@ -1,7 +1,7 @@
 package com.nine.ironladders.network;
 
-import com.nine.ironladders.network.packet.PacketHolder;
 import com.nine.ironladders.network.packet.PacketContext;
+import com.nine.ironladders.network.packet.PacketHolder;
 import com.nine.ironladders.network.packet.c2s.C2SPacket;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 

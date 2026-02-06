@@ -4,7 +4,6 @@ import com.nine.ironladders.client.ClientHelper;
 import com.nine.ironladders.client.ILUI;
 import com.nine.ironladders.client.tooltip.TooltipContext;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.Item;

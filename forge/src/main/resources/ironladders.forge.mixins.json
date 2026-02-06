@@ -7,10 +7,9 @@
   "mixins": [
   ],
   "client": [
-
     "client.CreativeModeInventoryScreenMixin",
-    "feature.scroll.client.GuiMixin",
-    "client.ForgeTierLadderBlockEntityMixin"
+    "client.ForgeTierLadderBlockEntityMixin",
+    "feature.scroll.client.GuiMixin"
   ],
   "server": [
   ],

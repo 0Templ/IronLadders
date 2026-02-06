@@ -7,7 +7,6 @@ import com.nine.ironladders.common.block.entity.MetalLadderBlockEntity;
 import com.nine.ironladders.common.item.CasingToolItem;
 import com.nine.ironladders.common.item.MorphToolItem;
 import com.nine.ironladders.common.item.StylerToolItem;
-import com.nine.ironladders.config.ILConfig;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;

@@ -7,7 +7,6 @@ import com.nine.ironladders.init.ILBlocks;
 import com.nine.ironladders.init.ILCreativeTab;
 import com.nine.ironladders.init.ILItems;
 import com.nine.ironladders.network.ILFabricNetwork;
-import com.nine.ironladders.platform.Platform;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
 
