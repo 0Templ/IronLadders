@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.nine.ironladders.mixin",
+  "refmap": "ironladders.refmap.json",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+  ],
+  "client": [
+    "client.CreativeModeInventoryScreenMixin",
+    "client.NeoForgeTierLadderBlockEntityMixin",
+    "feature.scroll.client.GuiMixin"
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

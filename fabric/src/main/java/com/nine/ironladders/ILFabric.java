@@ -2,15 +2,14 @@ package com.nine.ironladders;
 
 import com.nine.ironladders.config.ILConfig;
 import com.nine.ironladders.event.FabricCommonEvents;
-import com.nine.ironladders.init.ILBlockEntities;
-import com.nine.ironladders.init.ILBlocks;
-import com.nine.ironladders.init.ILCreativeTab;
-import com.nine.ironladders.init.ILItems;
+import com.nine.ironladders.init.*;
 import com.nine.ironladders.network.ILFabricNetwork;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
 
 public class ILFabric implements ModInitializer {
+	
+	public static final String UPDATE_JSON_URL = "https://raw.githubusercontent.com/0Templ/ModVersions/refs/heads/main/fabric/iron-ladders.json";
     
     @Override
     public void onInitialize() {
@@ -21,6 +20,7 @@ public class ILFabric implements ModInitializer {
 		{
 			ILBlocks.init();
 			ILBlockEntities.init();
+			ILComponents.init();
 			ILItems.init();
 			ILCreativeTab.init();
 		}

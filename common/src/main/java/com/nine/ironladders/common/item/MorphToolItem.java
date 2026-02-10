@@ -2,13 +2,15 @@ package com.nine.ironladders.common.item;
 
 import com.nine.ironladders.client.ClientHelper;
 import com.nine.ironladders.client.ILUI;
-import com.nine.ironladders.client.tooltip.TooltipContext;
+import com.nine.ironladders.client.tooltip.TooltipSource;
 import com.nine.ironladders.common.block.entity.MetalLadderBlockEntity;
 import com.nine.ironladders.common.item.base.BlockHitInteractiveItem;
 import com.nine.ironladders.common.item.base.ContextTooltipItem;
 import com.nine.ironladders.common.item.base.InventoryInteractiveItem;
 import com.nine.ironladders.common.util.MorphType;
 import com.nine.ironladders.common.util.PositionUtils;
+import com.nine.ironladders.init.ILComponents;
+import com.nine.ironladders.mixin.accessor.common.BlockBehaviourAccessor;
 import com.nine.ironladders.platform.Platform;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -43,9 +45,6 @@ public class MorphToolItem extends Item implements
 		InventoryInteractiveItem, ContextTooltipItem, BlockHitInteractiveItem {
 	
 	private static final int MAX_MORPH = 256;
-	
-	private static final String MORPH_TYPE_KEY = "il_morph_type";
-	private static final String MORPH_TYPE_ID = "il_morph_type_id";
 	
 	public MorphToolItem(Properties properties) {
 		super(properties);
@@ -150,36 +149,32 @@ public class MorphToolItem extends Item implements
 	}
 	
 	private static boolean canWrite(ItemStack stack, Block block){
-		var tag = stack.getOrCreateTag();
 		var type = BuiltInRegistries.BLOCK.getKey(block);
 		String typeKey = type.toString();
-		return !(tag.contains(MORPH_TYPE_KEY) && tag.getString(MORPH_TYPE_KEY).equals(typeKey));
+		return !(stack.has(ILComponents.MORPH_TYPE_KEY.get()) && stack.get(ILComponents.MORPH_TYPE_KEY.get()).equals(typeKey));
 	}
 
 	public static void writeMorphType(ItemStack stack, Block block) {
-		var tag = stack.getOrCreateTag();
 		var type = BuiltInRegistries.BLOCK.getKey(block);
 		String typeKey = type.toString();
-		tag.putString(MORPH_TYPE_KEY, typeKey);
+		stack.set(ILComponents.MORPH_TYPE_KEY.get(), typeKey);
 		var morphType = MorphType.KEY_ID_MAP.get(typeKey);
 		int id = morphType == null ? MorphType.UNKNOWN.id : morphType.id;
-		tag.putInt(MORPH_TYPE_ID, id);
+		stack.set(ILComponents.MORPH_TYPE_ID.get(), id);
 	}
 
 	public static String morphStateString(ItemStack stack) {
-		var tag = stack.getTag();
-		return tag == null ? "" : tag.getString(MORPH_TYPE_KEY);
+		return stack.getOrDefault(ILComponents.MORPH_TYPE_KEY.get(), "");
 	}
 	
 	public static int morphStateId(ItemStack stack) {
-		var tag = stack.getTag();
-		return tag == null ? 0 : tag.getInt(MORPH_TYPE_ID);
+		return stack.getOrDefault(ILComponents.MORPH_TYPE_ID.get(), 0);
 	}
 	
 	public static BlockState morphState(ItemStack stack, BlockState original) {
 		var current = morphStateString(stack);
 		if (current.isEmpty()) return null;
-		ResourceLocation id = new ResourceLocation(current);
+		ResourceLocation id = ResourceLocation.parse(current);
 		var optBlock = BuiltInRegistries.BLOCK.getOptional(id);
 		if (optBlock.isEmpty()) return null;
 
@@ -210,7 +205,7 @@ public class MorphToolItem extends Item implements
 	public static void playMorphSound(Level level, BlockPos pos, BlockState morphState) {
 		if (morphState == null) return;
 		Block block = morphState.getBlock();
-		SoundEvent event = block.getSoundType(morphState).getPlaceSound();
+		SoundEvent event = ((BlockBehaviourAccessor) block).il$getSoundType(morphState).getPlaceSound();
 		level.playSound(null, pos, event, SoundSource.PLAYERS, 1.0F, 1.0F);
 	}
 	
@@ -247,15 +242,16 @@ public class MorphToolItem extends Item implements
 		return false;
 	}
 	
+
 	@Override
 	public void appendContextTooltip(
 			ItemStack stack,
 			Level level,
 			List<Component> components,
 			TooltipFlag flag,
-			TooltipContext type
+			TooltipSource source
 	) {
-		if (type == TooltipContext.REFERENCE){
+		if (source == TooltipSource.REFERENCE){
 			components.add(Component.translatable("item.ironladders.ladder_morph_tool.desc").withStyle(ChatFormatting.GRAY));
 		} else {
 			var current = morphStateString(stack);
@@ -317,6 +313,7 @@ public class MorphToolItem extends Item implements
 	public boolean onClickedBy(ItemStack self, ItemStack other, int button, boolean shift) {
 		return false;
 	}
+	
 
 	
 }

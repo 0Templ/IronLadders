@@ -10,8 +10,8 @@ import com.nine.ironladders.common.block.MetalLadderBlock;
 import com.nine.ironladders.common.block.VariantLadderBlock;
 import com.nine.ironladders.config.ILConfig;
 import com.nine.ironladders.init.ILBlocks;
+import com.nine.ironladders.mixin.accessor.client.ModelBakeryAccessor;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.BlockModelShaper;
 import net.minecraft.client.renderer.block.model.BlockModelDefinition;
 import net.minecraft.client.renderer.block.model.MultiVariant;
 import net.minecraft.client.renderer.block.model.multipart.MultiPart;
@@ -60,16 +60,16 @@ public abstract class ModelManagerMixin {
 			ResourceManager resourceManager,
 			Executor executor,
 			CallbackInfoReturnable<CompletableFuture<Map<ResourceLocation,
-					List<ModelBakery.LoadedJson>>>> cir
+					List<BlockStateModelLoader.LoadedJson>>>> cir
 	) {
-		CompletableFuture<Map<ResourceLocation, List<ModelBakery.LoadedJson>>> modified =
+		CompletableFuture<Map<ResourceLocation, List<BlockStateModelLoader.LoadedJson>>> modified =
 				cir.getReturnValue().thenApply(map -> {
-					Map<ResourceLocation, List<ModelBakery.LoadedJson>> mutableMap = new HashMap<>(map);
+					Map<ResourceLocation, List<BlockStateModelLoader.LoadedJson>> mutableMap = new HashMap<>(map);
 					for (ResourceLocation location : map.keySet()) {
 						if (location.getNamespace().equals(ILCommon.MODID)) {
 							ModelType modelType = ILConfig.DEFAULT_MODEL_TYPE.get();
 							boolean useMulti = il$shouldUseMultivariant(location, modelType);
-							ResourceLocation altLocation = new ResourceLocation(
+							ResourceLocation altLocation = ResourceLocation.fromNamespaceAndPath(
 									location.getNamespace(),
 									location.getPath()
 											.replace("blockstates", ILClient.ALT_BLOCK_STATES_DIR)
@@ -79,8 +79,8 @@ public abstract class ModelManagerMixin {
 							if (altResource.isPresent()) {
 								try (Reader reader = altResource.get().openAsReader()) {
 									JsonObject json = GsonHelper.parse(reader);
-									List<ModelBakery.LoadedJson> altList = List.of(
-											new ModelBakery.LoadedJson(altResource.get().sourcePackId(), json)
+									List<BlockStateModelLoader.LoadedJson> altList = List.of(
+											new BlockStateModelLoader.LoadedJson(altResource.get().sourcePackId(), json)
 									);
 									mutableMap.put(location, altList);
 								} catch (Exception ignored) {
@@ -98,6 +98,7 @@ public abstract class ModelManagerMixin {
 		ClientCache.CACHE.clear();
 		
 		ResourceManager resourceManager = Minecraft.getInstance().getResourceManager();
+		ModelBakeryAccessor bakeryAccessor = (ModelBakeryAccessor) bakery;
 		
 		Function<Material, TextureAtlasSprite> spriteGetter = mat -> {
 			AtlasSet.StitchResult result = atlasMap.get(mat.atlasLocation());
@@ -110,31 +111,42 @@ public abstract class ModelManagerMixin {
 			
 			private final Map<ResourceLocation, Map<Transformation, BakedModel[]>> cache = new HashMap<>();
 		
+			@Override
 			public UnbakedModel getModel(ResourceLocation location) {
-				return bakery.getModel(location);
+				return bakeryAccessor.il$getModel(location);
 			}
+
 	
+			@Override
 			public BakedModel bake(ResourceLocation location, ModelState state) {
 				return cache.computeIfAbsent(location, k -> new HashMap<>())
 						.computeIfAbsent(state.getRotation(), k -> new BakedModel[2])
 						[state.isUvLocked() ? 1 : 0] =
-						bakery.getModel(location).bake(this, spriteGetter, state, location);
+						bakeryAccessor.il$getModel(location).bake(this, spriteGetter, state);
 			}
 			
-			// Forge-only hooks
+			// Forge-NeoForge hooks
 			// TODO: move to a platform helper..
 			public Function<Material, TextureAtlasSprite> getModelTextureGetter() {
 				return spriteGetter;
 			}
 			
-			public BakedModel bake(ResourceLocation location, ModelState state, Function<Material, TextureAtlasSprite> atlasSpriteFunction){
-				return bake(location, state);
+			public UnbakedModel getTopLevelModel(ModelResourceLocation location) {
+				return bakeryAccessor.il$getModel(location.id());
+			}
+			
+			public BakedModel bake(ResourceLocation location, ModelState state, Function<Material, TextureAtlasSprite> atlasSpriteFunction) {
+				return bakeryAccessor.il$getModel(location).bake(this, atlasSpriteFunction, state);
+			}
+			
+			public BakedModel bakeUncached(UnbakedModel unbakedModel, ModelState state, Function<Material, TextureAtlasSprite> atlasSpriteFunction) {
+				return unbakedModel.bake(this, atlasSpriteFunction, state);
 			}
 		};
 		
 		BakedModel missingModel = bakery.getBakedTopLevelModels().getOrDefault(
-				ModelBakery.MISSING_MODEL_LOCATION,
-				bakery.getModel(ModelBakery.MISSING_MODEL_LOCATION).bake(baker, spriteGetter, BlockModelRotation.X0_Y0, ModelBakery.MISSING_MODEL_LOCATION)
+				ModelBakery.MISSING_MODEL_VARIANT,
+				bakeryAccessor.il$getModel(ModelBakery.MISSING_MODEL_LOCATION).bake(baker, spriteGetter, BlockModelRotation.X0_Y0)
 		);
 		
 		for (ModelType type : CUSTOM_TYPES) {
@@ -159,10 +171,10 @@ public abstract class ModelManagerMixin {
 						BlockState renderState = il$normalizeState(state);
 						BakedModel baked = bakedCache.get(renderState);
 						if (baked == null) {
-							UnbakedModel unbaked = unbakedMap.getOrDefault(renderState, bakery.getModel(ModelBakery.MISSING_MODEL_LOCATION));
-							unbaked.resolveParents(bakery::getModel);
+							UnbakedModel unbaked = unbakedMap.getOrDefault(renderState, bakeryAccessor.il$getModel(ModelBakery.MISSING_MODEL_LOCATION));
+							unbaked.resolveParents(bakeryAccessor::il$getModel);
 							try {
-								baked = unbaked.bake(baker, spriteGetter, BlockModelRotation.X0_Y0, BlockModelShaper.stateToModelLocation(renderState));
+								baked = unbaked.bake(baker, spriteGetter, BlockModelRotation.X0_Y0);
 							} catch (Exception e) {
 								baked = missingModel;
 							}
@@ -182,14 +194,14 @@ public abstract class ModelManagerMixin {
 	}
 	
 	@Unique
-	private ModelBakery.LoadedJson il$loadJson(ResourceManager manager, Block block, ModelType type) {
+	private BlockStateModelLoader.LoadedJson il$loadJson(ResourceManager manager, Block block, ModelType type) {
 		ResourceLocation id = BuiltInRegistries.BLOCK.getKey(block);
 		boolean useMulti = type.isMultivariant() && block instanceof VariantLadderBlock;
-		ResourceLocation location = new ResourceLocation(ILCommon.MODID,
+		ResourceLocation location = ResourceLocation.fromNamespaceAndPath(ILCommon.MODID,
 				ILClient.ALT_BLOCK_STATES_DIR + "/" + id.getPath() + "_" + type.blockStateKey(useMulti) + ".json");
 		return manager.getResource(location).flatMap(res -> {
 			try (Reader reader = res.openAsReader()) {
-				return Optional.of(new ModelBakery.LoadedJson(res.sourcePackId(), GsonHelper.parse(reader)));
+				return Optional.of(new BlockStateModelLoader.LoadedJson(res.sourcePackId(), GsonHelper.parse(reader)));
 			} catch (Exception e) {
 				return Optional.empty();
 			}
@@ -206,7 +218,7 @@ public abstract class ModelManagerMixin {
 			return false;
 		}
 		String blockPath = path.replace("blockstates/", "").replace(".json", "");
-		ResourceLocation blockId = new ResourceLocation(location.getNamespace(), blockPath);
+		ResourceLocation blockId = ResourceLocation.fromNamespaceAndPath(location.getNamespace(), blockPath);
 		if (!BuiltInRegistries.BLOCK.containsKey(blockId)) {
 			return false;
 		}

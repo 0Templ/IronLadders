@@ -4,20 +4,22 @@ import com.nine.ironladders.init.ILBlocks;
 import com.nine.ironladders.platform.util.LoaderTarget;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.world.level.block.Block;
 
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
 
 public abstract class ILLootTableProvider extends FabricBlockLootTableProvider {
 	
 	protected final LoaderTarget[] targets;
 	
-	public ILLootTableProvider(FabricDataOutput dataOutput, LoaderTarget... targets) {
-		super(dataOutput);
+	public ILLootTableProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registryLookup, LoaderTarget... targets) {
+		super(output, registryLookup);
 		this.targets = targets;
 	}
 
-	private static Set<Block> NO_DROP = Set.of();
+	private static final Set<Block> NO_DROP = Set.of();
 	
 	@Override
 	public void generate() {
@@ -29,22 +31,29 @@ public abstract class ILLootTableProvider extends FabricBlockLootTableProvider {
 	
 	public static class Common extends ILLootTableProvider {
 		
-		public Common(FabricDataOutput output) {
-			super(output, LoaderTarget.COMMON);
+		public Common(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registryLookup) {
+			super(output, registryLookup, LoaderTarget.COMMON);
 		}
 	}
 	
 	public static class Fabric extends ILLootTableProvider {
 		
-		public Fabric(FabricDataOutput output) {
-			super(output, LoaderTarget.FABRIC);
+		public Fabric(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registryLookup) {
+			super(output, registryLookup, LoaderTarget.FABRIC, LoaderTarget.COMMON);
 		}
 	}
 	
 	public static class Forge extends ILLootTableProvider {
 		
-		public Forge(FabricDataOutput output) {
-			super(output, LoaderTarget.FORGE);
+		public Forge(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registryLookup) {
+			super(output, registryLookup, LoaderTarget.FORGE, LoaderTarget.COMMON);
+		}
+	}
+
+	public static class NeoForge extends ILLootTableProvider {
+
+		public NeoForge(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registryLookup) {
+			super(output, registryLookup, LoaderTarget.NEOFORGE, LoaderTarget.COMMON);
 		}
 	}
 

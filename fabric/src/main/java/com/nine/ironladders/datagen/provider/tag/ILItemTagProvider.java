@@ -72,7 +72,7 @@ public abstract class ILItemTagProvider extends FabricTagProvider.ItemTagProvide
 	public static class Common extends ILItemTagProvider {
 		
 		public Common(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
-			super(output, registriesFuture, LoaderTarget.FABRIC);
+			super(output, registriesFuture, LoaderTarget.COMMON);
 		}
 		
 	}
@@ -88,6 +88,13 @@ public abstract class ILItemTagProvider extends FabricTagProvider.ItemTagProvide
 		
 		public Forge(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
 			super(output, registriesFuture, LoaderTarget.FORGE);
+		}
+	}
+
+	public static class NeoForge extends ILItemTagProvider {
+
+		public NeoForge(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+			super(output, registriesFuture, LoaderTarget.NEOFORGE);
 		}
 	}
 	

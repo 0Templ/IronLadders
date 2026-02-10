@@ -20,7 +20,5 @@ public enum ConfigFlag implements ConfigOption {
 		}
 	}
 	
-	;
 	
-
 }

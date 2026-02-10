@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "minecraft:ladder"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    },
+    "S": {
+      "item": "minecraft:slime_ball"
+    }
+  },
+  "pattern": [
+    " PS",
+    " PP",
+    "L  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "ironladders:ladder_morph_tool"
+  }
+}

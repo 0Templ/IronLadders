@@ -1,6 +1,6 @@
 package com.nine.ironladders.mixin.feature.tooltip.client;
 
-import com.nine.ironladders.client.tooltip.TooltipContext;
+import com.nine.ironladders.client.tooltip.TooltipSource;
 import com.nine.ironladders.common.item.base.ContextTooltipItem;
 import com.nine.ironladders.mixin.accessor.client.AbstractContainerScreenAccessor;
 import net.minecraft.client.Minecraft;
@@ -11,7 +11,6 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -23,21 +22,21 @@ import java.util.List;
 public class ItemMixin {
 	
 	@Inject(method = "appendHoverText", at = @At("RETURN"))
-	private void il$injectSmartTooltip(ItemStack stack, Level level, List<Component> components, TooltipFlag flag, CallbackInfo ci) {
+	private void il$injectSmartTooltip(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag tooltipFlag, CallbackInfo ci) {
 		if (this instanceof ContextTooltipItem item) {
-			TooltipContext context = TooltipContext.UNKNOWN;
+			TooltipSource source = TooltipSource.UNKNOWN;
 			Minecraft mc = Minecraft.getInstance();
 			var player = mc.player;
 			if (mc.screen instanceof AbstractContainerScreen<?> screen && player != null) {
 				Slot hoveredSlot = ((AbstractContainerScreenAccessor)(screen)).getHoveredSlot();
 				boolean creativeScreen = screen instanceof CreativeModeInventoryScreen;
 				if (hoveredSlot == null || (creativeScreen && player.getInventory() != hoveredSlot.container)){
-					context = TooltipContext.REFERENCE;
+					source = TooltipSource.REFERENCE;
 				}else if (hoveredSlot.getItem() == stack) {
-					context = TooltipContext.INVENTORY;
+					source = TooltipSource.INVENTORY;
 				}
 			}
-			item.appendContextTooltip(stack, level, components, flag, context);
+			item.appendContextTooltip(stack, mc.level, components, tooltipFlag, source);
 		}
 	}
 }

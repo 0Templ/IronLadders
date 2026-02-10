@@ -31,17 +31,17 @@ public class RecipeHelper {
 		}
 		
 		for (var material : set.keySet()){
-			if (material instanceof ILItemMaterial itemMaterial) {
+			if (material instanceof ILItemMaterial(net.minecraft.world.level.ItemLike item)) {
 				// Possibly has no sense?
 				{
-					var reqKey = BuiltInRegistries.ITEM.getKey(itemMaterial.item().asItem());
+					var reqKey = BuiltInRegistries.ITEM.getKey(item.asItem());
 					if (!BuiltInRegistries.ITEM.containsKey(reqKey)) {
 						missing.addAll(set.get(material));
 					}
 				}
 			}
-			else if (material instanceof ILTagMaterial tagMaterial) {
-				var opt = BuiltInRegistries.ITEM.getTag(tagMaterial.tag());
+			else if (material instanceof ILTagMaterial(net.minecraft.tags.TagKey<Item> tag)) {
+				var opt = BuiltInRegistries.ITEM.getTag(tag);
 				if (opt.isEmpty() || opt.get().size() == 0) {
 					missing.addAll(set.get(material));
 				}

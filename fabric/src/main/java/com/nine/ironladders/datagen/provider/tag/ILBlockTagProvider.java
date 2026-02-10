@@ -134,6 +134,13 @@ public abstract class ILBlockTagProvider extends FabricTagProvider.BlockTagProvi
 			super(output, registriesFuture, LoaderTarget.FORGE, LoaderTarget.COMMON);
 		}
 	}
+
+	public static class NeoForge extends ILBlockTagProvider {
+
+		public NeoForge(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+			super(output, registriesFuture, LoaderTarget.NEOFORGE, LoaderTarget.COMMON);
+		}
+	}
 	
 	
 }

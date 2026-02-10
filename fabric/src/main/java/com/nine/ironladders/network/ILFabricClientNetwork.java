@@ -16,12 +16,11 @@ public final class ILFabricClientNetwork {
 	}
 
 	private static <T extends S2CPacket> void registerS2CPacket(PacketHolder<T> holder) {
-		ClientPlayNetworking.registerGlobalReceiver(
-				holder.id(),
-				(client, handler, buf, responseSender) -> {
-					var packet = holder.decoder().apply(buf);
-					client.execute(() -> holder.handler().accept(packet, new PacketContext(client.player)));
-				}
-		);
+		ClientPlayNetworking.registerGlobalReceiver(holder.id(), (packet, context) ->
+				context.client().execute(() -> {
+					if (context.player() != null) {
+						packet.handle(new PacketContext(context.player()));
+					}
+				}));
 	}
 }

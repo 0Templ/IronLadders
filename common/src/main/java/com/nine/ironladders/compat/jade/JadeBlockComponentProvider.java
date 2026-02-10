@@ -87,7 +87,8 @@ public class JadeBlockComponentProvider implements IBlockComponentProvider {
 	
 	@Override
 	public ResourceLocation getUid() {
-		return new ResourceLocation(ILCommon.MODID);
+		return ResourceLocation.parse(ILCommon.MODID);
 	}
 	
 }
+

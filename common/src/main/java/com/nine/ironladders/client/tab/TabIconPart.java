@@ -15,7 +15,7 @@ public class TabIconPart {
 	}
 	
 	protected static ResourceLocation createLocationIcon(String key){
-		return new ResourceLocation(ILCommon.MODID, "textures/gui/icon/tab/icon_" + key + ".png");
+		return ResourceLocation.fromNamespaceAndPath(ILCommon.MODID, "textures/gui/icon/tab/icon_" + key + ".png");
 	}
 	
 	public void render(GuiGraphics graphics, int x, int y) {
@@ -23,3 +23,4 @@ public class TabIconPart {
 	}
 	
 }
+

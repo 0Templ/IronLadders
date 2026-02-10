@@ -45,12 +45,12 @@ public class ILItemModels {
 	}
 
 	private static void generateMorphItemModels(BiConsumer<ResourceLocation, Supplier<JsonElement>> output){
-		ResourceLocation baseTexture = new ResourceLocation(ILCommon.MODID, "item/ladder_morph_tool");
+		ResourceLocation baseTexture = ResourceLocation.fromNamespaceAndPath(ILCommon.MODID, "item/ladder_morph_tool");
 		for (MorphType type : MorphType.values()) {
 			if (type == MorphType.NONE) continue;
 			if (type.key == null || type.key.isBlank()) continue;
-			ResourceLocation modelId = new ResourceLocation(ILCommon.MODID, "item/morph/morph_" + type.key);
-			ResourceLocation overlayTexture = new ResourceLocation(ILCommon.MODID, "item/morph/morph_" + type.key);
+			ResourceLocation modelId = ResourceLocation.fromNamespaceAndPath(ILCommon.MODID, "item/morph/morph_" + type.key);
+			ResourceLocation overlayTexture = ResourceLocation.fromNamespaceAndPath(ILCommon.MODID, "item/morph/morph_" + type.key);
 
 			TextureMapping mapping = new TextureMapping();
 			mapping.put(TextureSlot.LAYER0, baseTexture);
@@ -59,3 +59,4 @@ public class ILItemModels {
 		}
 	}
 }
+

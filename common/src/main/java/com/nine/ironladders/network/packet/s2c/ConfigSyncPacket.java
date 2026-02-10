@@ -5,6 +5,8 @@ import com.nine.ironladders.common.util.LadderType;
 import com.nine.ironladders.config.ConfigSyncManager;
 import com.nine.ironladders.network.packet.PacketContext;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.HashMap;
@@ -12,16 +14,20 @@ import java.util.Map;
 
 public record ConfigSyncPacket(Map<String, Object> map) implements S2CPacket {
 	
-	public static final ResourceLocation ID = new ResourceLocation(ILCommon.MODID, "config_sync_packet");
+	@Override
+	public Type<ConfigSyncPacket> type() {
+		return ID;
+	}
+	
+	public static final Type<ConfigSyncPacket> ID = new Type<>(
+			ResourceLocation.fromNamespaceAndPath(ILCommon.MODID,"config_sync_packet"));
+	
+	public static final StreamCodec<RegistryFriendlyByteBuf, ConfigSyncPacket> CODEC = StreamCodec.ofMember(
+			ConfigSyncPacket::encode, ConfigSyncPacket::decode);
 	
 	// Map is filled in ConfigSyncManager
 	public ConfigSyncPacket(){
 		this(new HashMap<>());
-	}
-	
-	@Override
-	public ResourceLocation id() {
-		return ID;
 	}
 	
 	@Override
@@ -39,5 +45,7 @@ public record ConfigSyncPacket(Map<String, Object> map) implements S2CPacket {
 		LadderType.resetSpeedCache();
 		ConfigSyncManager.SYNCED_VALUES.putAll(map);
 	}
+	
+
 	
 }

@@ -2,6 +2,7 @@ package com.nine.ironladders.platform;
 
 import com.nine.ironladders.platform.util.BlockEntityFactory;
 import com.nine.ironladders.platform.util.RegistryProvider;
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -14,6 +15,8 @@ import java.util.function.Supplier;
 
 public interface IPlatformRegistryHelper {
 	
+	
+	<T> RegistryProvider<DataComponentType<T>> registerComponent(String id, DataComponentType<T> dataComponentType);
 	
 	RegistryProvider<Item> registerItem(String id, Supplier<Item> itemSupplier);
 	

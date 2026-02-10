@@ -144,7 +144,7 @@ public class ConfigImpl {
 		}
 
 		if (range != null && !hideConstraints) {
-			lines.add("Range: " + range.min + " .. " + range.max);
+			lines.add("Range: " + range.min() + " .. " + range.max());
 		}
 
 		if (clazz != null && clazz.isEnum()) {

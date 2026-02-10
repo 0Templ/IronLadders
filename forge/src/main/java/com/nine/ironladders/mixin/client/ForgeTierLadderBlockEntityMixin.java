@@ -4,6 +4,7 @@ import com.nine.ironladders.client.LadderRenderData;
 import com.nine.ironladders.client.render.ForgeTierLadderBakedModel;
 import com.nine.ironladders.common.block.entity.MetalLadderBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -28,12 +29,12 @@ public class ForgeTierLadderBlockEntityMixin extends BlockEntity {
 	}
 	
 	@Inject(method = "setChanged", at = @At("TAIL"))
-	public void setChanged(CallbackInfo ci) {
+	public void il$load(CallbackInfo ci) {
 		requestModelDataUpdate();
 	}
 	
-	@Inject(method = "load", at = @At("TAIL"))
-	public void load(CompoundTag tag, CallbackInfo ci) {
+	@Inject(method = "loadAdditional", at = @At("TAIL"))
+	public void il$load(CompoundTag tag, HolderLookup.Provider registries, CallbackInfo ci) {
 		if (level != null && level.isClientSide) {
 			requestModelDataUpdate();
 		}

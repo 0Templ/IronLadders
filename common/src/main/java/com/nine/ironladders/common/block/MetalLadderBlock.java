@@ -15,15 +15,13 @@ import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.EntityBlock;
-import net.minecraft.world.level.block.LadderBlock;
-import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.AABB;
 
 import java.util.List;
@@ -48,6 +46,8 @@ public class MetalLadderBlock extends LadderBlock implements EntityBlock {
 				.requiresCorrectToolForDrops()
 				.forceSolidOff()
 				.noOcclusion()
+				.sound(SoundType.METAL)
+				.pushReaction(PushReaction.DESTROY)
 				.lightLevel(b -> b.getValue(LIGHT_LEVEL))
 		);
 		this.type = type;
@@ -234,8 +234,7 @@ public class MetalLadderBlock extends LadderBlock implements EntityBlock {
 	}
 	
 	@Override
-	public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-		super.playerWillDestroy(level, pos, state, player);
+	public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
 		if (!level.isClientSide) {
 			level.getBlockEntity(pos, ILBlockEntities.METAL_LADDER.get()).ifPresent(be -> {
 				for (var stack : be.getStacksToDrop()){
@@ -243,6 +242,7 @@ public class MetalLadderBlock extends LadderBlock implements EntityBlock {
 				}
 			});
 		}
+		return super.playerWillDestroy(level, pos, state, player);
 	}
 	
 	@Override

@@ -108,6 +108,13 @@ public class ILModelProvider extends FabricModelProvider {
 		}
 		
 	}
+
+	public static class NeoForge extends ILModelProvider {
+
+		public NeoForge(FabricDataOutput output) {
+			super(output, LoaderTarget.NEOFORGE);
+		}
+	}
 	
 	
 	

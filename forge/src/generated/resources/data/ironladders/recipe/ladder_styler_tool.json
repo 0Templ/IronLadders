@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "tag": "forge:gems/lapis"
+    },
+    "L": {
+      "item": "minecraft:ladder"
+    },
+    "T": {
+      "tag": "minecraft:trim_templates"
+    }
+  },
+  "pattern": [
+    " BT",
+    " BB",
+    "L  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "ironladders:ladder_styler_tool"
+  }
+}

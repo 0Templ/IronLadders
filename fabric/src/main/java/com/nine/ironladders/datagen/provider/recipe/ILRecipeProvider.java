@@ -10,7 +10,9 @@ import com.nine.ironladders.init.ILItems;
 import com.nine.ironladders.platform.util.LoaderTarget;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.advancements.CriterionTriggerInstance;
+import net.minecraft.advancements.Criterion;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -20,19 +22,19 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 
 import java.util.Set;
-import java.util.function.Consumer;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 public abstract class ILRecipeProvider extends FabricRecipeProvider {
 	
-	protected Consumer<FinishedRecipe> consumer;
+	protected RecipeOutput consumer;
 	
 	protected final LoaderTarget target;
 	protected final ILMaterials materials;
 	protected final Set<Item> available;
 	
-	private ILRecipeProvider(FabricDataOutput output, LoaderTarget target) {
-		super(output);
+	private ILRecipeProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture, LoaderTarget target) {
+		super(output, registriesFuture);
 		this.target = target;
 		this.materials = new ILMaterials(target);
 		this.available = ILBlocks.AVAILABLE_LADDERS.get(target, LoaderTarget.COMMON).stream()
@@ -40,7 +42,7 @@ public abstract class ILRecipeProvider extends FabricRecipeProvider {
 	}
 	
 	@Override
-	public void buildRecipes(Consumer<FinishedRecipe> consumer) {
+	public void buildRecipes(RecipeOutput consumer) {
 		this.consumer = consumer;
 		addRecipes();
 	}
@@ -97,7 +99,7 @@ public abstract class ILRecipeProvider extends FabricRecipeProvider {
 				.define('L', Ingredient.of(Items.LADDER))
 				.pattern("SL").pattern("LG")
 				.unlockedBy("has_material", has(materials.GOLD_INGOT))
-				.save(consumer, new ResourceLocation(ILCommon.MODID,
+				.save(consumer, ResourceLocation.fromNamespaceAndPath(ILCommon.MODID,
 						RecipeProvider.getItemName(ILBlocks.NETHERITE_LADDER.get()) + "_another_variant"));
 		
 		// Custom
@@ -113,7 +115,7 @@ public abstract class ILRecipeProvider extends FabricRecipeProvider {
 				.define('L', Items.LADDER)
 				.pattern(" PS").pattern(" PP").pattern("L  ")
 				.unlockedBy("has_material", has(materials.SLIME_BALL))
-				.save(consumer, new ResourceLocation(ILCommon.MODID, RecipeProvider.getItemName(ILItems.MORPH_TOOL.get())));
+				.save(consumer, ResourceLocation.fromNamespaceAndPath(ILCommon.MODID, RecipeProvider.getItemName(ILItems.MORPH_TOOL.get())));
 		
 		ShapedRecipeBuilder
 				.shaped(RecipeCategory.MISC, ILItems.SENSOR_TOOL.get(), 1)
@@ -123,7 +125,7 @@ public abstract class ILRecipeProvider extends FabricRecipeProvider {
 				.define('L', Items.LADDER)
 				.pattern(" TO").pattern(" DD").pattern("L  ")
 				.unlockedBy("has_material", has(materials.REDSTONE_TORCH))
-				.save(consumer, new ResourceLocation(ILCommon.MODID, RecipeProvider.getItemName(ILItems.SENSOR_TOOL.get())));
+				.save(consumer, ResourceLocation.fromNamespaceAndPath(ILCommon.MODID, RecipeProvider.getItemName(ILItems.SENSOR_TOOL.get())));
 		
 		ShapedRecipeBuilder
 				.shaped(RecipeCategory.MISC, ILItems.STYLER_TOOL.get(), 1)
@@ -132,7 +134,7 @@ public abstract class ILRecipeProvider extends FabricRecipeProvider {
 				.define('L', Items.LADDER)
 				.pattern(" BT").pattern(" BB").pattern("L  ")
 				.unlockedBy("has_material", has(materials.TRIM_TEMPLATE))
-				.save(consumer, new ResourceLocation(ILCommon.MODID, RecipeProvider.getItemName(ILItems.STYLER_TOOL.get())));
+				.save(consumer, ResourceLocation.fromNamespaceAndPath(ILCommon.MODID, RecipeProvider.getItemName(ILItems.STYLER_TOOL.get())));
 		
 		ShapedRecipeBuilder
 				.shaped(RecipeCategory.MISC, ILItems.LIGHT_TOOL.get(), 1)
@@ -141,7 +143,7 @@ public abstract class ILRecipeProvider extends FabricRecipeProvider {
 				.define('L', Items.LADDER)
 				.pattern(" DB").pattern(" DD").pattern("L  ")
 				.unlockedBy("has_material", has(materials.GLOWSTONE_DUST))
-				.save(consumer, new ResourceLocation(ILCommon.MODID, RecipeProvider.getItemName(ILItems.LIGHT_TOOL.get())));
+				.save(consumer, ResourceLocation.fromNamespaceAndPath(ILCommon.MODID, RecipeProvider.getItemName(ILItems.LIGHT_TOOL.get())));
 		
 		ShapedRecipeBuilder
 				.shaped(RecipeCategory.MISC, ILItems.CASING_TOOL.get(), 1)
@@ -150,7 +152,7 @@ public abstract class ILRecipeProvider extends FabricRecipeProvider {
 				.define('L', Items.LADDER)
 				.pattern(" GD").pattern(" GG").pattern("L  ")
 				.unlockedBy("has_material", has(materials.GLASS_BLOCK))
-				.save(consumer, new ResourceLocation(ILCommon.MODID, RecipeProvider.getItemName(ILItems.CASING_TOOL.get())));
+				.save(consumer, ResourceLocation.fromNamespaceAndPath(ILCommon.MODID, RecipeProvider.getItemName(ILItems.CASING_TOOL.get())));
 	}
 	
 	private boolean isAvailable(ItemLike itemLike) {
@@ -161,12 +163,12 @@ public abstract class ILRecipeProvider extends FabricRecipeProvider {
 		ladder(material, Ingredient.of(Items.LADDER), result, amount, has(material));
 	}
 	
-	protected void ladder(ILMaterial material, ItemLike result, int amount, CriterionTriggerInstance criterion) {
+	protected void ladder(ILMaterial material, ItemLike result, int amount, Criterion<InventoryChangeTrigger.TriggerInstance> criterion) {
 		ladder(material, Ingredient.of(Items.LADDER), result, amount, criterion);
 	}
 	
 	protected void ladder(ILMaterial material, Ingredient ladderBefore, ItemLike result, int amount,
-						  CriterionTriggerInstance criterionTrigger
+						  Criterion<InventoryChangeTrigger.TriggerInstance> criterionTrigger
 	) {
 		if (!isAvailable(result)) return;
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, result, amount)
@@ -174,16 +176,16 @@ public abstract class ILRecipeProvider extends FabricRecipeProvider {
 				.define('L', ladderBefore)
 				.pattern("LLL").pattern("LML").pattern("LLL")
 				.unlockedBy("has_material", criterionTrigger)
-				.save(consumer, new ResourceLocation(ILCommon.MODID,
+				.save(consumer, ResourceLocation.fromNamespaceAndPath(ILCommon.MODID,
 						RecipeProvider.getItemName(result)));
 	}
 	
-	public CriterionTriggerInstance has(ILMaterial material){
-		if (material instanceof ILItemMaterial itemMaterial){
-			return has(itemMaterial.item());
+	public Criterion<InventoryChangeTrigger.TriggerInstance> has(ILMaterial material){
+		if (material instanceof ILItemMaterial(ItemLike item)){
+			return has(item);
 		}
-		else if(material instanceof ILTagMaterial tagMaterial){
-			return has(tagMaterial.tag());
+		else if(material instanceof ILTagMaterial(net.minecraft.tags.TagKey<Item> tag)){
+			return has(tag);
 		}
 		return null;
 	}
@@ -200,19 +202,27 @@ public abstract class ILRecipeProvider extends FabricRecipeProvider {
 	
 	public static class Fabric extends ILRecipeProvider {
 		
-		public Fabric(FabricDataOutput output) {
-			super(output, LoaderTarget.FABRIC);
+		public Fabric(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+			super(output, registriesFuture, LoaderTarget.FABRIC);
 		}
 		
 	}
 	
 	public static class Forge extends ILRecipeProvider {
 		
-		public Forge(FabricDataOutput output) {
-			super(output, LoaderTarget.FORGE);
+		public Forge(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+			super(output, registriesFuture, LoaderTarget.FORGE);
+		}
+	}
+
+	public static class NeoForge extends ILRecipeProvider {
+
+		public NeoForge(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+			super(output, registriesFuture, LoaderTarget.NEOFORGE);
 		}
 	}
 	
 	
 	
 }
+

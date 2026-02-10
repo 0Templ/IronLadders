@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ironladders:block/crying_obsidian/crying_obsidian_ladder"
+  }
+}

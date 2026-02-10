@@ -4,7 +4,7 @@
 	"ambientocclusion": false,
 	"texture_size": [32, 32],
 	"textures": {
-		"ladder_texture": "ironladders:block/netherite/netherite_ladder_block_variant_1"
+    "ladder_texture": "ironladders:block/copper/copper_ladder_block"
 	},
 	"elements": [
 		{

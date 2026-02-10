@@ -12,22 +12,18 @@ import net.minecraft.world.item.ItemStack;
 @JeiPlugin
 public class JEISetup implements IModPlugin {
 
-	private static final ResourceLocation ID = new ResourceLocation(ILCommon.MODID, "jei");
-
-	@Override
-	public ResourceLocation getPluginUid() {
-		return ID;
-	}
+	private static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(ILCommon.MODID, "jei");
 	
 	@Override
 	public void registerRecipes(IRecipeRegistration registration) {
 		for (var info : NeiHelper.NEI_ITEM_INFO_MAP.entrySet()){
 			registration.addIngredientInfo(new ItemStack(info.getKey()), VanillaTypes.ITEM_STACK, info.getValue());
 		}
-		
-		var hiddenItems = NeiHelper.hiddenNEIStacks();
-		registration.getIngredientManager()
-				.removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, hiddenItems);
+		registration.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, NeiHelper.hiddenNEIStacks());
 	}
 	
+	@Override
+	public ResourceLocation getPluginUid() {
+		return ID;
+	}
 }

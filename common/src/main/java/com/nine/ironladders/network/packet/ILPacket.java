@@ -1,11 +1,11 @@
 package com.nine.ironladders.network.packet;
 
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 
-public interface ILPacket {
+public interface ILPacket extends CustomPacketPayload {
 
-	ResourceLocation id();
-	
 	void encode(FriendlyByteBuf buf);
+
+	void handle(PacketContext context);
 }

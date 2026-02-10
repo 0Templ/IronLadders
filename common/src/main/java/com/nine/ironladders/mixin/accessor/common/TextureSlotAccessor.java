@@ -9,7 +9,7 @@ public interface TextureSlotAccessor {
 	
 	@Invoker("create")
 	static TextureSlot il$create(String id, TextureSlot parent) {
-		return il$create(id, null);
+		throw new AssertionError();
 	}
 	
 }

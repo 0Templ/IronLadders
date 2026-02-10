@@ -15,6 +15,8 @@ public class ILCommon {
 	
 	public static final boolean IS_DATAGEN = Boolean.parseBoolean(System.getProperty("datagen"));
 	
+	public static final String MOD_VERSION = Platform.CORE.getModVersion(MODID);
+	
 	public static final int NETWORK_PROTOCOL_VERSION = 5;
 	
 	public static void tagsLoadEvent(){

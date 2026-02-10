@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "minecraft:ladder"
+    },
+    "M": {
+      "item": "minecraft:crying_obsidian"
+    }
+  },
+  "pattern": [
+    "LLL",
+    "LML",
+    "LLL"
+  ],
+  "result": {
+    "count": 8,
+    "id": "ironladders:crying_obsidian_ladder"
+  }
+}

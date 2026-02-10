@@ -6,9 +6,9 @@ import com.nine.ironladders.common.block.MetalLadderBlock;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 
 import java.util.List;
@@ -20,7 +20,7 @@ public class MetalLadderItem extends BlockItem {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, Level level, List<Component> components, TooltipFlag isAdvanced) {
+	public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> components, TooltipFlag isAdvanced) {
 		if (ClientHelper.shiftPressed()){
 			MetalLadderBlock block = (MetalLadderBlock) getBlock();
 			var speed = Math.round((block.getSpeedMultiplier() * 20) * 1000.0) / 1000.0;

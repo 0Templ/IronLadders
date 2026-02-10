@@ -20,6 +20,13 @@ public class FabricPlatformHelper implements IPlatformHelper {
 	}
 
 	@Override
+	public String getModVersion(String modId) {
+		return FabricLoader.getInstance().getModContainer(modId)
+				.map(mod -> mod.getMetadata().getVersion().getFriendlyString())
+				.orElse("unknown");
+	}
+
+	@Override
 	public File getConfigPath(String id) {
 		return FabricLoader.getInstance()
 				.getConfigDir()

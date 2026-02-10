@@ -12,43 +12,49 @@ import java.util.Set;
 public enum LadderType {
 	
 	NONE("none", ILConfig.COPPER_LADDER_SPEED_MULTIPLIER,
-			new TabIconPart("none")
+			new TabIconPart("none"), false
 			),
 	
 	COPPER("copper", ILConfig.COPPER_LADDER_SPEED_MULTIPLIER,
 			new TabCopperIconPart(),
+			false,
 			ILMaterials.PLATFORM_MATERIALS.COPPER_INGOT
 	),
 	
 	IRON("iron", ILConfig.IRON_LADDER_SPEED_MULTIPLIER,
 			new TabIconPart("iron"),
+			false,
 			ILMaterials.PLATFORM_MATERIALS.IRON_INGOT
 	),
 	
 	GOLD("gold", ILConfig.GOLD_LADDER_SPEED_MULTIPLIER,
 			new TabIconPart("gold"),
+			false,
 			ILMaterials.PLATFORM_MATERIALS.GOLD_INGOT
 	),
 	
 	DIAMOND("diamond", ILConfig.DIAMOND_LADDER_SPEED_MULTIPLIER,
 			new TabIconPart("diamond"),
+			false,
 			ILMaterials.PLATFORM_MATERIALS.DIAMOND
 	),
 	
 	OBSIDIAN("obsidian", ILConfig.OBSIDIAN_LADDER_SPEED_MULTIPLIER,
 			new TabIconPart("obsidian"),
+			false,
 			ILMaterials.PLATFORM_MATERIALS.OBSIDIAN
 	),
 	
 	NETHERITE("netherite", ILConfig.NETHERITE_LADDER_SPEED_MULTIPLIER,
 			new TabIconPart("netherite"),
+			false,
 			ILMaterials.PLATFORM_MATERIALS.NETHERITE
 	),
 	
-	BEDROCK("bedrock", ILConfig.BEDROCK_LADDER_SPEED_MULTIPLIER),
+	BEDROCK("bedrock", ILConfig.BEDROCK_LADDER_SPEED_MULTIPLIER, false),
 	
 	CRYING_OBSIDIAN("crying_obsidian", ILConfig.OBSIDIAN_LADDER_SPEED_MULTIPLIER,
-			new TabIconPart("crying_obsidian")
+			new TabIconPart("crying_obsidian"), false
 			),
 		
 	TIN("tin", ILConfig.TIN_LADDER_SPEED_MULTIPLIER,
@@ -124,6 +130,8 @@ public enum LadderType {
 	// Used in model datagen as subdirectories for ladder textures
 	public final String key;
 	
+	public final boolean nonVanilla;
+	public final boolean vanilla;
 	public final ConfigValue<Double> configValue;
 	private double speedMultiplier = Double.NaN;
 	private boolean initialized = false;
@@ -132,14 +140,27 @@ public enum LadderType {
 	
 	public final Set<ILMaterial> materials;
 	
+	
+	
 	LadderType(String key, ConfigValue<Double> configValue, ILMaterial... materials) {
-		this(key, configValue, null, materials);
+		this(key, configValue, true, materials);
 	}
 	
-	LadderType(String key, ConfigValue<Double> configValue, TabIconPart tabIconPart, ILMaterial... materials){
+	LadderType(String key, ConfigValue<Double> configValue, boolean nonVanilla, ILMaterial... materials) {
+		this(key, configValue, null, nonVanilla, materials);
+	}
+
+	LadderType(String key, ConfigValue<Double> configValue, TabIconPart tabIconPart, ILMaterial... materials) {
+		this(key, configValue, tabIconPart, true, materials);
+	}
+	
+	
+	LadderType(String key, ConfigValue<Double> configValue, TabIconPart tabIconPart, boolean nonVanilla, ILMaterial... materials){
 		this.key = key;
 		this.configValue = configValue;
 		this.tabIconPart = tabIconPart;
+		this.nonVanilla = nonVanilla;
+		this.vanilla = !nonVanilla;
 		this.materials = Set.of(materials);
 	}
 	

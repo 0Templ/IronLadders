@@ -10,6 +10,8 @@ public interface IPlatformHelper {
 	
 	String getModName(String modId);
 
+	String getModVersion(String modId);
+
 	File getConfigPath(String id);
 
 }

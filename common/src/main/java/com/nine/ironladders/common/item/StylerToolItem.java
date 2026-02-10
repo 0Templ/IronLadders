@@ -3,7 +3,7 @@ package com.nine.ironladders.common.item;
 import com.nine.ironladders.client.ClientHelper;
 import com.nine.ironladders.client.ILUI;
 import com.nine.ironladders.client.model.ModelType;
-import com.nine.ironladders.client.tooltip.TooltipContext;
+import com.nine.ironladders.client.tooltip.TooltipSource;
 import com.nine.ironladders.common.block.MetalLadderBlock;
 import com.nine.ironladders.common.block.entity.MetalLadderBlockEntity;
 import com.nine.ironladders.common.item.base.BlockHitInteractiveItem;
@@ -11,6 +11,7 @@ import com.nine.ironladders.common.item.base.ContextTooltipItem;
 import com.nine.ironladders.common.item.base.CustomHighlightNameItem;
 import com.nine.ironladders.common.item.base.HotBarScrollableItem;
 import com.nine.ironladders.common.util.PositionUtils;
+import com.nine.ironladders.init.ILComponents;
 import com.nine.ironladders.network.packet.c2s.ModelTypePacket;
 import com.nine.ironladders.platform.Platform;
 import net.minecraft.ChatFormatting;
@@ -39,7 +40,6 @@ public class StylerToolItem extends Item implements
 		ContextTooltipItem, HotBarScrollableItem, CustomHighlightNameItem, BlockHitInteractiveItem {
 	
 	private static final int MAX_DEPTH = 256;
-	private static final String MODEL_TYPE_KEY = "il_styler_model_type";
 	
 	public StylerToolItem(Properties properties) {
 		super(properties);
@@ -55,8 +55,8 @@ public class StylerToolItem extends Item implements
 	}
 	
 	@Override
-	public void appendContextTooltip(ItemStack stack, Level level, List<Component> components, TooltipFlag flag, TooltipContext type) {
-		if (type == TooltipContext.REFERENCE){
+	public void appendContextTooltip(ItemStack stack, Level level, List<Component> components, TooltipFlag flag, TooltipSource type) {
+		if (type == TooltipSource.REFERENCE){
 			components.add(Component.translatable("item.ironladders.ladder_styler_tool.desc").withStyle(ChatFormatting.GRAY));
 //			components.add(Component.translatable("item.ironladders.ladder_styler_tool.cost_info").withStyle(ChatFormatting.GRAY));
 		}
@@ -194,14 +194,19 @@ public class StylerToolItem extends Item implements
 	}
 	
 	public static ModelType getType(ItemStack stack){
-		if (stack.getTag() == null || !stack.getTag().contains(MODEL_TYPE_KEY)){
+		var key = stack.get(ILComponents.STYLER_MODEL_TYPE.get());
+		if (key == null || key.isEmpty()) {
 			return null;
 		}
-		return ModelType.byKey(stack.getTag().getString(MODEL_TYPE_KEY));
+		return ModelType.byKey(key);
 	}
 	
 	public static void writeType(ItemStack stack, ModelType type){
-		stack.getOrCreateTag().putString(MODEL_TYPE_KEY, type.key);
+		if (type == null) {
+			stack.remove(ILComponents.STYLER_MODEL_TYPE.get());
+			return;
+		}
+		stack.set(ILComponents.STYLER_MODEL_TYPE.get(), type.key);
 	}
 
 	@Override

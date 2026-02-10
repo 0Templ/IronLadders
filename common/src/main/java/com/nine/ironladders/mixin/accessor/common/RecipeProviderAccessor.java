@@ -1,5 +1,6 @@
 package com.nine.ironladders.mixin.accessor.common;
 
+import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.world.level.ItemLike;
@@ -10,11 +11,10 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 public interface RecipeProviderAccessor {
 
 	@Invoker("has")
-	static InventoryChangeTrigger.TriggerInstance il$has(ItemLike itemLike) {
-		return il$has(itemLike);
+	static Criterion<InventoryChangeTrigger.TriggerInstance> il$has(ItemLike itemLike) {
+		throw new AssertionError();
 	}
 	
 
 	
 }
-

@@ -4,7 +4,8 @@ public enum LoaderTarget {
 	
 	COMMON("common"),
 	FABRIC("fabric"),
-	FORGE("forge");
+	FORGE("forge"),
+	NEOFORGE("neoforge");
 	
 	public final String id;
 	

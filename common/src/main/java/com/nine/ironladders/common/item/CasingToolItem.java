@@ -2,7 +2,7 @@ package com.nine.ironladders.common.item;
 
 import com.nine.ironladders.client.ClientHelper;
 import com.nine.ironladders.client.ILUI;
-import com.nine.ironladders.client.tooltip.TooltipContext;
+import com.nine.ironladders.client.tooltip.TooltipSource;
 import com.nine.ironladders.common.block.MetalLadderBlock;
 import com.nine.ironladders.common.block.entity.MetalLadderBlockEntity;
 import com.nine.ironladders.common.item.base.BlockHitInteractiveItem;
@@ -48,9 +48,9 @@ public class CasingToolItem extends Item implements ContextTooltipItem, BlockHit
 			Level level,
 			List<Component> components,
 			TooltipFlag flag,
-			TooltipContext type
+			TooltipSource type
 	) {
-		if (type == TooltipContext.REFERENCE){
+		if (type == TooltipSource.REFERENCE){
 			components.add(Component.translatable("item.ironladders.ladder_casing_tool.desc").withStyle(ChatFormatting.GRAY));
 		}
 		else {

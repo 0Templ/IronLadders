@@ -1,0 +1,114 @@
+plugins {
+    id 'multiloader-loader'
+    id 'net.neoforged.moddev'
+    id "me.shedaniel.unified-publishing"
+}
+
+neoForge {
+    version = neoforge_version
+
+    parchment {
+        minecraftVersion = parchment_minecraft
+        mappingsVersion = parchment_version
+    }
+
+    runs {
+        client {
+            client()
+        }
+        data {
+            data()
+
+            def generated = file('src/generated/resources').absolutePath
+            def existing = file('src/main/resources').absolutePath
+
+            programArguments.addAll([
+                    '--mod', project.mod_id,
+                    '--all',
+                    '--output', generated,
+                    '--existing', existing
+            ])
+        }
+        server {
+            server()
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+sourceSets.main.resources {
+    srcDir 'src/generated/resources'
+    srcDir project(':common').file('src/generated/resources')
+    srcDir project(':common').file('src/main/resources')
+}
+
+dependencies {
+
+    // NEI APIs
+    compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
+    compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
+    compileOnly "me.shedaniel:RoughlyEnoughItems-neoforge:${rei_version}"
+    compileOnly "dev.emi:emi-neoforge:${emi_version}+${minecraft_version}:api"
+
+    // WAILA APIs
+    compileOnly "maven.modrinth:jade:${jade_neoforge_version}"
+    compileOnly "maven.modrinth:Eyw0UxEx:${top_neoforge_version}"
+    compileOnly "maven.modrinth:6AQIaxuO:${wthit_neoforge_version}"
+    compileOnly "maven.modrinth:ftdbN0KK:${badpackets_neoforge_version}"
+
+    // NEI runtime
+    def nei = (findProperty("neoforge_nei") ?: "JEI").toString().toUpperCase(Locale.ROOT)
+    def neiRuntime = [
+            JEI : {
+                add("runtimeOnly", "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+            },
+            REI  : {
+                add("runtimeOnly",  "me.shedaniel:RoughlyEnoughItems-neoforge:${rei_version}")
+            },
+            EMI: {
+                add("runtimeOnly", "dev.emi:emi-neoforge:${emi_version}+${minecraft_version}")
+            }
+    ]
+    neiRuntime[nei]?.call()
+
+    // Waila runtime
+    def waila = (findProperty("neoforge_waila") ?: "JADE").toString().toUpperCase(Locale.ROOT)
+    def wailaRuntime = [
+            JADE : {
+                add("runtimeOnly", "maven.modrinth:jade:${jade_neoforge_version}")
+            },
+            TOP  : {
+                add("runtimeOnly", "maven.modrinth:Eyw0UxEx:${top_neoforge_version}")
+            },
+            WTHIT: {
+                add("runtimeOnly", "maven.modrinth:6AQIaxuO:${wthit_neoforge_version}")
+                add("runtimeOnly", "maven.modrinth:ftdbN0KK:${badpackets_neoforge_version}")
+            }
+    ]
+    wailaRuntime[waila]?.call()
+
+    // Architectury
+    implementation "dev.architectury:architectury-neoforge:${architectury_neoforge_version}"
+
+    // Cloth-config
+    implementation "me.shedaniel.cloth:cloth-config-neoforge:${cloth_config_neoforge_version}"
+
+    // Mekanism
+    runtimeOnly "mekanism:Mekanism:${minecraft_version}-${mekanism_version}"
+}
+
+processResources {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
+configureUnifiedPublishing(project, [
+        loaderName: "NeoForge",
+        gameLoader: "neoforge",
+        releaseType: rootProject.neoforge_release_type,
+        publicationTask: "jar"
+])

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "ironladders:waxed_weathered_copper_ladder_from_honeycomb"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_weathered_copper_ladder": {
+      "conditions": {
+        "items": [
+          {
+            "items": "ironladders:weathered_copper_ladder"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_weathered_copper_ladder"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "ironladders:waxed_weathered_copper_ladder_from_honeycomb"
+    ]
+  }
+}

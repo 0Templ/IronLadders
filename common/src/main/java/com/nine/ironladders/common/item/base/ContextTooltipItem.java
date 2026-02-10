@@ -1,6 +1,6 @@
 package com.nine.ironladders.common.item.base;
 
-import com.nine.ironladders.client.tooltip.TooltipContext;
+import com.nine.ironladders.client.tooltip.TooltipSource;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -15,6 +15,6 @@ public interface ContextTooltipItem {
 			Level level,
 			List<Component> components,
 			TooltipFlag flag,
-			TooltipContext type);
+			TooltipSource type);
 
 }

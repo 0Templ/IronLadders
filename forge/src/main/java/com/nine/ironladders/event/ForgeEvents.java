@@ -4,26 +4,19 @@ import com.nine.ironladders.ILClient;
 import com.nine.ironladders.ILCommon;
 import com.nine.ironladders.client.ItemProperties;
 import com.nine.ironladders.client.render.ForgeTierLadderBakedModel;
-import com.nine.ironladders.common.recipe.ILRecipeCache;
-import com.nine.ironladders.compat.top.TheOneProbeSetup;
 import com.nine.ironladders.init.ILBlocks;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.block.BlockModelShaper;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.event.TagsUpdatedEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.event.server.ServerStartedEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.InterModComms;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 
 public final class ForgeEvents {
 	
@@ -44,13 +37,6 @@ public final class ForgeEvents {
 					ILCommon.LOGGER.error("Failed to inject copper ladders into vanilla maps. Copper weathering/waxing integration is disabled.", throwable);
 				}
 			});
-		}
-
-		@SubscribeEvent
-		public static void onInterModEnqueue(InterModEnqueueEvent event) {
-			if (ModList.get().isLoaded("theoneprobe")) {
-				InterModComms.sendTo("theoneprobe", "getTheOneProbe", TheOneProbeSetup::new);
-			}
 		}
 
 	}
@@ -99,11 +85,6 @@ public final class ForgeEvents {
 			ILCommon.onPlayerLogin(player);
 		}
 		
-		@SubscribeEvent
-		public static void onServerStarted(ServerStartedEvent event) {
-			MinecraftServer server = event.getServer();
-			ILRecipeCache.onResourcesReload(server.getRecipeManager(), server.registryAccess());
-		}
 	}
 	
 	@Mod.EventBusSubscriber(modid = ILCommon.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)

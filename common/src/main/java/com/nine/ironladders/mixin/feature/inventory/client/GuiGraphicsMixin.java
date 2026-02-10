@@ -38,7 +38,7 @@ public abstract class GuiGraphicsMixin {
 		pose.pushPose();
 		pose.translate(0.0F, 0.0F, 200.0F);
 		String text = String.valueOf(current);
-		drawString(font, text, x + 0, y + 9, ILUI.Color.WHITE, true);
+		drawString(font, text, x, y + 9, ILUI.Color.WHITE, true);
 		pose.popPose();
 	}
 

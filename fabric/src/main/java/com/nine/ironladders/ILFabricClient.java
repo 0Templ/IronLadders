@@ -29,7 +29,7 @@ public class ILFabricClient implements ClientModInitializer {
 			pluginContext.modifyModelAfterBake().register((model, ctx) -> {
 				if (model == null) return null;
 				
-				var id = ctx.id();
+				var id = ctx.resourceId();
 				if (id != null
 						&& id.getNamespace().equals(ILCommon.MODID)
 				) {

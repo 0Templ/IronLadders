@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 - /
 
+
+## 3.0.01
+- Fixed crash on launch (Forge)
+
 ## 3.0.0
 
 ### General

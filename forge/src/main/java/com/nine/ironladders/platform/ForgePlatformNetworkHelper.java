@@ -10,12 +10,12 @@ public class ForgePlatformNetworkHelper implements IPlatformNetworkHelper {
 	
 	@Override
 	public void sendToServer(C2SPacket packet) {
-		ILForgeNetwork.CHANNEL.sendToServer(packet);
+		ILForgeNetwork.CHANNEL.send(packet, PacketDistributor.SERVER.noArg());
 	}
 	
 	@Override
 	public void sendToClient(ServerPlayer player, S2CPacket packet) {
-		ILForgeNetwork.CHANNEL.send(PacketDistributor.PLAYER.with(() -> player), packet);
+		ILForgeNetwork.CHANNEL.send(packet, PacketDistributor.PLAYER.with(player));
 	}
 	
 }

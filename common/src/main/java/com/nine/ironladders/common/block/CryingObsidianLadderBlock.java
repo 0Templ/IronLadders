@@ -22,11 +22,10 @@ public class CryingObsidianLadderBlock extends VariantLadderBlock.ThreeVariantLa
 	
 	@Override
 	protected void doAnimateTick(BlockState state, Level level, BlockPos pos, RandomSource random){
-		if (random.nextInt(14) == 0) {
+		if (random.nextInt(15) == 0) {
 			spawnTearParticles(state, level, pos, random);
 		}
 	}
-	
 	
 	public static void spawnTearParticles(BlockState state, Level level, BlockPos pos, RandomSource random) {
 		Direction direction = Direction.getRandom(random);

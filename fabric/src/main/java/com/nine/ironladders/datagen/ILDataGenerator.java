@@ -18,6 +18,9 @@ public class ILDataGenerator implements DataGeneratorEntrypoint {
 			case "forge":
 				generateForgeData(dataGenerator);
 				break;
+			case "neoforge":
+				generateNeoForgeData(dataGenerator);
+				break;
 			case "fabric":
 				generateFabricData(dataGenerator);
 				break;
@@ -48,6 +51,17 @@ public class ILDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ILLootTableProvider.Forge::new);
 		pack.addProvider(ILItemTagProvider.Forge::new);
 		
+	}
+
+	public static void generateNeoForgeData(FabricDataGenerator dataGenerator) {
+		FabricDataGenerator.Pack pack = dataGenerator.createPack();
+
+		pack.addProvider(ILRecipeProvider.NeoForge::new);
+
+		pack.addProvider(ILModelProvider.NeoForge::new);
+		pack.addProvider(ILBlockTagProvider.NeoForge::new);
+		pack.addProvider(ILLootTableProvider.NeoForge::new);
+		pack.addProvider(ILItemTagProvider.NeoForge::new);
 	}
 	
 	public static void generateFabricData(FabricDataGenerator dataGenerator) {

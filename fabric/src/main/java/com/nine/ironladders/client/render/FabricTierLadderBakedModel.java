@@ -41,18 +41,17 @@ public class FabricTierLadderBakedModel extends ForwardingBakedModel {
 		
 		ModelType customType = null;
 		
-		if (renderData instanceof LadderRenderData data) {
-			var morph = data.state();
-			customType = data.type();
+		if (renderData instanceof LadderRenderData(BlockState morph, ModelType type, boolean hideAttachments)) {
+			customType = type;
 			if (morph != null){
 				if (morph.getBlock() instanceof MetalLadderBlock metalLadderBlock){
 					renderState = metalLadderBlock.withPropertiesOf(state);
 				}
 				else {
-					renderState = data.state();
+					renderState = morph;
 				}
 			}
-			if (data.hideAttachments()){
+			if (hideAttachments){
 				renderState = applyHiddenAttachmentState(renderState);
 			}
 		}

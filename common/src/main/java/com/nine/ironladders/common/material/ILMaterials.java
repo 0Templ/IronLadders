@@ -54,31 +54,31 @@ public class ILMaterials {
 		
 		this.COPPER_INGOT = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/copper"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "copper_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/copper"));
 			default -> new ILItemMaterial(Items.COPPER_INGOT);
 		};
 		
 		this.IRON_INGOT = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/iron"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "iron_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/iron"));
 			default -> new ILItemMaterial(Items.IRON_INGOT);
 		};
 		
 		this.GOLD_INGOT = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/gold"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "gold_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/gold"));
 			default -> new ILItemMaterial(Items.GOLD_INGOT);
 		};
 		
 		this.DIAMOND = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "gems/diamond"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "diamonds"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "gems/diamond"));
 			default -> new ILItemMaterial(Items.DIAMOND);
 		};
 		
 		this.NETHERITE = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/netherite"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "netherite_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/netherite"));
 			default -> new ILItemMaterial(Items.NETHERITE_INGOT);
 		};
 		
@@ -102,12 +102,12 @@ public class ILMaterials {
 		this.OBSERVER = new ILItemMaterial(Items.OBSERVER);
 		this.REDSTONE_DUST = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "dusts/redstone"));
-			default -> new ILTagMaterial(ILTags.createItemTag("c", "redstone_dusts"));
+			default -> new ILTagMaterial(ILTags.createItemTag("c", "dusts/redstone"));
 		};
 		this.REDSTONE_TORCH = new ILItemMaterial(Items.REDSTONE_TORCH);
 		this.LAPIS = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "gems/lapis"));
-			default -> new ILTagMaterial(ILTags.createItemTag("c", "lapis"));
+			default -> new ILTagMaterial(ILTags.createItemTag("c", "gems/lapis"));
 		};
 		this.TRIM_TEMPLATE = new ILTagMaterial(ItemTags.TRIM_TEMPLATES);
 		
@@ -132,92 +132,92 @@ public class ILMaterials {
 		
 		this.BRONZE_INGOT = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/bronze"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "bronze_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/bronze"));
 			default -> new ILItemMaterial(Items.GOLD_INGOT);
 		};
 		
 		this.TIN_INGOT = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/tin"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "tin_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/tin"));
 			default -> new ILItemMaterial(Items.IRON_INGOT);
 		};
 		this.STEEL_INGOT = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/steel"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "steel_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/steel"));
 			default -> new ILItemMaterial(Items.IRON_INGOT);
 		};
 		this.SILVER_INGOT = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/silver"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "silver_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/silver"));
 			default -> new ILItemMaterial(Items.IRON_INGOT);
 		};
 		this.ALUMINUM_INGOT = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/aluminum"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "aluminum_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/aluminum"));
 			default -> new ILItemMaterial(Items.IRON_INGOT);
 		};
 		this.LEAD_INGOT = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/lead"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "lead_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/lead"));
 			default -> new ILItemMaterial(Items.IRON_INGOT);
 		};
 		this.PLATINUM_INGOT = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/platinum"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "platinum_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/platinum"));
 			default -> new ILItemMaterial(Items.IRON_INGOT);
 		};
 		
 		this.CHROMIUM_INGOT = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/chromium"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "chromium_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/chromium"));
 			default -> new ILItemMaterial(Items.IRON_INGOT);
 		};
 		
 		this.ADVANCED_ALLOY_INGOT = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/advanced_alloy"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "advanced_alloy_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/advanced_alloy"));
 			default -> new ILItemMaterial(Items.IRON_INGOT);
 		};
 		
 		this.NICKEL_INGOT = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/nickel"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "nickel_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/nickel"));
 			default -> new ILItemMaterial(Items.IRON_INGOT);
 		};
 		
 		this.TUNGSTEN_INGOT = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/tungsten"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "tungsten_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/tungsten"));
 			default -> new ILItemMaterial(Items.IRON_INGOT);
 		};
 		
 		this.TUNGSTEN_STEEL_INGOT = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/tungsten_steel"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "tungstensteel_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/tungsten_steel"));
 			default -> new ILItemMaterial(Items.IRON_INGOT);
 		};
 		
 		this.TITANIUM_INGOT = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/titanium"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "titanium_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/titanium"));
 			default -> new ILItemMaterial(Items.IRON_INGOT);
 		};
 		
 		this.ZINC_INGOT = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/zinc"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "zinc_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/zinc"));
 			default -> new ILItemMaterial(Items.IRON_INGOT);
 		};
 		
 		this.INVAR_INGOT = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/invar"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "invar_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/invar"));
 			default -> new ILItemMaterial(Items.IRON_INGOT);
 		};
 		
 		this.ELECTRUM_INGOT = switch (target) {
 			case FORGE -> new ILTagMaterial(ILTags.createItemTag("forge", "ingots/electrum"));
-			case FABRIC -> new ILTagMaterial(ILTags.createItemTag("c", "electrum_ingots"));
+			case FABRIC, NEOFORGE -> new ILTagMaterial(ILTags.createItemTag("c", "ingots/electrum"));
 			default -> new ILItemMaterial(Items.IRON_INGOT);
 		};
 		
@@ -226,3 +226,4 @@ public class ILMaterials {
 	}
 	
 }
+

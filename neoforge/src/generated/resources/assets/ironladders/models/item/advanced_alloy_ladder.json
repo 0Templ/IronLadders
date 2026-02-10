@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ironladders:block/advanced_alloy/advanced_alloy_ladder"
+  }
+}

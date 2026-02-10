@@ -15,6 +15,28 @@ public class ILConfig {
 	private static final double OBSIDIAN_SPEED  = DIAMOND_SPEED * 0.80;
 	private static final double BEDROCK_SPEED = NETHERITE_SPEED;
 	
+	public static final ConfigValue<Boolean> HIDE_UNCRAFTABLE_LADDERS =
+			ConfigImpl.register(
+					"hide_uncraftable_ladders",
+					true,
+					ConfigSection.GENERAL,
+					ConfigSide.COMMON,
+					ConfigFlag.SYNC,
+					ConfigComment.of("Hides ladders with invalid recipe ingredients (from the creative tab and JEI/REI/EMI panel)")
+							.line("If you tweak ladder recipes, you may want to set this to false")
+			);
+
+	// Todo: breaks resources, try to fix it smh
+/*	public static final ConfigValue<Boolean> DISABLE_NON_VANILLA_LADDERS =
+			ConfigImpl.register(
+					"disable_non_vanilla_ladders",
+					false,
+					ConfigSection.GENERAL,
+					ConfigSide.COMMON,
+					ConfigFlag.SYNC,
+					ConfigComment.of("Disable all non-vanilla ladders")
+							.line("WARNING: Enabling this can break existing worlds (missing blocks/items etc.)")
+							.line("Recommended for new worlds only"));*/
 	
 	public static final ConfigValue<Double> GLOBAL_SPEED_MULTIPLIER =
 			speed(1, "global",
@@ -124,18 +146,6 @@ public class ILConfig {
 							.line("Prevents skipping through narrow spaces when moving at high speed"));
 	
 	
-	public static final ConfigValue<Boolean> HIDE_UNCRAFTABLE_LADDERS =
-			ConfigImpl.register(
-					"hide_uncraftable_ladders",
-					true,
-					ConfigSection.RECIPES,
-					ConfigSide.COMMON,
-					ConfigFlag.SYNC,
-					ConfigComment.of("Hides ladders with invalid recipe ingredients (from the creative tab and JEI/REI/EMI panel)")
-							.line("If you tweak ladder recipes, you may want to set this to false")
-			);
-	
-	
 	// Ladder model types
 	public static final ConfigValue<ModelType> DEFAULT_MODEL_TYPE =
 			ConfigImpl.register(
@@ -211,4 +221,3 @@ public class ILConfig {
 	}
 	
 }
-

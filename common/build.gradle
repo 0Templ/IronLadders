@@ -1,12 +1,12 @@
 plugins {
     id 'multiloader-common'
-    id 'net.neoforged.moddev.legacyforge'
+    id 'net.neoforged.moddev'
 }
 
-legacyForge {
-    mcpVersion = minecraft_version
+neoForge {
+    neoFormVersion = neo_form_version
     if (file("src/main/resources/META-INF/accesstransformer.cfg").exists()) {
-        accessTransformers = ["src/main/resources/META-INF/accesstransformer.cfg"]
+        accessTransformers.from("src/main/resources/META-INF/accesstransformer.cfg")
     }
     parchment {
         minecraftVersion = parchment_minecraft
@@ -22,10 +22,9 @@ dependencies {
 
 
     compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
-    compileOnly "maven.modrinth:nvQzSEkH:${jade_forge_version}"
-    compileOnly "maven.modrinth:6AQIaxuO:${wthit_forge_version}"
-    compileOnly "maven.modrinth:ftdbN0KK:${badpackets_forge_version}"
-
+    compileOnlyApi "maven.modrinth:nvQzSEkH:${jade_common_version}"
+    compileOnlyApi "maven.modrinth:6AQIaxuO:${wthit_common_version}"
+    compileOnlyApi "maven.modrinth:ftdbN0KK:${badpackets_common_version}"
 
     compileOnly(annotationProcessor("org.parchmentmc.data:parchment-${parchment_minecraft}:${parchment_version}@zip"))
 

@@ -5,10 +5,9 @@ import com.nine.ironladders.config.ConfigSpec;
 public enum ConfigSection implements ConfigOption {
 
 	NONE(""),
-	BEHAVIOR("behavior"),
-	SPEED(BEHAVIOR, "speed"),
-	UPGRADE(BEHAVIOR, "upgrade"),
-	ENTITY_INTERACTION(BEHAVIOR, "interaction"),
+	GENERAL("general"),
+	SPEED("speed"),
+	ENTITY_INTERACTION("interaction"),
 
 	RECIPES("recipes"),
 

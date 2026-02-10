@@ -2,7 +2,8 @@ package com.nine.ironladders.common.item.base;
 
 import com.nine.ironladders.client.ClientHelper;
 import com.nine.ironladders.client.ILUI;
-import com.nine.ironladders.client.tooltip.TooltipContext;
+import com.nine.ironladders.client.tooltip.TooltipSource;
+import com.nine.ironladders.init.ILComponents;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
@@ -14,8 +15,6 @@ import net.minecraft.world.level.Level;
 import java.util.List;
 
 public abstract class StoredChargeToolItem extends Item implements InventoryInteractiveItem, ContextTooltipItem {
-
-	private static final String SAVED_CHARGES_COUNT = "il_saved_charges";
 
 	protected StoredChargeToolItem(Properties properties) {
 		super(properties.stacksTo(1));
@@ -37,9 +36,9 @@ public abstract class StoredChargeToolItem extends Item implements InventoryInte
 			Level level,
 			List<Component> components,
 			TooltipFlag flag,
-			TooltipContext type
+			TooltipSource type
 	) {
-		if (type == TooltipContext.REFERENCE){
+		if (type == TooltipSource.REFERENCE){
 			components.add(Component.translatable(this.getDescriptionId() + ".desc").withStyle(ChatFormatting.GRAY));
 			Component cost = ILUI.withColor(Component.translatable(chargeItem().getDescriptionId()), ILUI.Color.SOFT_GRAY);
 			components.add(Component.translatable("item.ironladders.stored_charge_tool.cost_info",
@@ -95,15 +94,14 @@ public abstract class StoredChargeToolItem extends Item implements InventoryInte
 	}
 
 	public static int getCharges(ItemStack stack){
-		var tag = stack.getTag();
-		return tag != null ? tag.getInt(SAVED_CHARGES_COUNT) : 0;
+		return stack.getOrDefault(ILComponents.SAVED_CHARGES_COUNT.get(), 0);
 	}
 
 	public final int changeCharges(ItemStack stack, int value){
 		int current = getCharges(stack);
 		int toSet = Mth.clamp(current + value,0, maxSavedCharges());
 		if (toSet != current) {
-			stack.getOrCreateTag().putInt(SAVED_CHARGES_COUNT, toSet);
+			stack.set(ILComponents.SAVED_CHARGES_COUNT.get(), toSet);
 		}
 		return toSet - current;
 	}

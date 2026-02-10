@@ -18,7 +18,7 @@ public class NeiHelper {
 	
 	public static final Map<Item, Component> NEI_ITEM_INFO_MAP  = new HashMap<>();
 	
-	private static List<ItemStack> hiddenNEIStacksCache = null;
+	private static List<ItemStack> hiddenStacks = null;
 	
 	static {
 		NEI_ITEM_INFO_MAP.put(
@@ -46,13 +46,13 @@ public class NeiHelper {
 	
 	
 	public static List<ItemStack> hiddenNEIStacks() {
-		if (hiddenNEIStacksCache != null) {
-			return hiddenNEIStacksCache;
+		if (hiddenStacks != null) {
+			return hiddenStacks;
 		}
 		var ret = new ArrayList<>(RecipeHelper.hiddenStacks());
 		ret.add(ILBlocks.CRYING_OBSIDIAN_LADDER.get().asItem().getDefaultInstance());
-		hiddenNEIStacksCache = ret;
-		return hiddenNEIStacksCache;
+		hiddenStacks = ret;
+		return hiddenStacks;
 	}
 	
 }

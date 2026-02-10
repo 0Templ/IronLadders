@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "waxed_copper_ladder",
+  "ingredients": [
+    {
+      "item": "ironladders:copper_ladder"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "ironladders:waxed_copper_ladder"
+  }
+}

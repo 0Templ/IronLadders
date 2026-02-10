@@ -22,6 +22,13 @@ public class ForgePlatformHelper implements IPlatformHelper {
 	}
 
 	@Override
+	public String getModVersion(String modId) {
+		return ModList.get().getModContainerById(modId)
+				.map(container -> container.getModInfo().getVersion().toString())
+				.orElse("unknown");
+	}
+
+	@Override
 	public File getConfigPath(String id) {
 		return FMLPaths.CONFIGDIR.get().resolve(id + ".toml").toFile();
 	}

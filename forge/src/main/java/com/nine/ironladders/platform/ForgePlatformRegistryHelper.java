@@ -4,6 +4,7 @@ import com.nine.ironladders.ILCommon;
 import com.nine.ironladders.platform.util.BlockEntityFactory;
 import com.nine.ironladders.platform.util.ForgeRegistryObject;
 import com.nine.ironladders.platform.util.RegistryProvider;
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -19,6 +20,9 @@ import java.util.function.Supplier;
 
 public class ForgePlatformRegistryHelper implements IPlatformRegistryHelper {
 	
+	public static final DeferredRegister<DataComponentType<?>> COMPONENT_TYPES =
+			DeferredRegister.create(Registries.DATA_COMPONENT_TYPE, ILCommon.MODID);
+	
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ILCommon.MODID);
 	
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ILCommon.MODID);
@@ -27,6 +31,13 @@ public class ForgePlatformRegistryHelper implements IPlatformRegistryHelper {
 			DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, ILCommon.MODID);
 	
 	public static final DeferredRegister<CreativeModeTab> TAB = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ILCommon.MODID);
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public <T> RegistryProvider<DataComponentType<T>> registerComponent(String id, DataComponentType<T> dataComponentType) {
+		var ret = COMPONENT_TYPES.register(id, () -> dataComponentType);
+		return () -> (DataComponentType<T>) ret.get();
+	}
 	
 	@Override
 	public com.nine.ironladders.platform.util.RegistryProvider<Item> registerItem(String id, Supplier<Item> itemSupplier) {

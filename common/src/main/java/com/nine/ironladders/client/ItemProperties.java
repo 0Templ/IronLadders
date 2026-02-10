@@ -17,7 +17,7 @@ public class ItemProperties {
 	
 	private static void registerProperties(){
 		ItemPropertiesAccessor.register(ILItems.MORPH_TOOL.get(),
-				new ResourceLocation(ILCommon.MODID, "morph_type"), new MorphModelPredicateProvider());
+				ResourceLocation.fromNamespaceAndPath(ILCommon.MODID, "morph_type"), new MorphModelPredicateProvider());
 	}
 	
 	public static void init() {
@@ -38,3 +38,4 @@ public class ItemProperties {
 	}
 	
 }
+

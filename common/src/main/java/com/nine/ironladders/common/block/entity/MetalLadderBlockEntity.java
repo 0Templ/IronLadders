@@ -4,6 +4,7 @@ import com.nine.ironladders.client.model.ModelType;
 import com.nine.ironladders.common.block.MetalLadderBlock;
 import com.nine.ironladders.init.ILBlockEntities;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -43,8 +44,8 @@ public class MetalLadderBlockEntity extends BlockEntity {
 	}
 	
 	@Override
-	public void load(CompoundTag tag) {
-		super.load(tag);
+	public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+		super.loadAdditional(tag, registries);
 		if (tag.contains(MORPH_TYPE_KEY)) {
 			BlockState s = NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), tag.getCompound(MORPH_TYPE_KEY));
 			morphState = !s.isAir() ? s : null;
@@ -81,8 +82,8 @@ public class MetalLadderBlockEntity extends BlockEntity {
 	}
 	
 	@Override
-	protected void saveAdditional(CompoundTag tag) {
-		super.saveAdditional(tag);
+	protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+		super.saveAdditional(tag, registries);
 		if (morphState != null) tag.put(MORPH_TYPE_KEY, NbtUtils.writeBlockState(morphState));
 		if (modelType != null) tag.putString(MODEL_TYPE_KEY, modelType.key);
 		tag.putBoolean(HIDE_ATTACHMENTS_KEY, hideAttachments);
@@ -119,8 +120,8 @@ public class MetalLadderBlockEntity extends BlockEntity {
 	}
 	
 	@Override
-	public CompoundTag getUpdateTag() {
-		return saveWithId();
+	public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+		return saveWithId(registries);
 	}
 	
 	

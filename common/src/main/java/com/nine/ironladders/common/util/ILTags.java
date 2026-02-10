@@ -13,10 +13,11 @@ public class ILTags {
 	
 	
 	public static TagKey<Item> createItemTag(String namespace, String id) {
-		return TagKey.create(Registries.ITEM, new ResourceLocation(namespace, id));
+		return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(namespace, id));
 	}
 	
 	public static TagKey<Block> createBlockTag(String id) {
-		return TagKey.create(Registries.BLOCK, new ResourceLocation(ILCommon.MODID, id));
+		return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ILCommon.MODID, id));
 	}
 }
+

@@ -12,7 +12,7 @@ public interface ItemPropertiesAccessor {
 	
 	@Invoker("register")
 	static void register(Item item, ResourceLocation name, ClampedItemPropertyFunction property) {
-	
+		throw new AssertionError();
 	}
 	
 }

@@ -61,11 +61,11 @@ public class ConfigValue<T> {
     }
 
     public Number min() {
-        return range != null ? range.min : null;
+        return range != null ? range.min() : null;
     }
 
     public Number max() {
-        return range != null ? range.max : null;
+        return range != null ? range.max() : null;
     }
 
     public Class<?> elementClass() {
