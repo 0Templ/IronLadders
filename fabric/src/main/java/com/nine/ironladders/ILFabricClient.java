@@ -42,10 +42,8 @@ public class ILFabricClient implements ClientModInitializer {
 	}
 	
 	private void registerRenderLayers() {
-		for (var ladder : ILBlocks.AVAILABLE_LADDERS.all()) {
-			if (ladder != null) {
-				BlockRenderLayerMap.INSTANCE.putBlock(ladder, RenderType.cutout());
-			}
+		for (var ladder : ILBlocks.registeredLadders()) {
+			BlockRenderLayerMap.INSTANCE.putBlock(ladder, RenderType.cutout());
 		}
 	}
 }

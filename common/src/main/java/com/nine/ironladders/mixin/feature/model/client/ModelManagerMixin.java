@@ -153,8 +153,7 @@ public abstract class ModelManagerMixin {
 			Map<BlockState, BakedModel> typeCache = new IdentityHashMap<>();
 			Map<BlockState, BakedModel> bakedCache = new IdentityHashMap<>();
 			
-			for (Block block : ILBlocks.AVAILABLE_LADDERS.all()) {
-				if (block == null) continue;
+			for (Block block : ILBlocks.registeredLadders()) {
 				var json = il$loadJson(resourceManager, block, type);
 				if (json == null) continue;
 				

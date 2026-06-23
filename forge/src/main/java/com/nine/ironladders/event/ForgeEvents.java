@@ -53,7 +53,7 @@ public final class ForgeEvents {
 		
 		@SubscribeEvent
 		public static void onModifyBakingResult(ModelEvent.ModifyBakingResult event) {
-			for (var block : ILBlocks.AVAILABLE_LADDERS.all()) {
+			for (var block : ILBlocks.registeredLadders()) {
 				wrapBlock(event, block);
 			}
 		}

@@ -11,6 +11,8 @@ import com.nine.ironladders.common.util.PlatformObjects;
 import com.nine.ironladders.platform.Platform;
 import com.nine.ironladders.platform.util.LoaderTarget;
 import com.nine.ironladders.platform.util.RegistryProvider;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -20,12 +22,23 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 
+import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class ILBlocks {
 	
 	public static final PlatformObjects<Block> AVAILABLE_LADDERS = new PlatformObjects<>();
+	
+	public static List<Block> registeredLadders() {
+		return BuiltInRegistries.BLOCK.stream()
+				.filter(MetalLadderBlock.class::isInstance)
+				.filter(block -> {
+					ResourceLocation id = BuiltInRegistries.BLOCK.getKey(block);
+					return id != null && id.getNamespace().equals(ILCommon.MODID);
+				})
+				.toList();
+	}
 	
 	// Vanilla ladders
 	public static final RegistryProvider<Block> COPPER_LADDER = register(

@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file.
 - /
 
 
+## 3.0.02
+- Fixed crash on launch ((Neo)Forge) (again)
+
 ## 3.0.01
 - Fixed crash on launch (Forge)
 
